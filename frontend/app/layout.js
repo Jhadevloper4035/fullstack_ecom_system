@@ -1,11 +1,12 @@
+'use client'
+
 import './globals.css'
+import "../public/scss/main.scss";
+import "../public/css/image-compare-viewer.min.css";
 import BootstrapClient from './components/BootstrapClient'
 import NavigationProgress from './components/NavigationProgress'
+import { AuthProvider } from '@/context/AuthContext'
 
-export const metadata = {
-  title: 'Auth System - Secure Authentication',
-  description: 'Production-ready authentication system with JWT and token rotation',
-}
 
 export default function RootLayout({ children }) {
   return (
@@ -17,9 +18,11 @@ export default function RootLayout({ children }) {
         />
       </head>
       <body>
-        <NavigationProgress />
-        {children}
-        <BootstrapClient />
+        <AuthProvider>
+          <NavigationProgress />
+          {children}
+          <BootstrapClient />
+        </AuthProvider>
       </body>
     </html>
   )
