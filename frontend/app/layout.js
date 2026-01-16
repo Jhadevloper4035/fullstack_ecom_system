@@ -1,11 +1,11 @@
 'use client'
 
-import './globals.css'
 import "../public/scss/main.scss";
 import "../public/css/image-compare-viewer.min.css";
 import BootstrapClient from './components/BootstrapClient'
 import NavigationProgress from './components/NavigationProgress'
 import { AuthProvider } from '@/context/AuthContext'
+import Context from '@/context/Context';
 
 
 export default function RootLayout({ children }) {
@@ -19,9 +19,11 @@ export default function RootLayout({ children }) {
       </head>
       <body>
         <AuthProvider>
-          <NavigationProgress />
-          {children}
-          <BootstrapClient />
+          <Context >
+            <NavigationProgress />
+            {children}
+            <BootstrapClient />
+          </Context>
         </AuthProvider>
       </body>
     </html>
