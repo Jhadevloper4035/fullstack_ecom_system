@@ -1,0 +1,16 @@
+@use "sass:meta";
+
+// Fonts (CSS)
+@include meta.load-css("../fonts/fonts.css");
+@include meta.load-css("../fonts/font-icons.css");
+
+// Vendor CSS
+@include meta.load-css("../css/bootstrap.min.css");
+@include meta.load-css("../css/swiper-bundle.min.css");
+@include meta.load-css("../css/animate.css");
+
+// Components (SCSS)
+@include meta.load-css("components/explore-products");
+
+// App stylesheet
+@include meta.load-css("app.scss");
