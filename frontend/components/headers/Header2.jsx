@@ -5,9 +5,11 @@ import Link from "next/link";
 import Image from "next/image";
 import CartLength from "../common/CartLength";
 import { useAuth } from "@/context/AuthContext";
+import { useContextElement } from "@/context/Context";
 
 export default function Header2() {
-  const { user, logout } = useAuth();
+  const { logout } = useAuth();
+  const { user } = useContextElement();
 
   return (
     <header id="header" className="header-default header-style-4" >

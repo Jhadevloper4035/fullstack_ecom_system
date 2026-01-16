@@ -3,14 +3,17 @@
 import { useState, useEffect } from 'react'
 import { useRouter } from 'next/navigation'
 import { authApi } from '@/lib/api'
+import React from 'react'
+import { useContextElement } from '@/context/Context'
 
 export default function DashboardPage() {
   const router = useRouter()
-  const [user, setUser] = useState(null)
   const [loading, setLoading] = useState(true)
   const [loggingOut, setLoggingOut] = useState(false)
   const [activeTab, setActiveTab] = useState('overview')
   const [sessionInfo, setSessionInfo] = useState(null)
+
+  const { user, setUser } = useContextElement()
 
   useEffect(() => {
     loadUser()
@@ -22,6 +25,7 @@ export default function DashboardPage() {
       const response = await authApi.getCurrentUser()
       if (response.success) {
         setUser(response.user)
+        console.log("User loaded:", response.user)
       }
     } catch (error) {
       router.push('/login')
@@ -65,6 +69,7 @@ export default function DashboardPage() {
     setLoggingOut(true)
     try {
       await authApi.logout()
+      setUser(null);
       localStorage.removeItem('loginTime')
       router.push('/login')
     } catch (error) {
