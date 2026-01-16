@@ -1,74 +1,84 @@
 "use client";
 
 import Link from "next/link";
-import React, { useState, useEffect } from "react";
-import { Swiper, SwiperSlide } from "swiper/react";
-// import ProductCard1 from "../productCards/ProductCard1";
+import React from "react";
 import { usePathname } from "next/navigation";
 
 export default function Nav() {
   const pathname = usePathname();
-  const [categories, setCategories] = useState([]);
-  const [subcategories, setSubcategories] = useState([]);
-  const [featuredProducts, setFeaturedProducts] = useState([]);
-  const [loading, setLoading] = useState(true);
-
-  useEffect(() => {
-    const fetchNavData = async () => {
-      try {
-        const categoriesRes = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/category/categories`);
-        if (!categoriesRes.ok) throw new Error('Failed to fetch categories');
-        const categoriesData = await categoriesRes.json();
-
-        const subcategoriesRes = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/subCategory/`);
-        if (!subcategoriesRes.ok) throw new Error('Failed to fetch subcategories');
-        const subcategoriesData = await subcategoriesRes.json();
-
-        const productsRes = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/product`);
-        if (!productsRes.ok) throw new Error('Failed to fetch products');
-        const productsData = await productsRes.json();
-
-        if (categoriesData.success) {
-          setCategories(categoriesData.data);
-        }
-
-        if (subcategoriesData.success) {
-          setSubcategories(subcategoriesData.data);
-        }
-
-        if (productsData.success) {
-          setFeaturedProducts(productsData.products.slice(0, 9));
-        }
-      } catch (error) {
-        console.error('Error fetching nav data:', error);
-        setCategories([]);
-        setSubcategories([]);
-        setFeaturedProducts([]);
-      } finally {
-        setLoading(false);
-        if (typeof window !== 'undefined') {
-          window.dispatchEvent(new Event('nav-ready'));
-        }
-      }
-    };
-
-    fetchNavData();
-  }, []);
 
   const checkActive = (slug) => pathname.includes(slug);
 
-  const getSubcategoriesForCategory = (categoryId) => {
-    return subcategories.filter(sub => sub.category?._id === categoryId || sub.category === categoryId);
-  };
+  // Hardcoded navigation data
+  const navigationData = [
+    {
+      name: "Furniture",
+      slug: "furniture",
+      subcategories: [
+        { name: "Sofas & Sectionals", slug: "sofas-sectionals" },
+        { name: "Beds & Headboards", slug: "beds-headboards" },
+        { name: "Dining Tables", slug: "dining-tables" },
+        { name: "Chairs & Seating", slug: "chairs-seating" },
+        { name: "Storage & Organization", slug: "storage-organization" },
+        { name: "Desks & Office", slug: "desks-office" },
+      ]
+    },
+    {
+      name: "Lighting",
+      slug: "lighting",
+      subcategories: [
+        { name: "Ceiling Lights", slug: "ceiling-lights" },
+        { name: "Table Lamps", slug: "table-lamps" },
+        { name: "Floor Lamps", slug: "floor-lamps" },
+        { name: "Wall Sconces", slug: "wall-sconces" },
+        { name: "Pendant Lights", slug: "pendant-lights" },
+      ]
+    },
+    {
+      name: "Decor",
+      slug: "decor",
+      subcategories: [
+        { name: "Wall Art", slug: "wall-art" },
+        { name: "Mirrors", slug: "mirrors" },
+        { name: "Vases & Planters", slug: "vases-planters" },
+        { name: "Decorative Objects", slug: "decorative-objects" },
+        { name: "Candles & Diffusers", slug: "candles-diffusers" },
+      ]
+    },
+    {
+      name: "Bedding",
+      slug: "bedding",
+      subcategories: [
+        { name: "Duvet Covers", slug: "duvet-covers" },
+        { name: "Sheet Sets", slug: "sheet-sets" },
+        { name: "Pillows", slug: "pillows" },
+        { name: "Blankets & Throws", slug: "blankets-throws" },
+        { name: "Quilts & Coverlets", slug: "quilts-coverlets" },
+      ]
+    },
+    {
+      name: "Bath",
+      slug: "bath",
+      subcategories: [
+        { name: "Towels", slug: "towels" },
+        { name: "Bath Rugs", slug: "bath-rugs" },
+        { name: "Shower Curtains", slug: "shower-curtains" },
+        { name: "Bath Accessories", slug: "bath-accessories" },
+      ]
+    },
+    {
+      name: "Rugs",
+      slug: "rugs",
+      subcategories: [
+        { name: "Area Rugs", slug: "area-rugs" },
+        { name: "Runner Rugs", slug: "runner-rugs" },
+        { name: "Outdoor Rugs", slug: "outdoor-rugs" },
+        { name: "Rug Pads", slug: "rug-pads" },
+      ]
+    },
+  ];
 
   const renderMegaMenu = (category) => {
-    if (!category) return null;
-
-    const categorySubcategories = getSubcategoriesForCategory(category._id);
-    const categoryProducts = featuredProducts.filter(p =>
-      p.category?.slug === category.slug || p.category?._id === category._id
-    ).slice(0, 3);
-
     return (
       <div className="westelm-mega-menu">
         <div className="westelm-mega-container">
@@ -77,10 +87,10 @@ export default function Nav() {
             <div className="westelm-mega-column">
               <h3 className="westelm-mega-heading">{category.name}</h3>
               <ul className="westelm-mega-list">
-                {categorySubcategories.map((subcat, index) => (
+                {category.subcategories.map((subcat, index) => (
                   <li key={index} className="westelm-mega-list-item">
                     <Link
-                      href={`/shop/${(category.slug || category.name?.toLowerCase())}/${(subcat.slug || subcat.name?.toLowerCase())}`}
+                      href={`/shop/${category.slug}/${subcat.slug}`}
                       className={`westelm-mega-link ${pathname.includes(subcat.slug) ? "active" : ""}`}
                     >
                       {subcat.name}
@@ -89,7 +99,7 @@ export default function Nav() {
                 ))}
                 <li className="westelm-mega-list-item westelm-view-all">
                   <Link
-                    href={`/shop/${(category.slug || category.name?.toLowerCase())}`}
+                    href={`/shop/${category.slug}`}
                     className="westelm-mega-link-bold"
                   >
                     View All {category.name} →
@@ -98,20 +108,24 @@ export default function Nav() {
               </ul>
             </div>
 
-            {/* Featured Products Column */}
-            {categoryProducts.length > 0 && (
-              <div className="westelm-mega-products">
-                <h3 className="westelm-mega-heading">Featured</h3>
-                <div className="westelm-products-grid">
-                  {categoryProducts.map((product, i) => (
-                    <div key={i} className="westelm-product-item">
-                      {/* <ProductCard1 product={{ ...product, colors: null }} /> */}
-                      product name
-                    </div>
-                  ))}
+            {/* Featured Products Column - Placeholder */}
+            <div className="westelm-mega-products">
+              <h3 className="westelm-mega-heading">Featured</h3>
+              <div className="westelm-products-grid">
+                <div className="westelm-product-placeholder">
+                  <div className="placeholder-image"></div>
+                  <p className="placeholder-text">Featured Product 1</p>
+                </div>
+                <div className="westelm-product-placeholder">
+                  <div className="placeholder-image"></div>
+                  <p className="placeholder-text">Featured Product 2</p>
+                </div>
+                <div className="westelm-product-placeholder">
+                  <div className="placeholder-image"></div>
+                  <p className="placeholder-text">Featured Product 3</p>
                 </div>
               </div>
-            )}
+            </div>
           </div>
         </div>
       </div>
@@ -273,8 +287,22 @@ export default function Nav() {
           gap: 30px;
         }
 
-        .westelm-product-item {
-          min-width: 0;
+        .westelm-product-placeholder {
+          text-align: center;
+        }
+
+        .placeholder-image {
+          width: 100%;
+          aspect-ratio: 3/4;
+          background: #f5f5f5;
+          border-radius: 4px;
+          margin-bottom: 10px;
+        }
+
+        .placeholder-text {
+          font-size: 13px;
+          color: #666;
+          margin: 0;
         }
 
         /* Responsive Design */
@@ -328,25 +356,30 @@ export default function Nav() {
           </Link>
         </li>
 
-        {categories.map((category, index) => {
-          const hasSubcategories = getSubcategoriesForCategory(category._id).length > 0;
+        {navigationData.map((category, index) => {
           const isActive = checkActive(category.slug);
 
           return (
             <li
-              key={category._id || index}
+              key={index}
               className={`westelm-nav-item ${isActive ? "active" : ""}`}
             >
               <Link
-                href={`/shop/${(category.slug || category.name?.toLowerCase())}`}
+                href={`/shop/${category.slug}`}
                 className="westelm-nav-link"
               >
                 {category.name}
               </Link>
-              {hasSubcategories && renderMegaMenu(category)}
+              {renderMegaMenu(category)}
             </li>
           );
         })}
+
+        <li className={`westelm-nav-item ${pathname === "/sale" ? "active" : ""}`}>
+          <Link href="/sale" className="westelm-nav-link">
+            Sale
+          </Link>
+        </li>
       </ul>
     </>
   );
