@@ -15,6 +15,59 @@ const handleValidationErrors = (req, res, next) => {
   next();
 };
 
+
+
+const validateAddressRequiredFields = [
+
+  body("fullName")
+    .trim()
+    .notEmpty()
+    .withMessage("Full name is required"),
+
+  body("phoneNumber")
+    .trim()
+    .notEmpty()
+    .withMessage("Contact detail is required")
+    .isNumeric()
+    .withMessage("Phone number must contain only digits")
+    .isLength({ min: 10, max: 10 })
+    .withMessage("Please enter a valid 10-digit phone number"),
+
+  body("addressLine1")
+    .trim()
+    .notEmpty()
+    .withMessage("Address Line 1 is required"),
+
+  body("city")
+    .trim()
+    .notEmpty()
+    .withMessage("City is required"),
+
+  body("state")
+    .trim()
+    .notEmpty()
+    .withMessage("State is required"),
+
+  body("country")
+    .trim()
+    .notEmpty()
+    .withMessage("Country is required"),
+
+  body("postalCode")
+     .trim()
+     .notEmpty()
+     .withMessage("Postal Code required")
+     .isNumeric()
+     .withMessage("Postal Code must conatine only Digit")
+     .isLength({ min : 6 , max : 6})
+     .withMessage("Please enter valid 6-digit postal code ")
+];
+
+
+
+
+
+
 // Email validation
 const validateEmail = () => [
   body('email')
@@ -35,6 +88,7 @@ const validatePassword = () => [
     .isLength({ min: 8 })
     .withMessage('Password must be at least 8 characters long'),
 ];
+
 
 // Register validation
 const validateRegister = () => [
@@ -101,4 +155,5 @@ module.exports = {
   validateToken,
   validateRefreshToken,
   validatePasswordReset,
+  validateAddressRequiredFields,
 };

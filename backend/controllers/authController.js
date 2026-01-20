@@ -3,9 +3,6 @@ const authService = require('../services/authService');
 // Register controller
 const register = async (req, res) => {
   try {
-    console.log('=== Register Request ===');
-    console.log('Body:', JSON.stringify(req.body, null, 2));
-    console.log('Headers:', JSON.stringify(req.headers, null, 2));
     
     const { email, password } = req.body;
     
@@ -16,21 +13,14 @@ const register = async (req, res) => {
         error: 'Email and password are required'
       });
     }
-    
-    console.log('Calling authService.registerUser...');
     const result = await authService.registerUser(email, password);
-    console.log('Service result:', JSON.stringify(result, null, 2));
     
     if (!result.success) {
       console.log('Registration failed:', result.error);
       return res.status(400).json(result);
     }
-    
-    console.log('Registration successful');
     return res.status(201).json(result);
   } catch (error) {
-    console.error('Register error:', error);
-    console.error('Error stack:', error.stack);
     return res.status(500).json({
       success: false,
       error: 'Internal server error',

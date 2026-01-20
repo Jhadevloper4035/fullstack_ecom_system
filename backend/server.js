@@ -6,11 +6,15 @@ const morgan = require('morgan');
 const compression = require('compression');
 const cookieParser = require('cookie-parser');
 
-const authRoutes = require('./routes/authRoutes');
 const { apiLimiter } = require('./middleware/rateLimitMiddleware');
 const { connectToDatabase, closeConnection } = require('./db/connection');
 const { closeRedisClient } = require('./db/redis');
 const { closeRabbitConnection } = require('./services/rabbitmq');
+
+//
+
+const authRoutes = require('./routes/authRoutes');
+const addressRoutes = require('./routes/addressRoute');
 
 // Initialize Express app
 const app = express();
@@ -93,6 +97,8 @@ app.post('/api/test', (req, res) => {
 
 // API routes
 app.use('/api/auth', authRoutes);
+app.use('/api/address', addressRoutes);
+
 
 // 404 handler
 app.use((req, res) => {
