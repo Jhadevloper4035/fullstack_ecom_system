@@ -67,7 +67,8 @@ apiClient.interceptors.response.use(
         Cookies.remove('refreshToken')
         
         if (typeof window !== 'undefined') {
-          window.location.href = '/login'
+          // window.location.href = '/login'
+          return Promise.reject(refreshError)
         }
         
         return Promise.reject(refreshError)

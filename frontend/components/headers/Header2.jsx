@@ -8,8 +8,11 @@ import { useAuth } from "@/context/AuthContext";
 import { useContextElement } from "@/context/Context";
 
 export default function Header2() {
-  const { logout } = useAuth();
-  const { user } = useContextElement();
+  const { user, loading, logout } = useAuth();
+
+  if (loading) {
+    return null; // or a loading spinner
+  }
 
   return (
     <header id="header" className="header-default header-style-4" >
@@ -141,7 +144,7 @@ export default function Header2() {
 
                       ) : (
                         <div className="sub-top text-center">
-                          <p>Welcome, {user.name}</p>
+                          <p>Welcome, {user.email.split('@')[0]}</p>
                           <Link href={`/my-account`} className="tf-btn btn-reset">
                             Profile
                           </Link>

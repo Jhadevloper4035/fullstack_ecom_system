@@ -1,11 +1,12 @@
 "use client";
 import React, { useState } from "react";
+import { useAuth } from "@/context/AuthContext";
 
 export default function Information() {
   const [passwordType, setPasswordType] = useState("password");
   const [confirmPasswordType, setConfirmPasswordType] = useState("password");
   const [newPasswordType, setNewPasswordType] = useState("password");
-
+  const { user, loading, logout } = useAuth();
   const togglePassword = () => {
     setPasswordType((prevType) =>
       prevType === "password" ? "text" : "password"
@@ -65,7 +66,7 @@ export default function Information() {
                   placeholder="Username or email address*"
                   name="email"
                   tabIndex={2}
-                  defaultValue="themesflat@gmail.com"
+                  defaultValue={ user ? user.email : "email@domain.com"}
                   aria-required="true"
                   required
                 />
@@ -83,7 +84,7 @@ export default function Information() {
                 />
               </fieldset>
             </div>
-            <div className="tf-select">
+            {/* <div className="tf-select">
               <select
                 className="text-title"
                 id="country"
@@ -220,9 +221,9 @@ export default function Information() {
                   Vietnam
                 </option>
               </select>
-            </div>
+            </div> */}
           </div>
-          <div className="account-password">
+          {/* <div className="account-password">
             <h5 className="title">Change Password</h5>
             <fieldset className="position-relative password-item mb_20">
               <input
@@ -296,7 +297,7 @@ export default function Information() {
                 />
               </span>
             </fieldset>
-          </div>
+          </div> */}
           <div className="button-submit">
             <button className="tf-btn btn-fill" type="submit">
               <span className="text text-button">Update Account</span>

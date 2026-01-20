@@ -4,7 +4,8 @@ import React, { createContext, useContext, useEffect, useState } from "react";
 import { allProducts } from "@/data/products";
 import { openCartModal } from "@/utlis/openCartModal";
 import { openWistlistModal } from "@/utlis/openWishlist";
-import { api } from "@/utlis/api";
+import api from "@/lib/api";
+import { useAuth } from "@/context/AuthContext";
 
 const DataContext = createContext(null);
 
@@ -17,7 +18,8 @@ export const useContextElement = () => {
 };
 
 export default function Context({ children }) {
-  const [user, setUserState] = useState(null);
+  const { user } = useAuth();
+
   const [cartProducts, setCartProducts] = useState([]);
   const [wishList, setWishList] = useState([]);
   const [compareItem, setCompareItem] = useState([]);
@@ -25,29 +27,13 @@ export default function Context({ children }) {
   const [quickAddItem, setQuickAddItem] = useState(1);
   const [totalPrice, setTotalPrice] = useState(0);
 
-  /* ---------------- USER (PERSISTED) ---------------- */
-
-  const setUser = (userData) => {
-    setUserState(userData);
-    if (userData) {
-      localStorage.setItem("app_user", JSON.stringify(userData));
-    } else {
-      localStorage.removeItem("app_user");
-    }
-  };
-
-  // Rehydrate user on page load
-  useEffect(() => {
-    const storedUser = localStorage.getItem("app_user");
-    if (storedUser) {
-      setUserState(JSON.parse(storedUser));
-    }
-  }, []);
-
-  /* ---------------- CART ---------------- */
+  /* -------- CART -------- */
 
   const fetchCart = async () => {
-    if (!user) return;
+    if (!user) {
+      setCartProducts([]);
+      return;
+    }
 
     try {
       const { data } = await api.get("/cart");
@@ -62,18 +48,12 @@ export default function Context({ children }) {
 
       setCartProducts(mapped);
     } catch (err) {
-      console.error("Failed to fetch cart", err);
+      console.error("Cart fetch failed", err);
     }
   };
 
   useEffect(() => {
-    // fetchCart();
-    if(!user){
-      console.log("No user, clearing cart");
-    }
-    else {
-      console.log("User changed, would fetch cart here", user);
-    }
+    fetchCart();
   }, [user]);
 
   useEffect(() => {
@@ -84,11 +64,10 @@ export default function Context({ children }) {
     setTotalPrice(subtotal);
   }, [cartProducts]);
 
-  /* ---------------- WISHLIST ---------------- */
+  /* -------- WISHLIST -------- */
 
   useEffect(() => {
-    const stored = JSON.parse(localStorage.getItem("wishlist") || "[]");
-    setWishList(stored);
+    setWishList(JSON.parse(localStorage.getItem("wishlist") || "[]"));
   }, []);
 
   useEffect(() => {
@@ -97,39 +76,31 @@ export default function Context({ children }) {
 
   const addToWishlist = (id) => {
     if (!wishList.includes(id)) {
-      setWishList((prev) => [...prev, id]);
+      setWishList((p) => [...p, id]);
       openWistlistModal();
     }
   };
 
   const removeFromWishlist = (id) => {
-    setWishList((prev) => prev.filter((i) => i !== id));
-  };
-
-  /* ---------------- CONTEXT VALUE ---------------- */
-
-  const value = {
-    user,
-    setUser,
-
-    cartProducts,
-    totalPrice,
-
-    wishList,
-    addToWishlist,
-    removeFromWishlist,
-
-    compareItem,
-    setCompareItem,
-
-    quickViewItem,
-    setQuickViewItem,
-    quickAddItem,
-    setQuickAddItem,
+    setWishList((p) => p.filter((i) => i !== id));
   };
 
   return (
-    <DataContext.Provider value={value}>
+    <DataContext.Provider
+      value={{
+        cartProducts,
+        totalPrice,
+        wishList,
+        addToWishlist,
+        removeFromWishlist,
+        compareItem,
+        setCompareItem,
+        quickViewItem,
+        setQuickViewItem,
+        quickAddItem,
+        setQuickAddItem,
+      }}
+    >
       {children}
     </DataContext.Provider>
   );

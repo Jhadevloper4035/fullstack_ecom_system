@@ -3,8 +3,11 @@ import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { useAuth } from "@/context/AuthContext";
+
 export default function AccountSidebar() {
   const pathname = usePathname();
+  const { user, loading, logout } = useAuth();
   return (
     <div className="wrap-sidebar-account">
       <div className="sidebar-account">
@@ -17,8 +20,8 @@ export default function AccountSidebar() {
               height={280}
             />
           </div>
-          <h6 className="mb_4">Tony Nguyen</h6>
-          <div className="body-text-1">themesflat@gmail.com</div>
+          <h6 className="mb_4">{user ? user.email.split('@')[0] : "User"}</h6>
+          <div className="body-text-1">{user ? user.email : "email@domain.com"}</div>
         </div>
         <ul className="my-account-nav">
           <li>
