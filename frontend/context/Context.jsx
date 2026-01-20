@@ -31,7 +31,8 @@ export default function Context({ children }) {
 
   const fetchCart = async () => {
     if (!user) {
-      setCartProducts([]);
+      // setCartProducts([]);
+      console.log("No user logged in, skipping cart fetch");
       return;
     }
 
@@ -53,7 +54,8 @@ export default function Context({ children }) {
   };
 
   useEffect(() => {
-    fetchCart();
+    // fetchCart();
+    console.log("Disable fetch cart for development, User changed in Context:", user);
   }, [user]);
 
   useEffect(() => {

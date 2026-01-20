@@ -55,7 +55,7 @@ apiClient.interceptors.response.use(
         Cookies.set('accessToken', accessToken, {
           expires: 1 / 96, // 15 minutes
           secure: process.env.NODE_ENV === 'production',
-          sameSite: 'strict',
+          sameSite: 'lax',
         })
 
         // Retry original request with new token
@@ -65,12 +65,12 @@ apiClient.interceptors.response.use(
         // Refresh failed - clear tokens and redirect to login
         Cookies.remove('accessToken')
         Cookies.remove('refreshToken')
-        
+
         if (typeof window !== 'undefined') {
           // window.location.href = '/login'
           return Promise.reject(refreshError)
         }
-        
+
         return Promise.reject(refreshError)
       }
     }
@@ -95,16 +95,23 @@ export const authApi = {
       email,
       password,
     })
-    
-    if (response.data.success) {
-      // Store access token in cookie
+
+    if (response.data?.accessToken) {
       Cookies.set('accessToken', response.data.accessToken, {
         expires: 1 / 96, // 15 minutes
         secure: process.env.NODE_ENV === 'production',
-        sameSite: 'strict',
+        sameSite: 'lax', // IMPORTANT (explained below)
       })
     }
-    
+
+    if (response.data?.refreshToken) {
+      Cookies.set('refreshToken', response.data.refreshToken, {
+        expires: 7,
+        secure: process.env.NODE_ENV === 'production',
+        sameSite: 'lax',
+      })
+    }
+
     return response.data
   },
 
@@ -155,15 +162,15 @@ export const authApi = {
     const response = await apiClient.post('/auth/refresh-token', {
       refreshToken,
     })
-    
+
     if (response.data.success) {
       Cookies.set('accessToken', response.data.accessToken, {
         expires: 1 / 96, // 15 minutes
         secure: process.env.NODE_ENV === 'production',
-        sameSite: 'strict',
+        sameSite: 'lax',
       })
     }
-    
+
     return response.data
   },
 }

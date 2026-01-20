@@ -1,10 +1,10 @@
+
 import Footer1 from "@/components/footers/Footer1";
 import Header2 from "@/components/headers/Header2";
 import Topbar6 from "@/components/headers/Topbar6";
 import AccountSidebar from "@/components/my-account/AccountSidebar";
 import Information from "@/components/my-account/Information";
 import Link from "next/link";
-import React from "react";
 
 export const metadata = {
   title: "My Account || CURVE & COMFY",
@@ -13,6 +13,7 @@ export const metadata = {
 
 export default function MyAccountPage() {
   
+
   return (
     <>
       <Topbar6 bgColor="bg-main" />
