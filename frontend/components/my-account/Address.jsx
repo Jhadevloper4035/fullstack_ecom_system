@@ -65,11 +65,26 @@ export default function Address() {
 
   const handleAddAddress = async (e) => {
     e.preventDefault();
+
     try {
       setSubmitting(true);
+
       const response = await addressApi.create(form);
-      if (response.success) {
+
+      if (response.success && response.data) {
+        // 1️⃣ Close form immediately
         setShowCreateForm(false);
+
+        // 2️⃣ Optimistic UI update
+        setAddresses((prev) => [
+          {
+            ...response.data,
+            isEditing: false,
+          },
+          ...prev,
+        ]);
+
+        // 3️⃣ Reset form
         setForm({
           fullName: "",
           phoneNumber: "",
@@ -80,6 +95,8 @@ export default function Address() {
           country: "",
           isDefault: true,
         });
+
+        // 4️⃣ Sync with backend silently
         fetchAddresses();
       }
     } catch {
@@ -89,16 +106,18 @@ export default function Address() {
     }
   };
 
+
   const handleDelete = async (id) => {
     if (!confirm("Delete this address?")) return;
+
+    // Optimistic UI
+    setAddresses((prev) => prev.filter((a) => a.id !== id));
+
     try {
-      const response = await addressApi.delete(id);
-      if (response.success) {
-        setAddresses((prev) => prev.filter((a) => a.id !== id)
-        );
-      }
+      await addressApi.delete(id);
     } catch {
       setError("Failed to delete address");
+      fetchAddresses(); // rollback if needed
     }
   };
 
@@ -106,10 +125,9 @@ export default function Address() {
   const toggleEdit = (id) => {
     setAddresses((prev) =>
       prev.map((a) =>
-        a._id === id ? { ...a, isEditing: !a.isEditing } : a
+        a.id === id ? { ...a, isEditing: !a.isEditing } : a
       )
     );
-    console.log("Edit address with ID:", id);
   };
 
   return (
@@ -130,76 +148,113 @@ export default function Address() {
             >
               <div className="title">Add a new address</div>
 
-              <fieldset className="mb_20">
-                <input
-                  name="fullName"
-                  placeholder="Full Name*"
-                  value={form.fullName}
-                  onChange={handleChange}
-                  required
-                />
-              </fieldset>
+              <div className="cols mb_20">
+                <fieldset className="">
+                  <input
+                    className=""
+                    type="text"
+                    placeholder="Full Name*"
+                    value={form.fullName}
+                    onChange={handleChange}
+                    name="fullName"
+                    tabIndex={2}
+                    defaultValue=""
+                    aria-required="true"
+                    required
+                  />
+                </fieldset>
+                <fieldset className="">
+                  <input
+                    className=""
+                    type="text"
+                    placeholder="Phone Number*"
+                    value={form.phoneNumber}
+                    onChange={handleChange}
+                    name="phoneNumber"
+                    maxLength={10}
+                    aria-required="true"
+                    required
+                  />
+                </fieldset>
+              </div>
 
-              <fieldset className="mb_20">
-                <input
-                  name="phoneNumber"
-                  placeholder="Phone Number"
-                  value={form.phoneNumber}
-                  onChange={handleChange}
-                  maxLength={10}
-                  required
-                />
-              </fieldset>
-              <fieldset className="mb_20">
-                <input
-                  name="state"
-                  placeholder="State"
-                  value={form.state}
-                  onChange={handleChange}
-                  required
-                />
 
-              </fieldset>
-              <fieldset className="mb_20">
-                <input
-                  name="postalCode"
-                  placeholder="Postal Code"
-                  value={form.postalCode}
-                  onChange={handleChange}
-                  maxLength={6}
-                  required
-                />
 
-              </fieldset>
-              <fieldset className="mb_20">
+              <div className="cols mb_20">
+                <fieldset className="">
+                  <input
+                    className=""
+                    type="text"
+                    placeholder="State*"
+                    value={form.state}
+                    onChange={handleChange}
+                    name="state"
+                    tabIndex={2}
+                    defaultValue=""
+                    aria-required="true"
+                    required
+                  />
+                </fieldset>
+                <fieldset className="">
+                  <input
+                    name="postalCode"
+                    className=""
+                    type="text"
+                    placeholder="Postal Code*"
+                    value={form.postalCode}
+                    onChange={handleChange}
+                    maxLength={6}
+                    aria-required="true"
+                    required
+                  />
+                </fieldset>
+              </div>
+
+              <fieldset className="">
                 <input
-                  name="addressLine1"
-                  placeholder="Address*"
+                  className="mb_20"
+                  type="text"
+                  placeholder="Address Line 1*"
                   value={form.addressLine1}
                   onChange={handleChange}
+                  name="addressLine1"
+                  tabIndex={2}
+                  defaultValue=""
+                  aria-required="true"
                   required
                 />
               </fieldset>
 
-              <fieldset className="mb_20">
-                <input
-                  name="city"
-                  placeholder="City*"
-                  value={form.city}
-                  onChange={handleChange}
-                  required
-                />
-              </fieldset>
+              <div className="cols mb_20">
+                <fieldset className="">
+                  <input
+                    name="city"
+                    className=""
+                    type="text"
+                    placeholder="City*"
+                    value={form.city}
+                    onChange={handleChange}
+                    aria-required="true"
+                    required
+                  />
+                </fieldset>
+                <fieldset className="">
+                  <input
+                    className=""
+                    type="text"
+                    placeholder="country*"
+                    value={form.country}
+                    onChange={handleChange}
+                    name="country"
+                    tabIndex={2}
+                    defaultValue=""
+                    aria-required="true"
+                    required
+                  />
+                </fieldset>
 
-              <fieldset className="mb_20">
-                <input
-                  name="country"
-                  placeholder="Country*"
-                  value={form.country}
-                  onChange={handleChange}
-                  required
-                />
-              </fieldset>
+              </div>
+
 
               <div className="tf-cart-checkbox mb_20">
                 <div className="tf-checkbox-wrapp">
@@ -247,28 +302,102 @@ export default function Address() {
                   {address.isDefault ? "Default" : address.type || "Address"}
                 </h6>
 
-                <p>{address.fullName}</p>
-                <p>{address.fullAddress}</p>
-                <p>{address.country}</p>
-                <p className="mb_10">{address.phoneNumber}</p>
+                {!address.isEditing ? (
+                  <>
+                    <p>{address.fullName}</p>
+                    <p>{address.fullAddress}</p>
+                    <p>{address.country}</p>
+                    <p className="mb_10">{address.phoneNumber}</p>
 
-                <div className="d-flex gap-10 justify-content-center">
-                  <button
-                    className="tf-btn radius-4 btn-fill justify-content-center"
-                    onClick={() => toggleEdit(address.id)}
-                  >
-                    <span className="text">Edit</span>
-                  </button>
+                    <div className="d-flex gap-10 justify-content-center">
+                      <button
+                        className="tf-btn radius-4 btn-fill justify-content-center"
+                        onClick={() => toggleEdit(address.id)}
+                      >
+                        <span className="text">Edit</span>
+                      </button>
 
-                  <button
-                    className="tf-btn radius-4 btn-outline justify-content-center"
-                    onClick={() => handleDelete(address.id)}
-                  >
-                    <span className="text">Delete</span>
-                  </button>
-                </div>
+                      <button
+                        className="tf-btn radius-4 btn-outline justify-content-center"
+                        onClick={() => handleDelete(address.id)}
+                      >
+                        <span className="text">Delete</span>
+                      </button>
+                    </div>
+                  </>
+                ) : (
+                  <form className="edit-form-address wd-form-address d-block">
+                    <div className="title">Edit address</div>
+
+                    <fieldset className="mb_20">
+                      <input
+                        value={address.fullName}
+                        onChange={(e) =>
+                          setAddresses((prev) =>
+                            prev.map((a) =>
+                              a.id === address.id
+                                ? { ...a, fullName: e.target.value }
+                                : a
+                            )
+                          )
+                        }
+                        required
+                      />
+                    </fieldset>
+
+                    <fieldset className="mb_20">
+                      <input
+                        value={address.phoneNumber}
+                        onChange={(e) =>
+                          setAddresses((prev) =>
+                            prev.map((a) =>
+                              a.id === address.id
+                                ? { ...a, phoneNumber: e.target.value }
+                                : a
+                            )
+                          )
+                        }
+                        required
+                      />
+                    </fieldset>
+
+                    <fieldset className="mb_20">
+                      <input
+                        value={address.addressLine1 || ""}
+                        onChange={(e) =>
+                          setAddresses((prev) =>
+                            prev.map((a) =>
+                              a.id === address.id
+                                ? { ...a, addressLine1: e.target.value }
+                                : a
+                            )
+                          )
+                        }
+                        required
+                      />
+                    </fieldset>
+
+                    <div className="d-flex gap-10 justify-content-center">
+                      <button
+                        type="button"
+                        className="tf-btn btn-fill radius-4"
+                        onClick={() => toggleEdit(address.id)}
+                      >
+                        <span className="text">Save</span>
+                      </button>
+
+                      <span
+                        className="tf-btn btn-fill radius-4"
+                        onClick={() => toggleEdit(address.id)}
+                      >
+                        <span className="text">Cancel</span>
+                      </span>
+                    </div>
+                  </form>
+                )}
               </div>
             ))}
+
           </div>
         </div>
       </div>
