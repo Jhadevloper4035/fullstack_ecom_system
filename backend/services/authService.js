@@ -23,27 +23,27 @@ const registerUser = async (email, password) => {
         errors: passwordValidation.errors,
       };
     }
-    
+
     // Create user
     const userResult = await userRepo.createUser(email, password, false);
     if (!userResult.success) {
       return userResult;
     }
-    
+
     // Generate verification token
     const verificationToken = generateRandomToken();
     const config = getConfig();
-    
+
     await tokenRepo.createVerificationToken(
       userResult.user.id,
       verificationToken,
       config.verificationTokenExpiry
     );
-    
+
     // Send verification email
     const verificationUrl = `${config.frontendUrl}/verify-email?token=${verificationToken}`;
     await sendVerificationEmail(email, verificationUrl);
-    
+
     return {
       success: true,
       message: 'User registered successfully. Please check your email to verify your account.',
@@ -71,9 +71,9 @@ const loginUser = async (email, password) => {
         error: 'Invalid email or password',
       };
     }
-    
+
     const user = userResult.user;
-    
+
     // Check if user is active
     if (!user.is_active) {
       return {
@@ -81,7 +81,7 @@ const loginUser = async (email, password) => {
         error: 'Account is deactivated',
       };
     }
-    
+
     // Verify password
     const passwordResult = await comparePassword(password, user.password_hash);
     if (!passwordResult.success || !passwordResult.isMatch) {
@@ -90,7 +90,7 @@ const loginUser = async (email, password) => {
         error: 'Invalid email or password',
       };
     }
-    
+
     // Check if email is verified
     if (!user.is_verified) {
       return {
@@ -99,10 +99,10 @@ const loginUser = async (email, password) => {
         requiresVerification: true,
       };
     }
-    
+
     // Generate token pair
     const tokens = createTokenPair(user.id, user.email);
-    
+
     // Store refresh token in database
     await tokenRepo.createRefreshToken(
       user.id,
@@ -110,7 +110,7 @@ const loginUser = async (email, password) => {
       tokens.tokenFamily,
       tokens.refreshExpiresIn
     );
-    
+
     return {
       success: true,
       user: {
@@ -140,21 +140,21 @@ const verifyEmail = async (token) => {
     if (!tokenResult.success) {
       return tokenResult;
     }
-    
+
     const tokenRecord = tokenResult.tokenRecord;
-    
+
     // Verify user
     const verifyResult = await userRepo.verifyUser(tokenRecord.user_id);
     if (!verifyResult.success) {
       return verifyResult;
     }
-    
+
     // Mark token as used
     await tokenRepo.markVerificationTokenUsed(tokenRecord.id);
-    
+
     // Send welcome email
     await sendWelcomeEmail(verifyResult.user.email);
-    
+
     return {
       success: true,
       message: 'Email verified successfully',
@@ -180,23 +180,23 @@ const requestPasswordReset = async (email) => {
         message: 'If the email exists, a password reset link has been sent.',
       };
     }
-    
+
     const user = userResult.user;
-    
+
     // Generate reset token
     const resetToken = generateRandomToken();
     const config = getConfig();
-    
+
     await tokenRepo.createPasswordResetToken(
       user.id,
       resetToken,
       config.resetTokenExpiry
     );
-    
+
     // Send reset email
     const resetUrl = `${config.frontendUrl}/reset-password?token=${resetToken}`;
     await sendPasswordResetEmail(email, resetUrl);
-    
+
     return {
       success: true,
       message: 'If the email exists, a password reset link has been sent.',
@@ -220,31 +220,31 @@ const resetPassword = async (token, newPassword) => {
         errors: passwordValidation.errors,
       };
     }
-    
+
     // Find reset token
     const tokenResult = await tokenRepo.findPasswordResetToken(token);
     if (!tokenResult.success) {
       return tokenResult;
     }
-    
+
     const tokenRecord = tokenResult.tokenRecord;
-    
+
     // Update password
     const updateResult = await userRepo.updateUserPassword(
       tokenRecord.user_id,
       newPassword
     );
-    
+
     if (!updateResult.success) {
       return updateResult;
     }
-    
+
     // Mark token as used
     await tokenRepo.markPasswordResetTokenUsed(tokenRecord.id);
-    
+
     // Revoke all existing refresh tokens for security
     await tokenRepo.revokeUserTokens(tokenRecord.user_id);
-    
+
     return {
       success: true,
       message: 'Password reset successfully',
@@ -262,7 +262,7 @@ const refreshAccessToken = async (refreshToken) => {
   try {
     // Find refresh token in database
     const tokenResult = await tokenRepo.findRefreshToken(refreshToken);
-    
+
     if (!tokenResult.success) {
       // Token not found or revoked - might be token reuse attack
       return {
@@ -270,9 +270,9 @@ const refreshAccessToken = async (refreshToken) => {
         error: 'Invalid refresh token',
       };
     }
-    
+
     const tokenRecord = tokenResult.tokenRecord;
-    
+
     // Check if token is blacklisted in Redis
     const blacklisted = await isBlacklisted(refreshToken);
     if (blacklisted) {
@@ -284,7 +284,7 @@ const refreshAccessToken = async (refreshToken) => {
         securityBreach: true,
       };
     }
-    
+
     // Get user
     const userResult = await userRepo.findUserById(tokenRecord.user_id);
     if (!userResult.success) {
@@ -293,9 +293,9 @@ const refreshAccessToken = async (refreshToken) => {
         error: 'User not found',
       };
     }
-    
+
     const user = userResult.user;
-    
+
     // Check if user is active
     if (!user.is_active) {
       return {
@@ -303,14 +303,14 @@ const refreshAccessToken = async (refreshToken) => {
         error: 'Account is deactivated',
       };
     }
-    
+
     // Generate new token pair (rotation)
     const newTokens = createTokenPair(
       user.id,
       user.email,
       tokenRecord.token_family // Keep same family
     );
-    
+
     // Store new refresh token
     const newTokenResult = await tokenRepo.createRefreshToken(
       user.id,
@@ -318,13 +318,13 @@ const refreshAccessToken = async (refreshToken) => {
       newTokens.tokenFamily,
       newTokens.refreshExpiresIn
     );
-    
+
     // Mark old token as replaced
     await tokenRepo.markTokenReplaced(tokenRecord.id, newTokenResult.tokenRecord.id);
-    
+
     // Blacklist old refresh token
     await addToBlacklist(refreshToken, newTokens.refreshExpiresIn);
-    
+
     return {
       success: true,
       user: {
@@ -356,7 +356,7 @@ const logoutUser = async (refreshToken) => {
       // Blacklist token
       await addToBlacklist(refreshToken, 3600); // 1 hour
     }
-    
+
     return {
       success: true,
       message: 'Logged out successfully',
@@ -385,6 +385,27 @@ const logoutAllDevices = async (userId) => {
   }
 };
 
+
+const userDetail = async (userId) => {
+  try {
+
+    const userDetail = await userRepo.updatedUser(userId)
+    console.log(userDetail)
+    return {
+      success: true,
+      message: 'User Details',
+      user: userDetail
+    };
+
+  } catch (error) {
+    console.error(error)
+    return {
+      success: false,
+      error: error.message,
+    }
+  }
+}
+
 module.exports = {
   registerUser,
   loginUser,
@@ -394,4 +415,5 @@ module.exports = {
   refreshAccessToken,
   logoutUser,
   logoutAllDevices,
+  userDetail
 };

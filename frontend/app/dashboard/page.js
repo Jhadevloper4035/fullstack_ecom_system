@@ -3,28 +3,40 @@
 import { useAuth } from '@/context/AuthContext'
 import { useState, useEffect } from 'react'
 import { useRouter } from 'next/navigation'
+import { authApi } from '@/lib/api'
 import React from 'react'
+import { useContextElement } from '@/context/Context'
 
 export default function DashboardPage() {
   const router = useRouter()
-  const { user, loading, logout } = useAuth()
-
+  const [loading, setLoading] = useState(true)
+  const [loggingOut, setLoggingOut] = useState(false)
   const [activeTab, setActiveTab] = useState('overview')
   const [sessionInfo, setSessionInfo] = useState(null)
 
-  /* ---------------- AUTH GUARDS ---------------- */
+  const { user, setUser } = useContextElement()
 
   useEffect(() => {
-    if (!loading && !user) {
-      router.replace('/login')
+    loadUser()
+    loadSessionInfo()
+  }, [])
+
+  const loadUser = async () => {
+    try {
+      const response = await authApi.getCurrentUser()
+      if (response.success) {
+        setUser(response.user)
+        console.log("User loaded:", response.user)
+      }
+    } catch (error) {
+      router.push('/login')
+    } finally {
+      setLoading(false)
     }
-  }, [loading, user, router])
+  }
 
-  /* ---------------- SESSION INFO ---------------- */
-
-  useEffect(() => {
-    if (!user) return
-
+  const loadSessionInfo = () => {
+    // Get session info from browser
     const loginTime = localStorage.getItem('loginTime')
 
     setSessionInfo({
@@ -50,6 +62,32 @@ export default function DashboardPage() {
     if (platform.includes('Mac')) return 'macOS'
     if (platform.includes('Linux')) return 'Linux'
     return platform
+  }
+
+  const handleLogout = async () => {
+    setLoggingOut(true)
+    try {
+      await authApi.logout()
+      setUser(null);
+      localStorage.removeItem('loginTime')
+      router.push('/login')
+    } catch (error) {
+      console.error('Logout error:', error)
+      router.push('/login')
+    }
+  }
+
+  const handleLogoutAll = async () => {
+    if (confirm('Are you sure you want to logout from all devices? This will invalidate all your active sessions.')) {
+      try {
+        await authApi.logoutAll()
+        localStorage.removeItem('loginTime')
+        router.push('/login')
+      } catch (error) {
+        console.error('Logout all error:', error)
+        router.push('/login')
+      }
+    }
   }
 
   const formatDate = (dateString) => {

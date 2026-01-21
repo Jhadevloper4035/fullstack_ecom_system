@@ -1,3 +1,4 @@
+const address = require('../models/address');
 const User = require('../models/User');
 const { hashPassword } = require('../utils/password');
 
@@ -84,6 +85,40 @@ const findUserById = async (userId) => {
     return { success: false, error: error.message };
   }
 };
+
+
+const updatedUser = async (userId) => {
+  try {
+    const user = await User.findById(userId)
+    const addresses = await address.find({
+      userId,
+      isDeleted: false,
+      isActive: true,
+    })
+    .sort({ isDefault: -1, createdAt: -1 })
+    .lean()
+    
+    if (!user) {
+      return { success: false, error: 'User not found' };
+    }
+    
+    return {
+      success: true,
+      user: {
+        id: user._id.toString(),
+        email: user.email,
+        addresses: addresses || [],
+        is_verified: user.isVerified,
+        is_active: user.isActive,
+        created_at: user.createdAt,
+        updated_at: user.updatedAt,
+      },
+    };
+  } catch (error) {
+    return { success: false, error: error.message };
+  }
+};
+
 
 // Verify user
 const verifyUser = async (userId) => {
@@ -174,4 +209,5 @@ module.exports = {
   verifyUser,
   updateUserPassword,
   updateUserStatus,
+  updatedUser
 };

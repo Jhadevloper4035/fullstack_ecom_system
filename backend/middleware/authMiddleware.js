@@ -56,6 +56,7 @@ const authenticate = async (req, res, next) => {
     req.user = {
       id: userResult.user.id,
       email: userResult.user.email,
+      role : userResult.user.role,
       isVerified: userResult.user.is_verified,
     };
     
@@ -123,8 +124,33 @@ const requireVerified = (req, res, next) => {
   next();
 };
 
+
+const authenticateAdmin = (req,res,next) => {
+
+   if (!req.user) {
+    return res.status(401).json({
+      success: false,
+      error: 'Authentication required',
+    });
+  }
+
+  if (req.user.role === "user") {
+    return res.status(403).json({
+      success: false,
+      error: 'Acess Denied Inavlid user ',
+    });
+  }
+
+  next();
+
+}
+
+
+
+
 module.exports = {
   authenticate,
   optionalAuth,
   requireVerified,
+  authenticateAdmin
 };

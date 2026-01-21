@@ -17,6 +17,24 @@ const handleValidationErrors = (req, res, next) => {
 
 
 
+
+const validateCategoryFeilds = [
+
+  body("name")
+    .trim()
+    .notEmpty()
+    .withMessage("Category name is required"),
+
+  body("slug")
+    .trim()
+    .notEmpty()
+    .withMessage("Slug is required to create category")
+    .isLowercase()
+    .withMessage("Correct slug format")
+
+]
+
+
 const validateAddressRequiredFields = [
 
   body("fullName")
@@ -54,17 +72,14 @@ const validateAddressRequiredFields = [
     .withMessage("Country is required"),
 
   body("postalCode")
-     .trim()
-     .notEmpty()
-     .withMessage("Postal Code required")
-     .isNumeric()
-     .withMessage("Postal Code must conatine only Digit")
-     .isLength({ min : 6 , max : 6})
-     .withMessage("Please enter valid 6-digit postal code ")
+    .trim()
+    .notEmpty()
+    .withMessage("Postal Code required")
+    .isNumeric()
+    .withMessage("Postal Code must conatine only Digit")
+    .isLength({ min: 6, max: 6 })
+    .withMessage("Please enter valid 6-digit postal code ")
 ];
-
-
-
 
 
 
@@ -156,4 +171,5 @@ module.exports = {
   validateRefreshToken,
   validatePasswordReset,
   validateAddressRequiredFields,
+  validateCategoryFeilds,
 };
