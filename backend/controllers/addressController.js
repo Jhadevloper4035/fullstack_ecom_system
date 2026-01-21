@@ -1,58 +1,58 @@
 const Address = require("../models/address.js");
 
 const createAddress = async (req, res) => {
-    try {
+  try {
 
-        const userId = req.user.id
+    const userId = req.user.id
 
-        const address = new Address({
-            userId: userId,
-            ...req.body
-        })
+    const address = new Address({
+      userId: userId,
+      ...req.body
+    })
 
-        await address.save();
+    await address.save();
 
-        return res.status(200).json({
-            message: "Address created successfully",
-            data: address.getFormattedAddress()
-        })
+    return res.status(200).json({
+      message: "Address created successfully",
+      data: address.getFormattedAddress()
+    })
 
-    } catch (error) {
+  } catch (error) {
 
-        res.status(500).json({
-            error,
-            message: "Internal Server error"
-        })
+    res.status(500).json({
+      error,
+      message: "Internal Server error"
+    })
 
-    }
+  }
 
 }
 
 
 const getAllAddresses = async (req, res) => {
-    try {
+  try {
 
-        const userId = req.user.id
-        const { type } = req.query
+    const userId = req.user.id
+    const { type } = req.query
 
-        const addresses = type ? await Address.getAddressesByType(userId, type)
-            : await Address.getUserAddresses(userId)
+    const addresses = type ? await Address.getAddressesByType(userId, type)
+      : await Address.getUserAddresses(userId)
 
-        const fomatedAdresses = addresses.map((add) => add.getFormattedAddress())
+    const fomatedAdresses = addresses.map((add) => add.getFormattedAddress())
 
-        return res.status(200).json({
-            message: "Addresses retrieved successfully",
-            fomatedAdresses
-        })
+    return res.status(200).json({
+      message: "Addresses retrieved successfully",
+      fomatedAdresses
+    })
 
-    } catch (error) {
+  } catch (error) {
 
-        res.status(500).json({
-            error,
-            message: "Internal Server error"
-        })
+    res.status(500).json({
+      error,
+      message: "Internal Server error"
+    })
 
-    }
+  }
 
 }
 
@@ -174,7 +174,7 @@ const updateAddress = async (req, res) => {
     });
 
     if (!address) {
-      return res.status(404).json({ message : "address not found "})
+      return res.status(404).json({ message: "address not found " })
     }
 
     // Update address fields
@@ -254,16 +254,16 @@ const deleteAddress = async (req, res) => {
 
     await Address.softDelete(id, userId);
 
-  return res.status(200).json({
-    sucess : true,
-    message: "Address deleted successfully",
-  })
+    return res.status(200).json({
+      sucess: true,
+      message: "Address deleted successfully",
+    })
 
   } catch (error) {
     console.error("[Delete Address Error]:", error.message);
     return res.status(500).json({
-      sucess : false,
-      message : "Internal Server Error"
+      sucess: false,
+      message: "Internal Server Error"
     })
   }
 };

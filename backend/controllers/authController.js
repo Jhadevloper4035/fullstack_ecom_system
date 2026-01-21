@@ -3,9 +3,9 @@ const authService = require('../services/authService');
 // Register controller
 const register = async (req, res) => {
   try {
-    
+
     const { email, password } = req.body;
-    
+
     if (!email || !password) {
       console.log('Missing email or password');
       return res.status(400).json({
@@ -14,7 +14,7 @@ const register = async (req, res) => {
       });
     }
     const result = await authService.registerUser(email, password);
-    
+
     if (!result.success) {
       console.log('Registration failed:', result.error);
       return res.status(400).json(result);
@@ -32,14 +32,14 @@ const register = async (req, res) => {
 const login = async (req, res) => {
   try {
     const { email, password } = req.body;
-    
+
     const result = await authService.loginUser(email, password);
-    
+
     if (!result.success) {
       console.log(result)
       return res.status(401).json(result);
     }
-    
+
     // Set refresh token in httpOnly cookie
     res.cookie('refreshToken', result.tokens.refreshToken, {
       httpOnly: true,
@@ -47,7 +47,7 @@ const login = async (req, res) => {
       sameSite: 'strict',
       maxAge: 7 * 24 * 60 * 60 * 1000, // 7 days
     });
-    
+
     return res.status(200).json({
       success: true,
       user: result.user,
@@ -67,13 +67,13 @@ const login = async (req, res) => {
 const verifyEmail = async (req, res) => {
   try {
     const { token } = req.body;
-    
+
     const result = await authService.verifyEmail(token);
-    
+
     if (!result.success) {
       return res.status(400).json(result);
     }
-    
+
     return res.status(200).json(result);
   } catch (error) {
     console.error('Verify email error:', error);
@@ -88,9 +88,9 @@ const verifyEmail = async (req, res) => {
 const requestPasswordReset = async (req, res) => {
   try {
     const { email } = req.body;
-    
+
     const result = await authService.requestPasswordReset(email);
-    
+
     // Always return success to prevent email enumeration
     return res.status(200).json(result);
   } catch (error) {
@@ -106,13 +106,13 @@ const requestPasswordReset = async (req, res) => {
 const resetPassword = async (req, res) => {
   try {
     const { token, password } = req.body;
-    
+
     const result = await authService.resetPassword(token, password);
-    
+
     if (!result.success) {
       return res.status(400).json(result);
     }
-    
+
     return res.status(200).json(result);
   } catch (error) {
     console.error('Reset password error:', error);
@@ -128,22 +128,22 @@ const refreshToken = async (req, res) => {
   try {
     // Get refresh token from cookie or body
     const refreshToken = req.cookies.refreshToken || req.body.refreshToken;
-    
+
     if (!refreshToken) {
       return res.status(401).json({
         success: false,
         error: 'No refresh token provided',
       });
     }
-    
+
     const result = await authService.refreshAccessToken(refreshToken);
-    
+
     if (!result.success) {
       // Clear cookie if token is invalid
       res.clearCookie('refreshToken');
       return res.status(401).json(result);
     }
-    
+
     // Update refresh token cookie
     res.cookie('refreshToken', result.tokens.refreshToken, {
       httpOnly: true,
@@ -151,7 +151,7 @@ const refreshToken = async (req, res) => {
       sameSite: 'strict',
       maxAge: 7 * 24 * 60 * 60 * 1000, // 7 days
     });
-    
+
     return res.status(200).json({
       success: true,
       accessToken: result.tokens.accessToken,
@@ -170,14 +170,14 @@ const refreshToken = async (req, res) => {
 const logout = async (req, res) => {
   try {
     const refreshToken = req.cookies.refreshToken || req.body.refreshToken;
-    
+
     if (refreshToken) {
       await authService.logoutUser(refreshToken);
     }
-    
+
     // Clear cookie
     res.clearCookie('refreshToken');
-    
+
     return res.status(200).json({
       success: true,
       message: 'Logged out successfully',
@@ -195,12 +195,12 @@ const logout = async (req, res) => {
 const logoutAll = async (req, res) => {
   try {
     const userId = req.user.id;
-    
+
     const result = await authService.logoutAllDevices(userId);
-    
+
     // Clear cookie
     res.clearCookie('refreshToken');
-    
+
     return res.status(200).json(result);
   } catch (error) {
     console.error('Logout all error:', error);
@@ -216,7 +216,7 @@ const logoutAll = async (req, res) => {
 const getCurrentUser = async (req, res) => {
   try {
 
- const userDetail = await authService.userDetail(req.user.id)
+    const userDetail = await authService.userDetail(req.user.id)
     return res.status(200).json({
       success: true,
       user: userDetail,

@@ -16,6 +16,7 @@ const { closeRabbitConnection } = require('./services/rabbitmq');
 const authRoutes = require('./routes/authRoutes');
 const addressRoutes = require('./routes/addressRoute');
 const categoryRoute = require("./routes/categoryRoute")
+const subCategoryRoute = require("./routes/subCategoryRoute")
 
 
 // Initialize Express app
@@ -100,7 +101,8 @@ app.post('/api/test', (req, res) => {
 // API routes
 app.use('/api/auth', authRoutes);
 app.use('/api/address', addressRoutes);
-app.use('/api/category', categoryRoute);
+app.use('/api/category', categoryRoute);  
+app.use('/api/subcategory', subCategoryRoute);
 
 
 // 404 handler
