@@ -76,16 +76,11 @@ const getAllCategories = async (req, res) => {
 
         // Build the base query
         let categoryQuery = Category.find(query)
-        .select("-isActive -isDeleted -deletedAt -createdAt -updatedAt -__v")
+            .select("-isActive -isDeleted -deletedAt -createdAt -updatedAt -__v")
 
 
 
-       categoryQuery = categoryQuery.populate({
-  path: "subcategories",
-  select: "-isDeleted -isActive -createdAt -updatedAt  -deletedAt -__v -parent" ,
-  match: { isDeleted: false },
-  options: { sort: { name: 1 } },
-});
+
         // Search functionality
         if (search) {
             query.$or = [
@@ -97,7 +92,7 @@ const getAllCategories = async (req, res) => {
             if (populate === "true") {
                 categoryQuery = categoryQuery.populate({
                     path: "subcategories",
-                    select: "name slug description image isActive",
+                    select: "-isDeleted -isActive -createdAt -updatedAt  -deletedAt -__v -parent",
                     match: { isDeleted: false },
                     options: { sort: { name: 1 } },
                 });
