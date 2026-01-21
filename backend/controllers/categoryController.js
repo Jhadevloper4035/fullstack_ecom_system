@@ -1,4 +1,5 @@
 const Category = require("../models/category.js")
+const slugify = require("slugify")
 
 /**
  * Create Category
@@ -8,7 +9,14 @@ const createCategory = async (req, res) => {
     try {
         const { name, description, image } = req.body;
 
-        // Check if slug already exists (if provided)
+        console.log(req.user)
+
+       const slug = slugify(name, {
+        lower: true,
+         strict: true,
+          trim: true,
+});
+
         if (name) {
             const existingCategory = await Category.findOne({
                 name,
@@ -25,6 +33,7 @@ const createCategory = async (req, res) => {
         // Create category
         const category = new Category({
             name: name.trim(),
+            slug : slug,
             description: description?.trim(),
             image,
         });
@@ -53,10 +62,7 @@ const createCategory = async (req, res) => {
 };
 
 
-/**
- * Get All Categories
- * GET /api/categories
- */
+
 const getAllCategories = async (req, res) => {
     try {
         const { active } = req.query
@@ -111,3 +117,6 @@ const getCategoryBySlug = async (req, res) => {
   }
 };
 
+
+
+module.exports = {createCategory , getAllCategories}

@@ -288,6 +288,8 @@ addressSchema.statics.softDelete = async function (addressId, userId) {
   return address.save();
 };
 
+
+
 addressSchema.statics.hardDeleteOldAddresses = async function (daysOld = 90) {
   const cutoffDate = new Date();
   cutoffDate.setDate(cutoffDate.getDate() - daysOld);

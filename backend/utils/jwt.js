@@ -6,7 +6,7 @@ const { v4: uuidv4 } = require('uuid');
 const getJwtConfig = (env = process.env) => ({
   accessSecret: env.JWT_ACCESS_SECRET || 'access-secret',
   refreshSecret: env.JWT_REFRESH_SECRET || 'refresh-secret',
-  accessExpiry: env.JWT_ACCESS_EXPIRY || '15m',
+  accessExpiry: env.JWT_ACCESS_EXPIRY || '55m',
   refreshExpiry: env.JWT_REFRESH_EXPIRY || '7d',
 });
 
