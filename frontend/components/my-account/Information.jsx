@@ -80,16 +80,16 @@ export default function Information() {
               <fieldset className="">
                 <input
                   type="text"
-                  placeholder="First Name*"
-                  value={profile.firstName}
+                  placeholder="Full Name*"
+                  value={user ? user?.user?.user?.addresses[0]?.fullName : "userName"}
                   readOnly
                 />
               </fieldset>
               <fieldset className="">
                 <input
-                  type="text"
-                  placeholder="Last Name*"
-                  value={profile.lastName}
+                  type="number"
+                  placeholder="Phone*"
+                  value={profile.phone}
                   readOnly
                 />
               </fieldset>
@@ -102,19 +102,12 @@ export default function Information() {
                   placeholder="Username or email address*"
                   name="email"
                   tabIndex={2}
-                  defaultValue={user ? user.email : "email@domain.com"}
+                  defaultValue={user ? user?.user?.user.email : "email@domain.com"}
                   aria-required="true"
                   readOnly
                 />
               </fieldset>
-              <fieldset className="">
-                <input
-                  type="text"
-                  placeholder="Phone*"
-                  value={profile.phone}
-                  readOnly
-                />
-              </fieldset>
+              
             </div>
           </div>
           <div className="button-submit">

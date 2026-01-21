@@ -14,14 +14,13 @@ export default function AccountSidebar() {
         <div className="account-avatar">
           <div className="image">
             <Image
-              alt=""
+              alt="A"
               src="/images/avatar/user-account.jpg"
               width={281}
               height={280}
             />
           </div>
-          <h6 className="mb_4">{user ? user.email.split('@')[0] : "User"}</h6>
-          <div className="body-text-1">{user ? user.email : "email@domain.com"}</div>
+          <h6 className="mb_4">{user ? user?.user?.user?.email.split('@')[0] : "User"}</h6>
         </div>
         <ul className="my-account-nav">
           <li>

@@ -1,18 +1,25 @@
 "use client";
-import React from "react";
+import React, { useEffect} from "react";
 import Nav from "./Nav";
 import Link from "next/link";
 import Image from "next/image";
 import CartLength from "../common/CartLength";
 import { useAuth } from "@/context/AuthContext";
-import { useContextElement } from "@/context/Context";
 
 export default function Header2() {
   const { user, loading, logout } = useAuth();
 
   if (loading) {
     return null; // or a loading spinner
+    
   }
+
+  if (!user) {
+    console.log("No user in Header2");
+  } else {
+    console.log("User in Header2:", user?.user?.user.email);
+  }
+
 
   return (
     <header id="header" className="header-default header-style-4" >
@@ -144,7 +151,7 @@ export default function Header2() {
 
                       ) : (
                         <div className="sub-top text-center">
-                          <p>Welcome, {user.email.split('@')[0]}</p>
+                          <p>Welcome, {user?.user?.user.email.split('@')[0]}</p>
                           <Link href={`/my-account`} className="tf-btn btn-reset">
                             Profile
                           </Link>
