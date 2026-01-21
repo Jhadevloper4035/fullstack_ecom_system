@@ -109,6 +109,7 @@ export default function Address() {
         a._id === id ? { ...a, isEditing: !a.isEditing } : a
       )
     );
+    console.log("Edit address with ID:", id);
   };
 
   return (

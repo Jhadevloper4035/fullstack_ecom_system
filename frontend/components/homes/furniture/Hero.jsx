@@ -15,7 +15,7 @@ export default function Hero() {
       setIsMobile(window.innerWidth < 768);
     };
     
-    // Initial check
+    // Initial checkBottom
     checkMobile();
     
     // Add event listener for window resize
