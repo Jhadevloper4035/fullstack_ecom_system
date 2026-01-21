@@ -211,12 +211,15 @@ const logoutAll = async (req, res) => {
   }
 };
 
+
 // Get current user controller
 const getCurrentUser = async (req, res) => {
   try {
+
+ const userDetail = await authService.userDetail(req.user.id)
     return res.status(200).json({
       success: true,
-      user: req.user,
+      user: userDetail,
     });
   } catch (error) {
     console.error('Get current user error:', error);
@@ -226,6 +229,8 @@ const getCurrentUser = async (req, res) => {
     });
   }
 };
+
+
 
 module.exports = {
   register,
