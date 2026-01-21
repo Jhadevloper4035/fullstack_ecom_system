@@ -252,16 +252,19 @@ const deleteAddress = async (req, res) => {
     const userId = req.user.id;
     const { id } = req.params;
 
-    if (!validateObjectId(id)) {
-      return errorResponse(res, "Invalid address ID", 400);
-    }
-
     await Address.softDelete(id, userId);
 
-    return successResponse(res, null, "Address deleted successfully");
+  return res.status(200).json({
+    sucess : true,
+    message: "Address deleted successfully",
+  })
+
   } catch (error) {
     console.error("[Delete Address Error]:", error.message);
-    return errorResponse(res, error.message, 500);
+    return res.status(500).json({
+      sucess : false,
+      message : "Internal Server Error"
+    })
   }
 };
 
