@@ -78,9 +78,6 @@ const getAllCategories = async (req, res) => {
         let categoryQuery = Category.find(query)
             .select("-isActive -isDeleted -deletedAt -createdAt -updatedAt -__v")
 
-
-
-
         // Search functionality
         if (search) {
             query.$or = [
@@ -88,8 +85,11 @@ const getAllCategories = async (req, res) => {
                 { description: { $regex: search, $options: "i" } },
             ];
             categoryQuery = Category.find(query).sort({ name: 1 });
+        }
 
-            if (populate === "true") {
+
+          if (populate === "true") {
+                console.log(populate)
                 categoryQuery = categoryQuery.populate({
                     path: "subcategories",
                     select: "-isDeleted -isActive -createdAt -updatedAt  -deletedAt -__v -parent",
@@ -97,7 +97,6 @@ const getAllCategories = async (req, res) => {
                     options: { sort: { name: 1 } },
                 });
             }
-        }
 
         const categories = await categoryQuery;
 
