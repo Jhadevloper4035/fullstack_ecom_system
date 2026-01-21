@@ -7,14 +7,14 @@ const authenticate = async (req, res, next) => {
   try {
     // Extract token from header
     const token = extractTokenFromHeader(req.headers.authorization);
-    
+
     if (!token) {
       return res.status(401).json({
         success: false,
         error: 'No token provided',
       });
     }
-    
+
     // Check if token is blacklisted
     const blacklisted = await isBlacklisted(token);
     if (blacklisted) {
@@ -23,27 +23,27 @@ const authenticate = async (req, res, next) => {
         error: 'Token has been revoked',
       });
     }
-    
+
     // Verify token
     const verification = verifyToken(token, 'access');
-    
+
     if (!verification.success) {
       return res.status(401).json({
         success: false,
         error: 'Invalid or expired token',
       });
     }
-    
+
     // Get user from database
     const userResult = await userRepo.findUserById(verification.payload.userId);
-    
+
     if (!userResult.success) {
       return res.status(401).json({
         success: false,
         error: 'User not found',
       });
     }
-    
+
     // Check if user is active
     if (!userResult.user.is_active) {
       return res.status(403).json({
@@ -51,15 +51,15 @@ const authenticate = async (req, res, next) => {
         error: 'Account is deactivated',
       });
     }
-    
+
     // Attach user to request
     req.user = {
       id: userResult.user.id,
       email: userResult.user.email,
-      role : userResult.user.role,
+      role: userResult.user.role,
       isVerified: userResult.user.is_verified,
     };
-    
+
     next();
   } catch (error) {
     console.error('Authentication error:', error);
@@ -74,21 +74,21 @@ const authenticate = async (req, res, next) => {
 const optionalAuth = async (req, res, next) => {
   try {
     const token = extractTokenFromHeader(req.headers.authorization);
-    
+
     if (!token) {
       return next();
     }
-    
+
     const blacklisted = await isBlacklisted(token);
     if (blacklisted) {
       return next();
     }
-    
+
     const verification = verifyToken(token, 'access');
-    
+
     if (verification.success) {
       const userResult = await userRepo.findUserById(verification.payload.userId);
-      
+
       if (userResult.success && userResult.user.is_active) {
         req.user = {
           id: userResult.user.id,
@@ -97,7 +97,7 @@ const optionalAuth = async (req, res, next) => {
         };
       }
     }
-    
+
     next();
   } catch (error) {
     console.error('Optional authentication error:', error);
@@ -113,28 +113,31 @@ const requireVerified = (req, res, next) => {
       error: 'Authentication required',
     });
   }
-  
+
   if (!req.user.isVerified) {
     return res.status(403).json({
       success: false,
       error: 'Email verification required',
     });
   }
-  
+
   next();
 };
 
 
-const authenticateAdmin = (req,res,next) => {
+const authenticateAdmin = async (req, res, next) => {
 
-   if (!req.user) {
+
+  if (!req.user) {
     return res.status(401).json({
       success: false,
       error: 'Authentication required',
     });
   }
 
-  if (req.user.role === "user") {
+  const userResult = await userRepo.findUserById(req.user.id);
+
+  if (userResult.user.role === "user") {
     return res.status(403).json({
       success: false,
       error: 'Acess Denied Inavlid user ',

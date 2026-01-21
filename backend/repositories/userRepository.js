@@ -1,4 +1,4 @@
-const address = require('../models/address');
+const Addresses = require('../models/address');
 const User = require('../models/User');
 const { hashPassword } = require('../utils/password');
 
@@ -75,6 +75,7 @@ const findUserById = async (userId) => {
       user: {
         id: user._id.toString(),
         email: user.email,
+        role : user.role,
         is_verified: user.isVerified,
         is_active: user.isActive,
         created_at: user.createdAt,
@@ -90,11 +91,13 @@ const findUserById = async (userId) => {
 const updatedUser = async (userId) => {
   try {
     const user = await User.findById(userId)
-    const addresses = await address.find({
+
+    const addresses = await Addresses.find({
       userId,
       isDeleted: false,
       isActive: true,
     })
+    .select("-deletedAt -isDeleted -isActive -userId")
     .sort({ isDefault: -1, createdAt: -1 })
     .lean()
     
