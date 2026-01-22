@@ -41,7 +41,7 @@ export default function LoginBody() {
         
         setMessage({ type: 'success', text: 'Login successful! Redirecting...' })
         setTimeout(() => {
-          router.push('/home')
+          router.push('/')
         }, 1000)
       }
     } catch (error) {
