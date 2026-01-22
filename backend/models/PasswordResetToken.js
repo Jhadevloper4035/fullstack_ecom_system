@@ -15,8 +15,7 @@ const passwordResetTokenSchema = new mongoose.Schema({
   },
   expiresAt: {
     type: Date,
-    required: true,
-    index: true,
+    required: true
   },
   used: {
     type: Boolean,
@@ -27,7 +26,7 @@ const passwordResetTokenSchema = new mongoose.Schema({
 });
 
 // Compound index for token queries
-passwordResetTokenSchema.index({ token: 1, used: 1, expiresAt: 1 });
+passwordResetTokenSchema.index({ token: 1, used: 1 });
 
 // Auto-remove expired tokens (TTL index)
 passwordResetTokenSchema.index({ expiresAt: 1 }, { expireAfterSeconds: 0 });

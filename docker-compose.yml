@@ -61,6 +61,21 @@ services:
       timeout: 5s
       retries: 5
 
+  # RedisInsight - Redis Web UI
+  redisinsight:
+    image: redis/redisinsight:latest
+    container_name: auth_redisinsight
+    ports:
+      - "${REDISINSIGHT_PORT:-5540}:5540"
+    volumes:
+      - redisinsight_data:/data
+    depends_on:
+      redis:
+        condition: service_healthy
+    networks:
+      - auth_network
+    restart: unless-stopped
+
   # RabbitMQ Message Broker
   rabbitmq:
     image: rabbitmq:3-management-alpine
@@ -197,6 +212,7 @@ volumes:
   mongodb_data:
   mongodb_config:
   redis_data:
+  redisinsight_data:
   rabbitmq_data:
   nginx_logs:
   backend_node_modules:    # Named volume for backend node_modules

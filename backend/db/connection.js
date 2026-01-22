@@ -19,26 +19,23 @@ const connectToDatabase = async () => {
   }
 
   try {
-    console.log('Connecting to MongoDB...');
-    console.log('URI:', MONGODB_URI);
-    
+
     await mongoose.connect(MONGODB_URI, options);
-    
+
     isConnected = true;
-    console.log('✅ MongoDB Connected Successfully');
-    console.log('✅ Database:', mongoose.connection.name);
-    
+    console.log(`Database name ${mongoose.connection.name} Connected Successfully`);
+
     // Handle connection events
     mongoose.connection.on('error', (err) => {
       console.error('MongoDB connection error:', err);
       isConnected = false;
     });
-    
+
     mongoose.connection.on('disconnected', () => {
       console.log('MongoDB disconnected');
       isConnected = false;
     });
-    
+
     return mongoose.connection;
   } catch (error) {
     console.error('❌ MongoDB connection failed:', error.message);

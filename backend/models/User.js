@@ -7,7 +7,6 @@ const userSchema = new mongoose.Schema({
     unique: true,
     lowercase: true,
     trim: true,
-    index: true,
   },
   passwordHash: {
     type: String,
@@ -30,9 +29,6 @@ const userSchema = new mongoose.Schema({
   timestamps: true,
 });
 
-// Index for email lookups
-userSchema.index({ email: 1 });
 
 const User = mongoose.model('User', userSchema);
-
 module.exports = User;

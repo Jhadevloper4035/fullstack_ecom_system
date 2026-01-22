@@ -8,7 +8,7 @@ const cookieParser = require('cookie-parser');
 
 const { apiLimiter } = require('./middleware/rateLimitMiddleware');
 const { connectToDatabase, closeConnection } = require('./db/connection');
-const { closeRedisClient } = require('./db/redis');
+const { closeRedisClient , getRedisClient } = require('./db/redis');
 const { closeRabbitConnection } = require('./services/rabbitmq');
 
 //
@@ -42,7 +42,7 @@ app.use(cors({
   origin: function (origin, callback) {
     // Allow requests with no origin (like mobile apps, curl, postman)
     if (!origin) return callback(null, true);
-    
+
     // Check if origin is allowed
     if (allowedOrigins.indexOf(origin) !== -1) {
       callback(null, true);
@@ -91,17 +91,17 @@ app.get('/health', (req, res) => {
 app.post('/api/test', (req, res) => {
   console.log('Test endpoint hit');
   console.log('Body:', req.body);
-  res.json({ 
-    success: true, 
+  res.json({
+    success: true,
     message: 'Backend is working',
-    receivedData: req.body 
+    receivedData: req.body
   });
 });
 
 // API routes
 app.use('/api/auth', authRoutes);
 app.use('/api/address', addressRoutes);
-app.use('/api/category', categoryRoute);  
+app.use('/api/category', categoryRoute);
 app.use('/api/subcategory', subCategoryRoute);
 
 
@@ -116,11 +116,11 @@ app.use((req, res) => {
 // Global error handler
 app.use((err, req, res, next) => {
   console.error('Global error handler:', err);
-  
+
   res.status(err.status || 500).json({
     success: false,
-    error: process.env.NODE_ENV === 'production' 
-      ? 'Internal server error' 
+    error: process.env.NODE_ENV === 'production'
+      ? 'Internal server error'
       : err.message,
   });
 });
@@ -129,23 +129,21 @@ app.use((err, req, res, next) => {
 const startServer = async () => {
   try {
     // Connect to MongoDB first
-    console.log('Connecting to MongoDB...');
     await connectToDatabase();
-    console.log('✅ MongoDB connection established');
-    
+    await getRedisClient();
+
     // Then start the server
     const server = app.listen(PORT, () => {
-      console.log(`Server running on port ${PORT}`);
-      console.log(`Environment: ${process.env.NODE_ENV || 'development'}`);
+      console.log(`Server running on port ${PORT} & Environment: ${process.env.NODE_ENV || 'development'} `);
     });
-    
+
     // Graceful shutdown
     const gracefulShutdown = async () => {
       console.log('Starting graceful shutdown...');
-      
+
       server.close(async () => {
         console.log('HTTP server closed');
-        
+
         try {
           await closeConnection();
           await closeRedisClient();
@@ -157,7 +155,7 @@ const startServer = async () => {
           process.exit(1);
         }
       });
-      
+
       // Force shutdown after 10 seconds
       setTimeout(() => {
         console.error('Forcing shutdown');
@@ -167,7 +165,7 @@ const startServer = async () => {
 
     process.on('SIGTERM', gracefulShutdown);
     process.on('SIGINT', gracefulShutdown);
-    
+
   } catch (error) {
     console.error('Failed to start server:', error);
     process.exit(1);

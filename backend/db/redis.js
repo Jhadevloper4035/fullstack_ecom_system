@@ -1,6 +1,6 @@
 const redis = require('redis');
 
-// Redis Configuration - Pure function
+
 const createRedisConfig = (env = process.env) => ({
   socket: {
     host: env.REDIS_HOST || 'localhost',

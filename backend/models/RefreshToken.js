@@ -11,7 +11,6 @@ const refreshTokenSchema = new mongoose.Schema({
     type: String,
     required: true,
     unique: true,
-    index: true,
   },
   tokenFamily: {
     type: String,
@@ -21,7 +20,6 @@ const refreshTokenSchema = new mongoose.Schema({
   expiresAt: {
     type: Date,
     required: true,
-    index: true,
   },
   isRevoked: {
     type: Boolean,
@@ -41,7 +39,6 @@ const refreshTokenSchema = new mongoose.Schema({
 // Compound indexes for queries
 refreshTokenSchema.index({ userId: 1, isRevoked: 1 });
 refreshTokenSchema.index({ tokenFamily: 1, isRevoked: 1 });
-refreshTokenSchema.index({ expiresAt: 1 });
 
 // Auto-remove expired tokens (TTL index)
 refreshTokenSchema.index({ expiresAt: 1 }, { expireAfterSeconds: 0 });

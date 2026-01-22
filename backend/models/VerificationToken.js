@@ -5,18 +5,15 @@ const verificationTokenSchema = new mongoose.Schema({
     type: mongoose.Schema.Types.ObjectId,
     ref: 'User',
     required: true,
-    index: true,
   },
   token: {
     type: String,
     required: true,
     unique: true,
-    index: true,
   },
   expiresAt: {
     type: Date,
     required: true,
-    index: true,
   },
   used: {
     type: Boolean,
@@ -27,7 +24,7 @@ const verificationTokenSchema = new mongoose.Schema({
 });
 
 // Compound index for token queries
-verificationTokenSchema.index({ token: 1, used: 1, expiresAt: 1 });
+verificationTokenSchema.index({ token: 1, used: 1 });
 
 // Auto-remove expired tokens (TTL index)
 verificationTokenSchema.index({ expiresAt: 1 }, { expireAfterSeconds: 0 });
