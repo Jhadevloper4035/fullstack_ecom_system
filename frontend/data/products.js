@@ -1,7 +1,7 @@
 export const products = [
   {
     id: 1,
-    title: "Product Name",
+    title: "Caden Retro Cream Sofa",
     price: 59.99,
     imgSrc: "/images/products/womens/women-19.jpeg",
     imgHover: "/images/products/womens/women-20.png",

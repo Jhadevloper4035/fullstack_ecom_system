@@ -26,7 +26,7 @@ export default function Home() {
             <Products4 parentClass="flat-spacing-3" />
             <Collections2 />
             <Testimonials />
-            <ShopGram parentClass="" />
+            {/* <ShopGram parentClass="" /> */}
             <Footer1 />
             <ContentReadySignal />
         </Suspense>
