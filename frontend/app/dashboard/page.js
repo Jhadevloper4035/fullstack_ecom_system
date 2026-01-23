@@ -20,10 +20,16 @@ export default function DashboardPage() {
   const loadUser = async () => {
     try {
       const response = await authApi.getCurrentUser()
+      console.log('API Response:', response)
+
       if (response.success) {
-        setUser(response.user)
+        // Handle nested user object structure
+        const userData = response.user?.user?.user || response.user?.user || response.user
+        setUser(userData)
+        console.log('User data loaded:', userData)
       }
     } catch (error) {
+      console.error('Error loading user:', error)
       router.push('/login')
     } finally {
       setLoading(false)
@@ -35,7 +41,7 @@ export default function DashboardPage() {
     const loginTime = localStorage.getItem('loginTime')
     const userAgent = navigator.userAgent
     const platform = navigator.platform
-    
+
     setSessionInfo({
       loginTime: loginTime ? new Date(loginTime) : new Date(),
       browser: getBrowserInfo(),
@@ -101,22 +107,22 @@ export default function DashboardPage() {
   const getTimeAgo = (date) => {
     if (!date) return 'Unknown'
     const seconds = Math.floor((new Date() - new Date(date)) / 1000)
-    
+
     let interval = seconds / 31536000
     if (interval > 1) return Math.floor(interval) + ' years ago'
-    
+
     interval = seconds / 2592000
     if (interval > 1) return Math.floor(interval) + ' months ago'
-    
+
     interval = seconds / 86400
     if (interval > 1) return Math.floor(interval) + ' days ago'
-    
+
     interval = seconds / 3600
     if (interval > 1) return Math.floor(interval) + ' hours ago'
-    
+
     interval = seconds / 60
     if (interval > 1) return Math.floor(interval) + ' minutes ago'
-    
+
     return Math.floor(seconds) + ' seconds ago'
   }
 
@@ -166,6 +172,12 @@ export default function DashboardPage() {
                     </a>
                   </li>
                   <li>
+                    <a className="dropdown-item" href="#" onClick={(e) => { e.preventDefault(); setActiveTab('addresses'); }}>
+                      <i className="bi bi-geo-alt me-2"></i>
+                      Addresses
+                    </a>
+                  </li>
+                  <li>
                     <a className="dropdown-item" href="#" onClick={(e) => { e.preventDefault(); setActiveTab('security'); }}>
                       <i className="bi bi-shield-lock me-2"></i>
                       Security
@@ -208,7 +220,7 @@ export default function DashboardPage() {
                     </p>
                   </div>
                   <div className="col-md-4 text-md-end mt-3 mt-md-0">
-                    {user?.isVerified ? (
+                    {user.isVerified ? (
                       <span className="badge bg-success fs-6 px-3 py-2">
                         <i className="bi bi-check-circle me-1"></i>
                         Verified Account
@@ -242,6 +254,15 @@ export default function DashboardPage() {
                 >
                   <i className="bi bi-person me-2"></i>
                   Profile
+                </button>
+              </li>
+              <li className="nav-item" role="presentation">
+                <button
+                  className={`nav-link ${activeTab === 'addresses' ? 'active' : ''}`}
+                  onClick={() => setActiveTab('addresses')}
+                >
+                  <i className="bi bi-geo-alt me-2"></i>
+                  Addresses
                 </button>
               </li>
               <li className="nav-item" role="presentation">
@@ -391,7 +412,7 @@ export default function DashboardPage() {
                       <i className="bi bi-person-circle me-2"></i>
                       Profile Details
                     </h4>
-                    
+
                     <div className="row">
                       <div className="col-md-6 mb-4">
                         <label className="form-label text-muted small">Email Address</label>
@@ -487,9 +508,174 @@ export default function DashboardPage() {
                     <div className="alert alert-info d-flex align-items-center">
                       <i className="bi bi-info-circle-fill me-2"></i>
                       <div>
-                        <strong>Profile Information:</strong> Your profile data is securely stored and encrypted. 
+                        <strong>Profile Information:</strong> Your profile data is securely stored and encrypted.
                         Contact support if you need to update your email address.
                       </div>
+                    </div>
+                  </div>
+                </div>
+              )}
+
+              {/* Addresses Tab */}
+              {activeTab === 'addresses' && (
+                <div className="fade-in">
+                  <div className="card border-0 shadow-sm">
+                    <div className="card-body p-4">
+                      <div className="d-flex justify-content-between align-items-center mb-4">
+                        <h4 className="card-title mb-0">
+                          <i className="bi bi-geo-alt me-2"></i>
+                          Saved Addresses
+                        </h4>
+                        <button className="btn btn-primary">
+                          <i className="bi bi-plus-circle me-1"></i>
+                          Add New Address
+                        </button>
+                      </div>
+
+                      {user?.addresses && user.addresses.length > 0 ? (
+                        <div className="row g-4">
+                          {user.addresses.map((address, index) => (
+                            <div key={address._id || index} className="col-12">
+                              <div className={`card h-100 ${address.isDefault ? 'border-primary' : 'border-0'}`}>
+                                <div className="card-body">
+                                  <div className="d-flex justify-content-between align-items-start mb-3">
+                                    <div>
+                                      <h5 className="mb-1">
+                                        <i className={`bi ${address.type === 'home' ? 'bi-house-door' : address.type === 'work' ? 'bi-briefcase' : 'bi-geo-alt'} me-2`}></i>
+                                        {address.fullName}
+                                        {address.isDefault && (
+                                          <span className="badge bg-primary ms-2">Default</span>
+                                        )}
+                                      </h5>
+                                      <p className="text-muted small mb-0 text-uppercase">
+                                        <i className="bi bi-tag me-1"></i>
+                                        {address.type}
+                                      </p>
+                                    </div>
+                                    <div className="dropdown">
+                                      <button className="btn btn-sm btn-outline-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown">
+                                        <i className="bi bi-three-dots-vertical"></i>
+                                      </button>
+                                      <ul className="dropdown-menu dropdown-menu-end">
+                                        <li>
+                                          <a className="dropdown-item" href="#">
+                                            <i className="bi bi-pencil me-2"></i>
+                                            Edit
+                                          </a>
+                                        </li>
+                                        {!address.isDefault && (
+                                          <li>
+                                            <a className="dropdown-item" href="#">
+                                              <i className="bi bi-star me-2"></i>
+                                              Set as Default
+                                            </a>
+                                          </li>
+                                        )}
+                                        <li>
+                                          <hr className="dropdown-divider" />
+                                        </li>
+                                        <li>
+                                          <a className="dropdown-item text-danger" href="#">
+                                            <i className="bi bi-trash me-2"></i>
+                                            Delete
+                                          </a>
+                                        </li>
+                                      </ul>
+                                    </div>
+                                  </div>
+
+                                  <div className="row g-3">
+                                    <div className="col-md-6">
+                                      <div className="d-flex align-items-start">
+                                        <i className="bi bi-geo-alt-fill text-primary me-2 mt-1"></i>
+                                        <div className="flex-grow-1">
+                                          <small className="text-muted d-block">Address</small>
+                                          <p className="mb-0">
+                                            {address.addressLine1}
+                                            {address.addressLine2 && <>, {address.addressLine2}</>}
+                                            {address.landmark && (
+                                              <><br /><small className="text-muted">Near {address.landmark}</small></>
+                                            )}
+                                          </p>
+                                        </div>
+                                      </div>
+                                    </div>
+
+                                    <div className="col-md-6">
+                                      <div className="d-flex align-items-start">
+                                        <i className="bi bi-building text-primary me-2 mt-1"></i>
+                                        <div className="flex-grow-1">
+                                          <small className="text-muted d-block">City & State</small>
+                                          <p className="mb-0">{address.city}, {address.state}</p>
+                                          <small className="text-muted">{address.country} - {address.postalCode}</small>
+                                        </div>
+                                      </div>
+                                    </div>
+
+                                    <div className="col-md-6">
+                                      <div className="d-flex align-items-start">
+                                        <i className="bi bi-telephone text-primary me-2 mt-1"></i>
+                                        <div className="flex-grow-1">
+                                          <small className="text-muted d-block">Phone Numbers</small>
+                                          <p className="mb-0">{address.phoneNumber}</p>
+                                          {address.alternatePhone && address.alternatePhone !== address.phoneNumber && (
+                                            <small className="text-muted">Alt: {address.alternatePhone}</small>
+                                          )}
+                                        </div>
+                                      </div>
+                                    </div>
+
+                                    {address.deliveryInstructions && (
+                                      <div className="col-md-6">
+                                        <div className="d-flex align-items-start">
+                                          <i className="bi bi-info-circle text-primary me-2 mt-1"></i>
+                                          <div className="flex-grow-1">
+                                            <small className="text-muted d-block">Delivery Instructions</small>
+                                            <p className="mb-0 small">{address.deliveryInstructions}</p>
+                                          </div>
+                                        </div>
+                                      </div>
+                                    )}
+                                  </div>
+
+                                  <hr className="my-3" />
+
+                                  <div className="d-flex justify-content-between align-items-center">
+                                    <small className="text-muted">
+                                      <i className="bi bi-clock me-1"></i>
+                                      Added {getTimeAgo(address.createdAt)}
+                                    </small>
+                                    <div className="btn-group btn-group-sm">
+                                      <button className="btn btn-outline-primary">
+                                        <i className="bi bi-pencil"></i> Edit
+                                      </button>
+                                      {!address.isDefault && (
+                                        <button className="btn btn-outline-danger">
+                                          <i className="bi bi-trash"></i>
+                                        </button>
+                                      )}
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          ))}
+                        </div>
+                      ) : (
+                        <div className="text-center py-5">
+                          <div className="display-1 text-muted mb-3">
+                            <i className="bi bi-geo-alt"></i>
+                          </div>
+                          <h5 className="mb-3">No Addresses Found</h5>
+                          <p className="text-muted mb-4">
+                            You haven't added any addresses yet. Add your first address to get started.
+                          </p>
+                          <button className="btn btn-primary">
+                            <i className="bi bi-plus-circle me-2"></i>
+                            Add Your First Address
+                          </button>
+                        </div>
+                      )}
                     </div>
                   </div>
                 </div>
@@ -524,7 +710,7 @@ export default function DashboardPage() {
                               Never stored in plain text
                             </li>
                           </ul>
-                          <button 
+                          <button
                             className="btn btn-outline-primary w-100"
                             onClick={() => router.push('/forgot-password')}
                           >
@@ -560,7 +746,7 @@ export default function DashboardPage() {
                               Automatic token rotation
                             </li>
                           </ul>
-                          <button 
+                          <button
                             className="btn btn-outline-danger w-100"
                             onClick={handleLogoutAll}
                           >
@@ -641,7 +827,7 @@ export default function DashboardPage() {
                     <div className="alert alert-info d-flex align-items-start mb-4">
                       <i className="bi bi-info-circle-fill me-3 mt-1"></i>
                       <div>
-                        <strong>About Sessions:</strong> This is your current active session. 
+                        <strong>About Sessions:</strong> This is your current active session.
                         You can revoke all sessions using the "Logout All Devices" button to sign out from all locations.
                       </div>
                     </div>
@@ -741,7 +927,7 @@ export default function DashboardPage() {
           </div>
         </div>
       </div>
-      
+
     </div>
   )
 }

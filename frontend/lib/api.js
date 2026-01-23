@@ -65,11 +65,11 @@ apiClient.interceptors.response.use(
         // Refresh failed - clear tokens and redirect to login
         Cookies.remove('accessToken')
         Cookies.remove('refreshToken')
-        
+
         if (typeof window !== 'undefined') {
           window.location.href = '/login'
         }
-        
+
         return Promise.reject(refreshError)
       }
     }
@@ -94,7 +94,7 @@ export const authApi = {
       email,
       password,
     })
-    
+
     if (response.data.success) {
       // Store access token in cookie
       Cookies.set('accessToken', response.data.accessToken, {
@@ -103,7 +103,7 @@ export const authApi = {
         sameSite: 'strict',
       })
     }
-    
+
     return response.data
   },
 
@@ -154,7 +154,7 @@ export const authApi = {
     const response = await apiClient.post('/auth/refresh-token', {
       refreshToken,
     })
-    
+
     if (response.data.success) {
       Cookies.set('accessToken', response.data.accessToken, {
         expires: 1 / 96, // 15 minutes
@@ -162,7 +162,7 @@ export const authApi = {
         sameSite: 'strict',
       })
     }
-    
+
     return response.data
   },
 }
