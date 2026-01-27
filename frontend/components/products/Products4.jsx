@@ -3,12 +3,11 @@
 import LayoutHandler from "./LayoutHandler";
 import Sorting from "./Sorting";
 import Listview from "./Listview";
-
+import { productMain } from "@/data/products";
 import { useEffect, useReducer, useState } from "react";
 import FilterModal from "./FilterModal";
-import { initialState, reducer } from "@/reducer/filterReducer";
-import { productMain } from "@/data/products";
 import FilterMeta from "./FilterMeta";
+import { initialState, reducer } from "@/reducer/filterReducer";
 
 import Pagination from "../common/Pagination";
 
@@ -164,9 +163,8 @@ export default function Products4() {
               </a>
               <div
                 onClick={allProps.toggleFilterWithOnSale}
-                className={`d-none d-lg-flex shop-sale-text ${
-                  activeFilterOnSale ? "active" : ""
-                }`}
+                className={`d-none d-lg-flex shop-sale-text ${activeFilterOnSale ? "active" : ""
+                  }`}
               >
                 <i className="icon icon-checkCircle" />
                 <p className="text-caption-1">Shop sale items only</p>

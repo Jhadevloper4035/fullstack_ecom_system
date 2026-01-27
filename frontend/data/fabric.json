@@ -1,0 +1,7 @@
+[
+  { "_id": "cotton", "name": "Cotton" },
+  { "_id": "linen", "name": "Linen" },
+  { "_id": "velvet", "name": "Velvet" },
+  { "_id": "leather", "name": "Leather" },
+  { "_id": "polyester", "name": "Polyester" }
+]

@@ -7,18 +7,20 @@ import GridView from "./GridView";
 import { useEffect, useReducer, useState } from "react";
 import FilterModal from "./FilterModal";
 import { initialState, reducer } from "@/reducer/filterReducer";
-import { productMain } from "@/data/products";
 import FilterMeta from "./FilterMeta";
+import axios from 'axios';
 
 export default function Products1({ parentClass = "flat-spacing" }) {
   const [activeLayout, setActiveLayout] = useState(4);
   const [state, dispatch] = useReducer(reducer, initialState);
+  const [allProducts, setAllProducts] = useState([]);
+  const [loading, setLoading] = useState(true);
   const {
     price,
     availability,
     color,
     size,
-    brands,
+    fabrics,
 
     filtered,
     sortingOption,
@@ -28,6 +30,10 @@ export default function Products1({ parentClass = "flat-spacing" }) {
     currentPage,
     itemPerPage,
   } = state;
+
+  const [categories, setCategories] = useState([]);
+  const [colors, setColors] = useState([]);
+  const [fabricsData, setFabricsData] = useState([]);
 
   const allProps = {
     ...state,
@@ -49,16 +55,16 @@ export default function Products1({ parentClass = "flat-spacing" }) {
         : dispatch({ type: "SET_AVAILABILITY", payload: value });
     },
 
-    setBrands: (newBrand) => {
-      const updated = [...brands].includes(newBrand)
-        ? [...brands].filter((elm) => elm != newBrand)
-        : [...brands, newBrand];
-      dispatch({ type: "SET_BRANDS", payload: updated });
+    setFabrics: (newFabric) => {
+      const updated = [...fabrics].includes(newFabric)
+        ? [...fabrics].filter((elm) => elm != newFabric)
+        : [...fabrics, newFabric];
+      dispatch({ type: "SET_FABRICS", payload: updated });
     },
-    removeBrand: (newBrand) => {
-      const updated = [...brands].filter((brand) => brand != newBrand);
+    removeFabric: (newFabric) => {
+      const updated = [...fabrics].filter((fabric) => fabric != newFabric);
 
-      dispatch({ type: "SET_BRANDS", payload: updated });
+      dispatch({ type: "SET_FABRICS", payload: updated });
     },
     setSortingOption: (value) =>
       dispatch({ type: "SET_SORTING_OPTION", payload: value }),
@@ -72,50 +78,103 @@ export default function Products1({ parentClass = "flat-spacing" }) {
     clearFilter: () => {
       dispatch({ type: "CLEAR_FILTER" });
     },
+    // Dynamic Filter Options
+    filterFabrics: fabricsData.map(b => ({ label: b.name })),
+    filterCategories: categories.map(c => ({ name: c.name, count: allProducts.filter(p => p.category === c.name).length })),
+    filterColors: colors.map(c => ({ name: c.name, className: `bg-${c.name.toLowerCase()}` })),
+    filterSizes: [...new Set(allProducts.flatMap(p => p.filterSizes))],
+    allProducts: allProducts, // Pass all products for count calculation
   };
+
+
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const [productRes, categoryRes, colorRes, fabricRes] = await Promise.all([
+          axios.get(`${process.env.NEXT_PUBLIC_API_URL}/product`),
+          axios.get(`${process.env.NEXT_PUBLIC_API_URL}/category/categories`),
+          axios.get(`${process.env.NEXT_PUBLIC_API_URL}/color/colors`),
+          axios.get(`${process.env.NEXT_PUBLIC_API_URL}/fabric/`)
+        ]);
+
+        if (productRes.data.success) {
+          const mappedProducts = productRes.data.products.map(product => ({
+            ...product,
+            id: product._id,
+            filterColor: product.colors?.map(c => c.name) || [],
+            filterFabrics: product.fabrics?.map(f => f.name) || [],
+            filterSizes: product.filterSizes || [],
+            category: product.category?.name || product.category,
+            price: product.price,
+            oldPrice: product.oldPrice,
+            inStock: product.inStock
+          }));
+          setAllProducts(mappedProducts);
+
+        }
+
+        if (categoryRes.data.success) {
+          setCategories(categoryRes.data.data);
+        }
+        if (colorRes.data.success) {
+          setColors(colorRes.data.data);
+        }
+        // Fabric response is array directly
+        setFabricsData(fabricRes.data);
+
+      } catch (error) {
+        console.error("Error fetching data:", error);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchData();
+  }, []);
 
   useEffect(() => {
     let filteredArrays = [];
 
-    if (brands.length) {
-      const filteredByBrands = [...productMain].filter((elm) =>
-        brands.every((el) => elm.filterBrands.includes(el))
+    if (fabrics.length) {
+      const filteredByFabrics = [...allProducts].filter((elm) =>
+        fabrics.every((el) => elm.filterFabrics.includes(el))
       );
-      filteredArrays = [...filteredArrays, filteredByBrands];
+      filteredArrays = [...filteredArrays, filteredByFabrics];
     }
     if (availability !== "All") {
-      const filteredByavailability = [...productMain].filter(
+      const filteredByavailability = [...allProducts].filter(
         (elm) => availability.value === elm.inStock
       );
       filteredArrays = [...filteredArrays, filteredByavailability];
     }
     if (color !== "All") {
-      const filteredByColor = [...productMain].filter((elm) =>
+      const filteredByColor = [...allProducts].filter((elm) =>
         elm.filterColor.includes(color.name)
       );
       filteredArrays = [...filteredArrays, filteredByColor];
     }
     if (size !== "All" && size !== "Free Size") {
-      const filteredBysize = [...productMain].filter((elm) =>
+      const filteredBysize = [...allProducts].filter((elm) =>
         elm.filterSizes.includes(size)
       );
       filteredArrays = [...filteredArrays, filteredBysize];
     }
     if (activeFilterOnSale) {
-      const filteredByonSale = [...productMain].filter((elm) => elm.oldPrice);
+      const filteredByonSale = [...allProducts].filter((elm) => elm.oldPrice);
       filteredArrays = [...filteredArrays, filteredByonSale];
     }
 
-    const filteredByPrice = [...productMain].filter(
+    const filteredByPrice = [...allProducts].filter(
       (elm) => elm.price >= price[0] && elm.price <= price[1]
     );
     filteredArrays = [...filteredArrays, filteredByPrice];
 
-    const commonItems = [...productMain].filter((item) =>
+    const commonItems = [...allProducts].filter((item) =>
       filteredArrays.every((array) => array.includes(item))
     );
     dispatch({ type: "SET_FILTERED", payload: commonItems });
-  }, [price, availability, color, size, brands, activeFilterOnSale]);
+  }, [price, availability, color, size, fabrics, activeFilterOnSale, allProducts]);
 
   useEffect(() => {
     if (sortingOption === "Price Ascending") {
@@ -160,9 +219,8 @@ export default function Products1({ parentClass = "flat-spacing" }) {
               </a>
               <div
                 onClick={allProps.toggleFilterWithOnSale}
-                className={`d-none d-lg-flex shop-sale-text ${
-                  activeFilterOnSale ? "active" : ""
-                }`}
+                className={`d-none d-lg-flex shop-sale-text ${activeFilterOnSale ? "active" : ""
+                  }`}
               >
                 <i className="icon icon-checkCircle" />
                 <p className="text-caption-1">Shop sale items only</p>
@@ -184,6 +242,7 @@ export default function Products1({ parentClass = "flat-spacing" }) {
 
             {activeLayout == 1 ? (
               <div className="tf-list-layout wrapper-shop" id="listLayout">
+                {console.log("Products1 rendering Listview with sorted:", sorted)}
                 <Listview products={sorted} />
               </div>
             ) : (
@@ -191,6 +250,7 @@ export default function Products1({ parentClass = "flat-spacing" }) {
                 className={`tf-grid-layout wrapper-shop tf-col-${activeLayout}`}
                 id="gridLayout"
               >
+                {console.log("Products1 rendering GridView with sorted:", sorted)}
                 <GridView products={sorted} />
               </div>
             )}

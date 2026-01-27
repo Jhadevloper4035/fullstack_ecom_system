@@ -1,0 +1,14 @@
+[
+  { "_id": "sofas-sectionals", "name": "Sofas & Sectionals", "category": "furniture" },
+  { "_id": "beds-headboards", "name": "Beds & Headboards", "category": "furniture" },
+  { "_id": "dining-tables", "name": "Dining Tables", "category": "furniture" },
+  { "_id": "chairs-seating", "name": "Chairs & Seating", "category": "furniture" },
+  { "_id": "storage-organization", "name": "Storage & Organization", "category": "furniture" },
+  { "_id": "desks-office", "name": "Desks & Office", "category": "furniture" },
+
+  { "_id": "ceiling-lights", "name": "Ceiling Lights", "category": "lighting" },
+  { "_id": "table-lamps", "name": "Table Lamps", "category": "lighting" },
+  { "_id": "floor-lamps", "name": "Floor Lamps", "category": "lighting" },
+  { "_id": "wall-sconces", "name": "Wall Sconces", "category": "lighting" },
+  { "_id": "pendant-lights", "name": "Pendant Lights", "category": "lighting" }
+]

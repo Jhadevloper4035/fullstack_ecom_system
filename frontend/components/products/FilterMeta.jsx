@@ -40,15 +40,15 @@ export default function FilterMeta({ allProps, productLength }) {
           ""
         )}
 
-        {allProps.brands.length ? (
+        {allProps.fabrics.length ? (
           <React.Fragment>
-            {allProps.brands.map((brand, i) => (
+            {allProps.fabrics.map((fabric, i) => (
               <span
                 key={i}
                 className="filter-tag"
-                onClick={() => allProps.removeBrand(brand)}
+                onClick={() => allProps.removeFabric(fabric)}
               >
-                {brand}
+                {fabric}
                 <span className="remove-tag icon-close" />
               </span>
             ))}
@@ -58,9 +58,9 @@ export default function FilterMeta({ allProps, productLength }) {
         )}
       </div>
       {allProps.availability != "All" ||
-      allProps.size != "All" ||
-      allProps.color != "All" ||
-      allProps.brands.length ? (
+        allProps.size != "All" ||
+        allProps.color != "All" ||
+        allProps.fabrics.length ? (
         <button
           id="remove-all"
           className="remove-all-filters text-btn-uppercase"

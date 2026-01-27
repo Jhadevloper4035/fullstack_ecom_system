@@ -6,7 +6,7 @@ export default function GridView({ products, pagination = true }) {
   return (
     <>
       {products.map((product, index) => (
-        <ProductCard1 key={index} product={product} gridClass="grid" />
+        <ProductCard1 key={index} product={product} gridClass="grid" parentClass="card-product" aspectRatio="1/1.4" />
       ))}
       {/* pagination */}
       {pagination ? (

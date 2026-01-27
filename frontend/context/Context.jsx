@@ -30,11 +30,7 @@ export default function Context({ children }) {
   /* -------- CART -------- */
 
   const fetchCart = async () => {
-    if (!user) {
-      // setCartProducts([]);
-      console.log("No user logged in, skipping cart fetch");
-      return;
-    }
+    if (!user) return;
 
     try {
       const { data } = await api.get("/cart");
@@ -53,9 +49,50 @@ export default function Context({ children }) {
     }
   };
 
+  const isAddedToCartProducts = (id) => {
+    return !!cartProducts.find((p) => p.id === id);
+  };
+
+  const addProductToCart = async (id, qty = 1, isModal = true) => {
+    try {
+      await api.post("/cart/add", {
+        productId: id,
+        quantity: qty,
+      });
+      await fetchCart();
+      if (isModal) openCartModal();
+    } catch (err) {
+      console.error("Failed to add to cart", err);
+    }
+  };
+
+  const updateQuantity = async (id, qty) => {
+    try {
+      await api.put("/cart/update", {
+        productId: id,
+        quantity: qty,
+      });
+      await fetchCart();
+    } catch (err) {
+      console.error("Failed to update quantity", err);
+    }
+  };
+
+  const removeFromCart = async (id) => {
+    try {
+      await api.delete(`/cart/remove/${id}`);
+      await fetchCart();
+    } catch (err) {
+      console.error("Failed to remove from cart", err);
+    }
+  };
+
   useEffect(() => {
+    console.log(
+      "Disable fetch cart for development, User changed in Context:",
+      user
+    );
     // fetchCart();
-    console.log("Disable fetch cart for development, User changed in Context:", user);
   }, [user]);
 
   useEffect(() => {
@@ -87,19 +124,58 @@ export default function Context({ children }) {
     setWishList((p) => p.filter((i) => i !== id));
   };
 
+  const isAddedtoWishlist = (id) => {
+    return wishList.includes(id);
+  };
+
+  /* -------- COMPARE -------- */
+
+  const addToCompareItem = (id) => {
+    if (!compareItem.includes(id)) {
+      setCompareItem((p) => [...p, id]);
+    }
+  };
+
+  const removeFromCompareItem = (id) => {
+    setCompareItem((p) => p.filter((i) => i !== id));
+  };
+
+  const isAddedtoCompareItem = (id) => {
+    return compareItem.includes(id);
+  };
+
   return (
     <DataContext.Provider
       value={{
+        /* state */
         cartProducts,
+        setCartProducts,
         totalPrice,
         wishList,
+        compareItem,
+        quickViewItem,
+        quickAddItem,
+
+        /* cart */
+        fetchCart,
+        addProductToCart,
+        updateQuantity,
+        removeFromCart,
+        isAddedToCartProducts,
+
+        /* wishlist */
         addToWishlist,
         removeFromWishlist,
-        compareItem,
+        isAddedtoWishlist,
+
+        /* compare */
+        addToCompareItem,
+        removeFromCompareItem,
+        isAddedtoCompareItem,
         setCompareItem,
-        quickViewItem,
+
+        /* ui */
         setQuickViewItem,
-        quickAddItem,
         setQuickAddItem,
       }}
     >

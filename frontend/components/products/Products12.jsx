@@ -19,7 +19,6 @@ export default function Products12() {
     availability,
     color,
     size,
-    brands,
 
     filtered,
     sortingOption,
@@ -50,17 +49,7 @@ export default function Products12() {
         : dispatch({ type: "SET_AVAILABILITY", payload: value });
     },
 
-    setBrands: (newBrand) => {
-      const updated = [...brands].includes(newBrand)
-        ? [...brands].filter((elm) => elm != newBrand)
-        : [...brands, newBrand];
-      dispatch({ type: "SET_BRANDS", payload: updated });
-    },
-    removeBrand: (newBrand) => {
-      const updated = [...brands].filter((brand) => brand != newBrand);
 
-      dispatch({ type: "SET_BRANDS", payload: updated });
-    },
     setSortingOption: (value) =>
       dispatch({ type: "SET_SORTING_OPTION", payload: value }),
     toggleFilterWithOnSale: () => dispatch({ type: "TOGGLE_FILTER_ON_SALE" }),
@@ -77,13 +66,6 @@ export default function Products12() {
 
   useEffect(() => {
     let filteredArrays = [];
-
-    if (brands.length) {
-      const filteredByBrands = [...productMain].filter((elm) =>
-        brands.every((el) => elm.filterBrands.includes(el))
-      );
-      filteredArrays = [...filteredArrays, filteredByBrands];
-    }
     if (availability !== "All") {
       const filteredByavailability = [...productMain].filter(
         (elm) => availability.value === elm.inStock
@@ -116,7 +98,7 @@ export default function Products12() {
       filteredArrays.every((array) => array.includes(item))
     );
     dispatch({ type: "SET_FILTERED", payload: commonItems });
-  }, [price, availability, color, size, brands, activeFilterOnSale]);
+  }, [price, availability, color, size, activeFilterOnSale]);
 
   useEffect(() => {
     if (sortingOption === "Price Ascending") {
@@ -166,9 +148,8 @@ export default function Products12() {
               </a>
               <div
                 onClick={allProps.toggleFilterWithOnSale}
-                className={`d-none d-lg-flex shop-sale-text ${
-                  activeFilterOnSale ? "active" : ""
-                }`}
+                className={`d-none d-lg-flex shop-sale-text ${activeFilterOnSale ? "active" : ""
+                  }`}
               >
                 <i className="icon icon-checkCircle" />
                 <p className="text-caption-1">Shop sale items only</p>

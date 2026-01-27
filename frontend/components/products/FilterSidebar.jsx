@@ -71,17 +71,15 @@ export default function FilterSidebar({ allProps }) {
                 <span
                   key={index}
                   onClick={() => allProps.setSize(size)}
-                  className={`size-item size-check ${
-                    allProps.size === size ? "active" : ""
-                  }`}
+                  className={`size-item size-check ${allProps.size === size ? "active" : ""
+                    }`}
                 >
                   {size}
                 </span>
               ))}
               <span
-                className={`size-item size-check free-size ${
-                  allProps.size == "Free Size" ? "active" : ""
-                } `}
+                className={`size-item size-check free-size ${allProps.size == "Free Size" ? "active" : ""
+                  } `}
                 onClick={() => allProps.setSize("Free Size")}
               >
                 Free Size
@@ -95,9 +93,8 @@ export default function FilterSidebar({ allProps }) {
                 <div
                   onClick={() => allProps.setColor(color)}
                   key={index}
-                  className={`color-item color-check ${
-                    color == allProps.color ? "active" : ""
-                  }`}
+                  className={`color-item color-check ${color == allProps.color ? "active" : ""
+                    }`}
                 >
                   <span className={`color ${color.className}`} />
                   {color.name}
@@ -136,38 +133,7 @@ export default function FilterSidebar({ allProps }) {
               ))}
             </div>
           </div>
-          <div className="widget-facet facet-fieldset">
-            <h6 className="facet-title">Brands</h6>
-            <div className="box-fieldset-item">
-              {brands.map((brand, index) => (
-                <fieldset
-                  key={index}
-                  className="fieldset-item"
-                  onClick={() => allProps.setBrands(brand.label)}
-                >
-                  <input
-                    type="checkbox"
-                    name="brand"
-                    className="tf-check"
-                    readOnly
-                    checked={allProps.brands.includes(brand.label)}
-                  />
-                  <label>
-                    {brand.label}{" "}
-                    <span className="count-brand">
-                      ({" "}
-                      {
-                        productMain.filter((el) =>
-                          el.filterBrands.includes(brand.label)
-                        ).length
-                      }
-                      )
-                    </span>
-                  </label>
-                </fieldset>
-              ))}
-            </div>
-          </div>
+
         </div>
         <div className="canvas-bottom d-block d-xl-none">
           <button

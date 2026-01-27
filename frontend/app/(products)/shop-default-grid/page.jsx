@@ -1,0 +1,40 @@
+import Footer1 from "@/components/footers/Footer1";
+import Header2 from "@/components/headers/Header2";
+import Topbar6 from "@/components/headers/Topbar6";
+import ProductsNew from "@/components/products/ProductsNew";
+import Link from "next/link";
+import React from "react";
+
+export default function ShopDefaultGridPage() {
+  return (
+    <>
+      <Topbar6 bgColor="bg-main" />
+      <Header2 />
+      <div
+        className="page-title"
+        style={{ backgroundImage: "url(/images/section/page-title.jpg)" }}
+      >
+        <div className="container-full">
+          <div className="row">
+            <div className="col-12">
+              <h3 className="heading text-center">CURVE & COMFY</h3>
+              <ul className="breadcrumbs d-flex align-items-center justify-content-center">
+                <li>
+                  <Link className="link" href={`/`}>
+                    Homepage
+                  </Link>
+                </li>
+                <li>
+                  <i className="icon-arrRight" />
+                </li>
+                <li>CURVE & COMFY</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <ProductsNew />
+      <Footer1 />
+    </>
+  );
+}

@@ -1,0 +1,26 @@
+[
+  {
+    "_id": "furniture",
+    "name": "Furniture"
+  },
+  {
+    "_id": "lighting",
+    "name": "Lighting"
+  },
+  {
+    "_id": "decor",
+    "name": "Decor"
+  },
+  {
+    "_id": "bedding",
+    "name": "Bedding"
+  },
+  {
+    "_id": "bath",
+    "name": "Bath"
+  },
+  {
+    "_id": "rugs",
+    "name": "Rugs"
+  }
+]

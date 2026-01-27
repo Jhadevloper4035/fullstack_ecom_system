@@ -1,0 +1,2992 @@
+[
+  {
+    "id": 1,
+    "title": "Caden Retro Cream Sofa",
+    "description": "A retro-inspired cream sofa with clean lines and comfortable, modern cushioning.",
+    "imgSrc": "sofa_A.jpg",
+    "imgHover": "sofa_A1.jpg",
+    "images": [
+      "sofa_A1.jpg",
+      "sofa_A2.jpg",
+      "sofa_A3.jpg",
+      "sofa_A4.jpg",
+      "sofa_A5.jpg",
+      "sofa_A6.jpg"
+    ],
+    "price": 42000,
+    "comparePrice": 50000,
+    "inStock": true,
+    "stockQuantity": 10,
+    "categories": "Sofa",
+    "subCategories": [
+      "category1",
+      "category2"
+    ],
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "colors": [
+      "sofa_A4.jpg",
+      "sofa_A5.jpg",
+      "sofa_A6.jpg"
+    ],
+    "sku": null,
+    "brands": [
+      "Louis Vuitton",
+      "Hermes"
+    ],
+    "filterColors": [
+      "Pink",
+      "Orange"
+    ],
+    "filterSizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "isOnSale": true,
+    "isFeatured": false
+  },
+  {
+    "id": 2,
+    "title": "Round Upholstered Loveseat",
+    "description": "A compact, round loveseat designed for cozy seating and visual appeal.",
+    "imgSrc": "sofa_B.jpg",
+    "imgHover": "sofa_B1.jpg",
+    "images": [
+      "sofa_B1.jpg",
+      "sofa_B2.jpg",
+      "sofa_B3.jpg",
+      "sofa_B4.jpg",
+      "sofa_B5.jpg"
+    ],
+    "price": 38000,
+    "comparePrice": 58000,
+    "inStock": true,
+    "stockQuantity": 10,
+    "categories": "Sofa",
+    "subCategories": [
+      "category1",
+      "category3"
+    ],
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "colors": [
+      "sofa_A4.jpg",
+      "sofa_A5.jpg",
+      "sofa_A6.jpg"
+    ],
+    "sku": null,
+    "brands": [
+      "Louis Vuitton",
+      "Hermes"
+    ],
+    "filterColors": [
+      "Pink",
+      "Orange"
+    ],
+    "filterSizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "isOnSale": true,
+    "isFeatured": false
+  },
+  {
+    "id": 3,
+    "title": "The Circular Comfort Sofa",
+    "description": "A sculptural circular sofa offering plush comfort and contemporary style.",
+    "imgSrc": "sofa_C.jpg",
+    "imgHover": "sofa_C1.jpg",
+    "images": [
+      "sofa_C1.jpg",
+      "sofa_C2.jpg",
+      "sofa_C3.jpg",
+      "sofa_C4.jpg",
+      "sofa_C5.jpg",
+      "sofa_C6.jpg"
+    ],
+    "price": 41000,
+    "comparePrice": 51000,
+    "inStock": true,
+    "stockQuantity": 10,
+    "categories": "Sofa",
+    "subCategories": [
+      "category4"
+    ],
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "colors": [
+      "sofa_A4.jpg",
+      "sofa_A5.jpg",
+      "sofa_A6.jpg"
+    ],
+    "sku": null,
+    "brands": [
+      "Louis Vuitton",
+      "Hermes"
+    ],
+    "filterColors": [
+      "Pink",
+      "Orange"
+    ],
+    "filterSizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "isOnSale": true,
+    "isFeatured": false
+  },
+  {
+    "id": 4,
+    "title": "Luna 2 Seater sofa",
+    "description": "A compact two-seater sofa crafted for modern living spaces and everyday comfort.",
+    "imgSrc": "sofa_D.jpg",
+    "imgHover": "sofa_D1.jpg",
+    "images": [
+      "sofa_D1.jpg",
+      "sofa_D2.jpg",
+      "sofa_D3.jpg",
+      "sofa_D4.jpg",
+      "sofa_D5.jpg",
+      "sofa_D6.jpg"
+    ],
+    "price": 47000,
+    "comparePrice": 50000,
+    "inStock": true,
+    "stockQuantity": 10,
+    "categories": "Sofa",
+    "subCategories": [
+      "category1",
+      "category2"
+    ],
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "colors": [
+      "sofa_A4.jpg",
+      "sofa_A5.jpg",
+      "sofa_A6.jpg"
+    ],
+    "sku": null,
+    "brands": [
+      "Louis Vuitton",
+      "Hermes"
+    ],
+    "filterColors": [
+      "Pink",
+      "Orange"
+    ],
+    "filterSizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "isOnSale": true,
+    "isFeatured": false
+  },
+  {
+    "id": 5,
+    "title": "Right / Left Hand Chaise Lounge Sofa",
+    "description": "A versatile chaise lounge sofa available in right or left configurations for relaxed seating.",
+    "imgSrc": "sofa_E.jpg",
+    "imgHover": "sofa_E1.jpg",
+    "images": [
+      "sofa_E1.jpg",
+      "sofa_E2.jpg",
+      "sofa_E3.jpg",
+      "sofa_E4.jpg",
+      "sofa_E5.jpg",
+      "sofa_E6.jpg"
+    ],
+    "price": 48200,
+    "comparePrice": 55000,
+    "inStock": true,
+    "stockQuantity": 10,
+    "categories": "Sofa",
+    "subCategories": [
+      "category1",
+      "category2"
+    ],
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "colors": [
+      "sofa_A4.jpg",
+      "sofa_A5.jpg",
+      "sofa_A6.jpg"
+    ],
+    "sku": null,
+    "brands": [
+      "Louis Vuitton",
+      "Hermes"
+    ],
+    "filterColors": [
+      "Pink",
+      "Orange"
+    ],
+    "filterSizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "isOnSale": true,
+    "isFeatured": false
+  },
+  {
+    "id": 6,
+    "title": "Muse 3 Seater Sofa",
+    "description": "A spacious three-seater sofa combining refined design with superior comfort.",
+    "imgSrc": "sofa_F.jpg",
+    "imgHover": "sofa_F1.jpg",
+    "images": [
+      "sofa_F1.jpg",
+      "sofa_F2.jpg",
+      "sofa_F3.jpg",
+      "sofa_F4.jpg",
+      "sofa_F5.jpg",
+      "sofa_F6.jpg"
+    ],
+    "price": 55000,
+    "comparePrice": 60000,
+    "inStock": true,
+    "stockQuantity": 10,
+    "categories": "Sofa",
+    "subCategories": [
+      "category1",
+      "category3",
+      "category5"
+    ],
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "colors": [
+      "sofa_A4.jpg",
+      "sofa_A5.jpg",
+      "sofa_A6.jpg"
+    ],
+    "sku": null,
+    "brands": [
+      "Louis Vuitton",
+      "Hermes"
+    ],
+    "filterColors": [
+      "Pink",
+      "Orange"
+    ],
+    "filterSizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "isOnSale": true,
+    "isFeatured": false
+  },
+  {
+    "id": 7,
+    "title": "Candelaria Contemporary Sofa",
+    "description": "A sleek contemporary sofa with clean lines and a modern aesthetic.",
+    "imgSrc": "sofa_G.jpg",
+    "imgHover": "sofa_G.jpg",
+    "images": [
+      "sofa_G1.jpg",
+      "sofa_G2.jpg",
+      "sofa_G3.jpg",
+      "sofa_G4.jpg",
+      "sofa_G5.jpg",
+      "sofa_G6.jpg"
+    ],
+    "price": 34000,
+    "comparePrice": 40000,
+    "inStock": true,
+    "stockQuantity": 10,
+    "categories": "Sofa",
+    "subCategories": [
+      "category5"
+    ],
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "colors": [
+      "sofa_A4.jpg",
+      "sofa_A5.jpg",
+      "sofa_A6.jpg"
+    ],
+    "sku": null,
+    "brands": [
+      "Louis Vuitton",
+      "Hermes"
+    ],
+    "filterColors": [
+      "Pink",
+      "Orange"
+    ],
+    "filterSizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "isOnSale": true,
+    "isFeatured": false
+  },
+  {
+    "id": 8,
+    "title": "Mor D‚cor Andrea Sofa",
+    "description": "A stylish sofa with premium upholstery and a refined, elegant presence.",
+    "imgSrc": "sofa_H.jpg",
+    "imgHover": "sofa_H1.jpg",
+    "images": [
+      "sofa_H1.jpg",
+      "sofa_H2.jpg",
+      "sofa_H3.jpg",
+      "sofa_H4.jpg",
+      "sofa_H5.jpg",
+      "sofa_H6.jpg"
+    ],
+    "price": 46000,
+    "comparePrice": 59000,
+    "inStock": true,
+    "stockQuantity": 10,
+    "categories": "Sofa",
+    "subCategories": [
+      "category1",
+      "category3",
+      "category4"
+    ],
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "colors": [
+      "sofa_A4.jpg",
+      "sofa_A5.jpg",
+      "sofa_A6.jpg"
+    ],
+    "sku": null,
+    "brands": [
+      "Louis Vuitton",
+      "Hermes"
+    ],
+    "filterColors": [
+      "Pink",
+      "Orange"
+    ],
+    "filterSizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "isOnSale": true,
+    "isFeatured": false
+  },
+  {
+    "id": 9,
+    "title": "Fior 3 Seater Sofa with Vertical Tufting",
+    "description": "A three-seater sofa featuring vertical tufting for a sophisticated look.",
+    "imgSrc": "sofa_I.jpg",
+    "imgHover": "sofa_I1.jpg",
+    "images": [
+      "sofa_I1.jpg",
+      "sofa_I2.jpg",
+      "sofa_I3.jpg",
+      "sofa_I4.jpg",
+      "sofa_I5.jpg",
+      "sofa_I6.jpg"
+    ],
+    "price": 58000,
+    "comparePrice": 60000,
+    "inStock": true,
+    "stockQuantity": 10,
+    "categories": "Sofa",
+    "subCategories": [
+      "category1",
+      "category2",
+      "category4"
+    ],
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "colors": [
+      "sofa_A4.jpg",
+      "sofa_A5.jpg",
+      "sofa_A6.jpg"
+    ],
+    "sku": null,
+    "brands": [
+      "Louis Vuitton",
+      "Hermes"
+    ],
+    "filterColors": [
+      "Pink",
+      "Orange"
+    ],
+    "filterSizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "isOnSale": true,
+    "isFeatured": false
+  },
+  {
+    "id": 10,
+    "title": "Mufti Compacto sofa with a solid wood frame and tufted detailing",
+    "description": "A compact sofa built on a solid wood frame with classic tufted detailing.",
+    "imgSrc": "sofa_J.jpg",
+    "imgHover": "sofa_J1.jpg",
+    "images": [
+      "sofa_J1.jpg",
+      "sofa_J2.jpg",
+      "sofa_J3.jpg",
+      "sofa_J4.jpg",
+      "sofa_J5.jpg",
+      "sofa_J6.jpg"
+    ],
+    "price": 57000,
+    "comparePrice": 65000,
+    "inStock": true,
+    "stockQuantity": 10,
+    "categories": "Sofa",
+    "subCategories": [
+      "category5"
+    ],
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "colors": [
+      "sofa_A4.jpg",
+      "sofa_A5.jpg",
+      "sofa_A6.jpg"
+    ],
+    "sku": null,
+    "brands": [
+      "Louis Vuitton",
+      "Hermes"
+    ],
+    "filterColors": [
+      "Pink",
+      "Orange"
+    ],
+    "filterSizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "isOnSale": true,
+    "isFeatured": false
+  },
+  {
+    "id": 11,
+    "title": "The Shadow Coffee Table",
+    "description": "A bold, minimal centerpiece that adds depth and quiet sophistication to modern living spaces.",
+    "imgSrc": "coffeeTable_A.jpg",
+    "imgHover": "coffeeTable_A1.jpg",
+    "images": [
+      "coffeeTable_A1.jpg",
+      "coffeeTable_A2.jpg",
+      "coffeeTable_A3.jpg",
+      "coffeeTable_A4.jpg"
+    ],
+    "price": 31742,
+    "comparePrice": 38914,
+    "inStock": true,
+    "stockQuantity": 10,
+    "categories": "Coffee Table",
+    "subCategories": [
+      "category1",
+      "category4"
+    ],
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "colors": [
+      "sofa_A4.jpg",
+      "sofa_A5.jpg",
+      "sofa_A6.jpg"
+    ],
+    "sku": null,
+    "brands": [
+      "Louis Vuitton",
+      "Hermes"
+    ],
+    "filterColors": [
+      "Pink",
+      "Orange"
+    ],
+    "filterSizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "isOnSale": true,
+    "isFeatured": false
+  },
+  {
+    "id": 12,
+    "title": "The Marble Bloom coffee table",
+    "description": "An elegant, stone-inspired table with sculptural curves and timeless appeal.",
+    "imgSrc": "coffeeTable_B.jpg",
+    "imgHover": "coffeeTable_B1.jpg",
+    "images": [
+      "coffeeTable_B1.jpg",
+      "coffeeTable_B2.jpg",
+      "coffeeTable_B3.jpg",
+      "coffeeTable_B4.jpg"
+    ],
+    "price": 34589,
+    "comparePrice": 41263,
+    "inStock": true,
+    "stockQuantity": 10,
+    "categories": "Coffee Table",
+    "subCategories": [
+      "category1",
+      "category5"
+    ],
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "colors": [
+      "sofa_A4.jpg",
+      "sofa_A5.jpg",
+      "sofa_A6.jpg"
+    ],
+    "sku": null,
+    "brands": [
+      "Louis Vuitton",
+      "Hermes"
+    ],
+    "filterColors": [
+      "Pink",
+      "Orange"
+    ],
+    "filterSizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "isOnSale": true,
+    "isFeatured": false
+  },
+  {
+    "id": 13,
+    "title": "The Contour coffee table",
+    "description": "Smooth, flowing lines create a refined statement for contemporary interiors.",
+    "imgSrc": "coffeeTable_C.jpg",
+    "imgHover": "coffeeTable_C1.jpg",
+    "images": [
+      "coffeeTable_C1.jpg",
+      "coffeeTable_C2.jpg",
+      "coffeeTable_C3.jpg",
+      "coffeeTable_C4.jpg"
+    ],
+    "price": 36105,
+    "comparePrice": 44887,
+    "inStock": true,
+    "stockQuantity": 10,
+    "categories": "Coffee Table",
+    "subCategories": [
+      "category5"
+    ],
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "colors": [
+      "sofa_A4.jpg",
+      "sofa_A5.jpg",
+      "sofa_A6.jpg"
+    ],
+    "sku": null,
+    "brands": [
+      "Louis Vuitton",
+      "Hermes"
+    ],
+    "filterColors": [
+      "Pink",
+      "Orange"
+    ],
+    "filterSizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "isOnSale": true,
+    "isFeatured": false
+  },
+  {
+    "id": 14,
+    "title": "The Orbit coffee table",
+    "description": "Rounded geometry and balanced proportions inspired by celestial motion.",
+    "imgSrc": "coffeeTable_D.jpg",
+    "imgHover": "coffeeTable_D1.jpg",
+    "images": [
+      "coffeeTable_D1.jpg",
+      "coffeeTable_D2.jpg",
+      "coffeeTable_D3.jpg",
+      "coffeeTable_D4.jpg"
+    ],
+    "price": 38964,
+    "comparePrice": 47102,
+    "inStock": true,
+    "stockQuantity": 10,
+    "categories": "Coffee Table",
+    "subCategories": [
+      "category1",
+      "category2"
+    ],
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "colors": [
+      "sofa_A4.jpg",
+      "sofa_A5.jpg",
+      "sofa_A6.jpg"
+    ],
+    "sku": null,
+    "brands": [
+      "Louis Vuitton",
+      "Hermes"
+    ],
+    "filterColors": [
+      "Pink",
+      "Orange"
+    ],
+    "filterSizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "isOnSale": true,
+    "isFeatured": false
+  },
+  {
+    "id": 15,
+    "title": "The Sienna coffee table",
+    "description": "Warm, earthy tones paired with a clean, modern silhouette.",
+    "imgSrc": "coffeeTable_E.jpg",
+    "imgHover": "coffeeTable_E1.jpg",
+    "images": [
+      "coffeeTable_E1.jpg",
+      "coffeeTable_E2.jpg",
+      "coffeeTable_E3.jpg",
+      "coffeeTable_E4.jpg"
+    ],
+    "price": 40217,
+    "comparePrice": 48936,
+    "inStock": true,
+    "stockQuantity": 10,
+    "categories": "Coffee Table",
+    "subCategories": [
+      "category1",
+      "category2"
+    ],
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "colors": [
+      "sofa_A4.jpg",
+      "sofa_A5.jpg",
+      "sofa_A6.jpg"
+    ],
+    "sku": null,
+    "brands": [
+      "Louis Vuitton",
+      "Hermes"
+    ],
+    "filterColors": [
+      "Pink",
+      "Orange"
+    ],
+    "filterSizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "isOnSale": true,
+    "isFeatured": false
+  },
+  {
+    "id": 16,
+    "title": "The Pebble Coffee Table",
+    "description": "Soft, organic forms inspired by naturally weathered stones.",
+    "imgSrc": "coffeeTable_F.jpg",
+    "imgHover": "coffeeTable_F1.jpg",
+    "images": [
+      "coffeeTable_F1.jpg",
+      "coffeeTable_F2.jpg",
+      "coffeeTable_F3.jpg",
+      "coffeeTable_F4.jpg"
+    ],
+    "price": 42880,
+    "comparePrice": 50941,
+    "inStock": true,
+    "stockQuantity": 10,
+    "categories": "Coffee Table",
+    "subCategories": [
+      "category1",
+      "category3",
+      "category6"
+    ],
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "colors": [
+      "sofa_A4.jpg",
+      "sofa_A5.jpg",
+      "sofa_A6.jpg"
+    ],
+    "sku": null,
+    "brands": [
+      "Louis Vuitton",
+      "Hermes"
+    ],
+    "filterColors": [
+      "Pink",
+      "Orange"
+    ],
+    "filterSizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "isOnSale": true,
+    "isFeatured": false
+  },
+  {
+    "id": 17,
+    "title": "The Interlock coffee table",
+    "description": "Intersecting elements designed for visual depth and modern sophistication.",
+    "imgSrc": "coffeeTable_G.jpg",
+    "imgHover": "coffeeTable_G1.jpg",
+    "images": [
+      "coffeeTable_G1.jpg",
+      "coffeeTable_G2.jpg",
+      "coffeeTable_G3.jpg",
+      "coffeeTable_G4.jpg"
+    ],
+    "price": 45136,
+    "comparePrice": 53784,
+    "inStock": true,
+    "stockQuantity": 10,
+    "categories": "Coffee Table",
+    "subCategories": [
+      "category6"
+    ],
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "colors": [
+      "sofa_A4.jpg",
+      "sofa_A5.jpg",
+      "sofa_A6.jpg"
+    ],
+    "sku": null,
+    "brands": [
+      "Louis Vuitton",
+      "Hermes"
+    ],
+    "filterColors": [
+      "Pink",
+      "Orange"
+    ],
+    "filterSizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "isOnSale": true,
+    "isFeatured": false
+  },
+  {
+    "id": 18,
+    "title": "The Interlock coffee table 2",
+    "description": "Intersecting elements designed for visual depth and modern sophistication.",
+    "imgSrc": "coffeeTable_H.jpg",
+    "imgHover": "coffeeTable_H1.jpg",
+    "images": [
+      "coffeeTable_H1.jpg",
+      "coffeeTable_H2.jpg",
+      "coffeeTable_H3.jpg",
+      "coffeeTable_H4.jpg"
+    ],
+    "price": 46902,
+    "comparePrice": 55611,
+    "inStock": true,
+    "stockQuantity": 10,
+    "categories": "Coffee Table",
+    "subCategories": [
+      "category1",
+      "category3",
+      "category5"
+    ],
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "colors": [
+      "sofa_A4.jpg",
+      "sofa_A5.jpg",
+      "sofa_A6.jpg"
+    ],
+    "sku": null,
+    "brands": [
+      "Louis Vuitton",
+      "Hermes"
+    ],
+    "filterColors": [
+      "Pink",
+      "Orange"
+    ],
+    "filterSizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "isOnSale": true,
+    "isFeatured": false
+  },
+  {
+    "id": 19,
+    "title": "The Dune Coffee Table",
+    "description": "Flowing curves inspired by shifting sands for a sculptural, modern look.",
+    "imgSrc": "coffeeTable_I.jpg",
+    "imgHover": "coffeeTable_I1.jpg",
+    "images": [
+      "coffeeTable_I1.jpg",
+      "coffeeTable_I2.jpg",
+      "coffeeTable_I3.jpg",
+      "coffeeTable_I4.jpg"
+    ],
+    "price": 48357,
+    "comparePrice": 56904,
+    "inStock": true,
+    "stockQuantity": 10,
+    "categories": "Coffee Table",
+    "subCategories": [
+      "category1",
+      "category2",
+      "category5"
+    ],
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "colors": [
+      "sofa_A4.jpg",
+      "sofa_A5.jpg",
+      "sofa_A6.jpg"
+    ],
+    "sku": null,
+    "brands": [
+      "Louis Vuitton",
+      "Hermes"
+    ],
+    "filterColors": [
+      "Pink",
+      "Orange"
+    ],
+    "filterSizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "isOnSale": true,
+    "isFeatured": false
+  },
+  {
+    "id": 20,
+    "title": "Ivory Noir Coffee Tables",
+    "description": "A refined contrast of light and dark tones with timeless elegance.",
+    "imgSrc": "coffeeTable_J.jpg",
+    "imgHover": "coffeeTable_J1.jpg",
+    "images": [
+      "coffeeTable_J1.jpg",
+      "coffeeTable_J2.jpg",
+      "coffeeTable_J3.jpg",
+      "coffeeTable_J4.jpg"
+    ],
+    "price": 49621,
+    "comparePrice": 58437,
+    "inStock": true,
+    "stockQuantity": 10,
+    "categories": "Coffee Table",
+    "subCategories": [
+      "category6"
+    ],
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "colors": [
+      "sofa_A4.jpg",
+      "sofa_A5.jpg",
+      "sofa_A6.jpg"
+    ],
+    "sku": null,
+    "brands": [
+      "Louis Vuitton",
+      "Hermes"
+    ],
+    "filterColors": [
+      "Pink",
+      "Orange"
+    ],
+    "filterSizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "isOnSale": true,
+    "isFeatured": false
+  },
+  {
+    "id": 21,
+    "title": "The Sora Console",
+    "description": "A refined veneer console paired with elegant brass legs, offering a sleek and contemporary profile.",
+    "imgSrc": "consoleTable_A.jpg",
+    "imgHover": "consoleTable_A1.jpg",
+    "images": [
+      "consoleTable_A1.jpg",
+      "consoleTable_A2.jpg",
+      "consoleTable_A3.jpg",
+      "consoleTable_A4.jpg"
+    ],
+    "price": 42000,
+    "comparePrice": 50000,
+    "inStock": true,
+    "stockQuantity": 10,
+    "categories": "Console Table",
+    "subCategories": [
+      "category1",
+      "category6"
+    ],
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "colors": [
+      "sofa_A4.jpg",
+      "sofa_A5.jpg",
+      "sofa_A6.jpg"
+    ],
+    "sku": null,
+    "brands": [
+      "Louis Vuitton",
+      "Hermes"
+    ],
+    "filterColors": [
+      "Pink",
+      "Orange"
+    ],
+    "filterSizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "isOnSale": true,
+    "isFeatured": false
+  },
+  {
+    "id": 22,
+    "title": "The Oppulence console",
+    "description": "A statement console featuring a veneer surface with laminate-finish doors for functional elegance.",
+    "imgSrc": "consoleTable_B.jpg",
+    "imgHover": "consoleTable_B1.jpg",
+    "images": [
+      "consoleTable_B1.jpg",
+      "consoleTable_B2.jpg",
+      "consoleTable_B3.jpg",
+      "consoleTable_B4.jpg"
+    ],
+    "price": 38000,
+    "comparePrice": 58000,
+    "inStock": true,
+    "stockQuantity": 10,
+    "categories": "Console Table",
+    "subCategories": [
+      "category1",
+      "category7"
+    ],
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "colors": [
+      "sofa_A4.jpg",
+      "sofa_A5.jpg",
+      "sofa_A6.jpg"
+    ],
+    "sku": null,
+    "brands": [
+      "Louis Vuitton",
+      "Hermes"
+    ],
+    "filterColors": [
+      "Pink",
+      "Orange"
+    ],
+    "filterSizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "isOnSale": true,
+    "isFeatured": false
+  },
+  {
+    "id": 23,
+    "title": "The Horizon console",
+    "description": "A low-profile console combining a laminate top with veneer legs for a balanced modern look.",
+    "imgSrc": "consoleTable_C.jpg",
+    "imgHover": "consoleTable_C1.jpg",
+    "images": [
+      "consoleTable_C1.jpg",
+      "consoleTable_C2.jpg",
+      "consoleTable_C3.jpg",
+      "consoleTable_C4.jpg"
+    ],
+    "price": 41000,
+    "comparePrice": 51000,
+    "inStock": true,
+    "stockQuantity": 10,
+    "categories": "Console Table",
+    "subCategories": [
+      "category6"
+    ],
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "colors": [
+      "sofa_A4.jpg",
+      "sofa_A5.jpg",
+      "sofa_A6.jpg"
+    ],
+    "sku": null,
+    "brands": [
+      "Louis Vuitton",
+      "Hermes"
+    ],
+    "filterColors": [
+      "Pink",
+      "Orange"
+    ],
+    "filterSizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "isOnSale": true,
+    "isFeatured": false
+  },
+  {
+    "id": 24,
+    "title": "The Elaris console",
+    "description": "A spacious laminate-finish console accented with brass legs for a bold yet sophisticated presence.",
+    "imgSrc": "consoleTable_D.jpg",
+    "imgHover": "consoleTable_D1.jpg",
+    "images": [
+      "consoleTable_D1.jpg",
+      "consoleTable_D2.jpg",
+      "consoleTable_D3.jpg",
+      "consoleTable_D4.jpg"
+    ],
+    "price": 47000,
+    "comparePrice": 50000,
+    "inStock": true,
+    "stockQuantity": 10,
+    "categories": "Console Table",
+    "subCategories": [
+      "category1",
+      "category2"
+    ],
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "colors": [
+      "sofa_A4.jpg",
+      "sofa_A5.jpg",
+      "sofa_A6.jpg"
+    ],
+    "sku": null,
+    "brands": [
+      "Louis Vuitton",
+      "Hermes"
+    ],
+    "filterColors": [
+      "Pink",
+      "Orange"
+    ],
+    "filterSizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "isOnSale": true,
+    "isFeatured": false
+  },
+  {
+    "id": 25,
+    "title": "The Serene console",
+    "description": "A spacious laminate-finish console accented with brass legs for a bold yet sophisticated presence.",
+    "imgSrc": "consoleTable_E.jpg",
+    "imgHover": "consoleTable_E1.jpg",
+    "images": [
+      "consoleTable_E1.jpg",
+      "consoleTable_E2.jpg",
+      "consoleTable_E3.jpg",
+      "consoleTable_E4.jpg"
+    ],
+    "price": 48200,
+    "comparePrice": 55000,
+    "inStock": true,
+    "stockQuantity": 10,
+    "categories": "Console Table",
+    "subCategories": [
+      "category1",
+      "category2"
+    ],
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "colors": [
+      "sofa_A4.jpg",
+      "sofa_A5.jpg",
+      "sofa_A6.jpg"
+    ],
+    "sku": null,
+    "brands": [
+      "Louis Vuitton",
+      "Hermes"
+    ],
+    "filterColors": [
+      "Pink",
+      "Orange"
+    ],
+    "filterSizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "isOnSale": true,
+    "isFeatured": false
+  },
+  {
+    "id": 26,
+    "title": "The Gallery console",
+    "description": "A classic veneer console enhanced with ducco polish for a clean, gallery-inspired aesthetic.",
+    "imgSrc": "consoleTable_F.jpg",
+    "imgHover": "consoleTable_F1.jpg",
+    "images": [
+      "consoleTable_F1.jpg",
+      "consoleTable_F2.jpg",
+      "consoleTable_F3.jpg",
+      "consoleTable_F4.jpg"
+    ],
+    "price": 55000,
+    "comparePrice": 60000,
+    "inStock": true,
+    "stockQuantity": 10,
+    "categories": "Console Table",
+    "subCategories": [
+      "category1",
+      "category3",
+      "category7"
+    ],
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "colors": [
+      "sofa_A4.jpg",
+      "sofa_A5.jpg",
+      "sofa_A6.jpg"
+    ],
+    "sku": null,
+    "brands": [
+      "Louis Vuitton",
+      "Hermes"
+    ],
+    "filterColors": [
+      "Pink",
+      "Orange"
+    ],
+    "filterSizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "isOnSale": true,
+    "isFeatured": false
+  },
+  {
+    "id": 27,
+    "title": "The Terra console",
+    "description": "A compact veneer-finish console with a minimalist form and grounded proportions.",
+    "imgSrc": "consoleTable_G.jpg",
+    "imgHover": "consoleTable_G1.jpg",
+    "images": [
+      "consoleTable_G1.jpg",
+      "consoleTable_G2.jpg",
+      "consoleTable_G3.jpg",
+      "consoleTable_G4.jpg"
+    ],
+    "price": 34000,
+    "comparePrice": 40000,
+    "inStock": true,
+    "stockQuantity": 10,
+    "categories": "Console Table",
+    "subCategories": [
+      "category7"
+    ],
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "colors": [
+      "sofa_A4.jpg",
+      "sofa_A5.jpg",
+      "sofa_A6.jpg"
+    ],
+    "sku": null,
+    "brands": [
+      "Louis Vuitton",
+      "Hermes"
+    ],
+    "filterColors": [
+      "Pink",
+      "Orange"
+    ],
+    "filterSizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "isOnSale": true,
+    "isFeatured": false
+  },
+  {
+    "id": 28,
+    "title": "The Espresso Console",
+    "description": "A veneer-finish console with brass legs, blending richness and modern structure.",
+    "imgSrc": "consoleTable_H.jpg",
+    "imgHover": "consoleTable_H1.jpg",
+    "images": [
+      "consoleTable_H1.jpg",
+      "consoleTable_H2.jpg",
+      "consoleTable_H3.jpg",
+      "consoleTable_H4.jpg"
+    ],
+    "price": 46000,
+    "comparePrice": 59000,
+    "inStock": true,
+    "stockQuantity": 10,
+    "categories": "Console Table",
+    "subCategories": [
+      "category1",
+      "category3",
+      "category6"
+    ],
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "colors": [
+      "sofa_A4.jpg",
+      "sofa_A5.jpg",
+      "sofa_A6.jpg"
+    ],
+    "sku": null,
+    "brands": [
+      "Louis Vuitton",
+      "Hermes"
+    ],
+    "filterColors": [
+      "Pink",
+      "Orange"
+    ],
+    "filterSizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "isOnSale": true,
+    "isFeatured": false
+  },
+  {
+    "id": 29,
+    "title": "The Linear Console",
+    "description": "A sleek console featuring a marble top with veneer finish, designed for clean, linear interiors.",
+    "imgSrc": "consoleTable_I.jpg",
+    "imgHover": "consoleTable_I1.jpg",
+    "images": [
+      "consoleTable_I1.jpg",
+      "consoleTable_I2.jpg",
+      "consoleTable_I3.jpg",
+      "consoleTable_I4.jpg"
+    ],
+    "price": 58000,
+    "comparePrice": 60000,
+    "inStock": true,
+    "stockQuantity": 10,
+    "categories": "Console Table",
+    "subCategories": [
+      "category1",
+      "category2",
+      "category6"
+    ],
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "colors": [
+      "sofa_A4.jpg",
+      "sofa_A5.jpg",
+      "sofa_A6.jpg"
+    ],
+    "sku": null,
+    "brands": [
+      "Louis Vuitton",
+      "Hermes"
+    ],
+    "filterColors": [
+      "Pink",
+      "Orange"
+    ],
+    "filterSizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "isOnSale": true,
+    "isFeatured": false
+  },
+  {
+    "id": 30,
+    "title": "The Midnight Vault Console",
+    "description": "A timeless veneer-finish console with a strong, balanced silhouette for contemporary spaces",
+    "imgSrc": "consoleTable_J.jpg",
+    "imgHover": "consoleTable_J1.jpg",
+    "images": [
+      "consoleTable_J1.jpg",
+      "consoleTable_J2.jpg",
+      "consoleTable_J3.jpg",
+      "consoleTable_J4.jpg"
+    ],
+    "price": 57000,
+    "comparePrice": 65000,
+    "inStock": true,
+    "stockQuantity": 10,
+    "categories": "Console Table",
+    "subCategories": [
+      "category7"
+    ],
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "colors": [
+      "sofa_A4.jpg",
+      "sofa_A5.jpg",
+      "sofa_A6.jpg"
+    ],
+    "sku": null,
+    "brands": [
+      "Louis Vuitton",
+      "Hermes"
+    ],
+    "filterColors": [
+      "Pink",
+      "Orange"
+    ],
+    "filterSizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "isOnSale": true,
+    "isFeatured": false
+  },
+  {
+    "id": 31,
+    "title": "The Marquis Nester table",
+    "description": "A compact, versatile accent table designed for flexible placement and everyday utility.",
+    "imgSrc": "nestertable_A.jpg",
+    "imgHover": "nestertable_A1.jpg",
+    "images": [
+      "nestertable_A1.jpg",
+      "nestertable_A2.jpg",
+      "nestertable_A3.jpg",
+      "nestertable_A4.jpg"
+    ],
+    "price": 31742,
+    "comparePrice": 38914,
+    "inStock": true,
+    "stockQuantity": 10,
+    "categories": "Nester Table",
+    "subCategories": [
+      "category1",
+      "category8"
+    ],
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "colors": [
+      "sofa_A4.jpg",
+      "sofa_A5.jpg",
+      "sofa_A6.jpg"
+    ],
+    "sku": null,
+    "brands": [
+      "Louis Vuitton",
+      "Hermes"
+    ],
+    "filterColors": [
+      "Pink",
+      "Orange"
+    ],
+    "filterSizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "isOnSale": true,
+    "isFeatured": false
+  },
+  {
+    "id": 32,
+    "title": "The Haven Round Nester Table",
+    "description": "A compact, versatile accent table designed for flexible placement and everyday utility.",
+    "imgSrc": "nestertable_B.jpg",
+    "imgHover": "nestertable_B1.jpg",
+    "images": [
+      "nestertable_B1.jpg",
+      "nestertable_B2.jpg",
+      "nestertable_B3.jpg",
+      "nestertable_B4.jpg"
+    ],
+    "price": 34589,
+    "comparePrice": 41263,
+    "inStock": true,
+    "stockQuantity": 10,
+    "categories": "Nester Table",
+    "subCategories": [
+      "category1",
+      "category9"
+    ],
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "colors": [
+      "sofa_A4.jpg",
+      "sofa_A5.jpg",
+      "sofa_A6.jpg"
+    ],
+    "sku": null,
+    "brands": [
+      "Louis Vuitton",
+      "Hermes"
+    ],
+    "filterColors": [
+      "Pink",
+      "Orange"
+    ],
+    "filterSizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "isOnSale": true,
+    "isFeatured": false
+  },
+  {
+    "id": 33,
+    "title": "The Pedestal Nester Table",
+    "description": "A compact, versatile accent table designed for flexible placement and everyday utility.",
+    "imgSrc": "nestertable_C.jpg",
+    "imgHover": "nestertable_C1.jpg",
+    "images": [
+      "nestertable_C1.jpg",
+      "nestertable_C2.jpg",
+      "nestertable_C3.jpg",
+      "nestertable_C4.jpg"
+    ],
+    "price": 36105,
+    "comparePrice": 44887,
+    "inStock": true,
+    "stockQuantity": 10,
+    "categories": "Nester Table",
+    "subCategories": [
+      "category7"
+    ],
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "colors": [
+      "sofa_A4.jpg",
+      "sofa_A5.jpg",
+      "sofa_A6.jpg"
+    ],
+    "sku": null,
+    "brands": [
+      "Louis Vuitton",
+      "Hermes"
+    ],
+    "filterColors": [
+      "Pink",
+      "Orange"
+    ],
+    "filterSizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "isOnSale": true,
+    "isFeatured": false
+  },
+  {
+    "id": 34,
+    "title": "The Offset Nester Table",
+    "description": "A compact, versatile accent table designed for flexible placement and everyday utility.",
+    "imgSrc": "nestertable_D.jpg",
+    "imgHover": "nestertable_D1.jpg",
+    "images": [
+      "nestertable_D1.jpg",
+      "nestertable_D2.jpg",
+      "nestertable_D3.jpg",
+      "nestertable_D4.jpg"
+    ],
+    "price": 38964,
+    "comparePrice": 47102,
+    "inStock": true,
+    "stockQuantity": 10,
+    "categories": "Nester Table",
+    "subCategories": [
+      "category1",
+      "category2"
+    ],
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "colors": [
+      "sofa_A4.jpg",
+      "sofa_A5.jpg",
+      "sofa_A6.jpg"
+    ],
+    "sku": null,
+    "brands": [
+      "Louis Vuitton",
+      "Hermes"
+    ],
+    "filterColors": [
+      "Pink",
+      "Orange"
+    ],
+    "filterSizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "isOnSale": true,
+    "isFeatured": false
+  },
+  {
+    "id": 35,
+    "title": "The Nook Nester table",
+    "description": "A compact, versatile accent table designed for flexible placement and everyday utility.",
+    "imgSrc": "nestertable_E.jpg",
+    "imgHover": "nestertable_E1.jpg",
+    "images": [
+      "nestertable_E1.jpg",
+      "nestertable_E2.jpg",
+      "nestertable_E3.jpg",
+      "nestertable_E4.jpg"
+    ],
+    "price": 40217,
+    "comparePrice": 48936,
+    "inStock": true,
+    "stockQuantity": 10,
+    "categories": "Nester Table",
+    "subCategories": [
+      "category1",
+      "category2"
+    ],
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "colors": [
+      "sofa_A4.jpg",
+      "sofa_A5.jpg",
+      "sofa_A6.jpg"
+    ],
+    "sku": null,
+    "brands": [
+      "Louis Vuitton",
+      "Hermes"
+    ],
+    "filterColors": [
+      "Pink",
+      "Orange"
+    ],
+    "filterSizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "isOnSale": true,
+    "isFeatured": false
+  },
+  {
+    "id": 36,
+    "title": "The Couch Clip Nester table",
+    "description": "A compact, versatile accent table designed for flexible placement and everyday utility.",
+    "imgSrc": "nestertable_F.jpg",
+    "imgHover": "nestertable_F1.jpg",
+    "images": [
+      "nestertable_F1.jpg",
+      "nestertable_F2.jpg",
+      "nestertable_F3.jpg",
+      "nestertable_F4.jpg"
+    ],
+    "price": 42880,
+    "comparePrice": 50941,
+    "inStock": true,
+    "stockQuantity": 10,
+    "categories": "Nester Table",
+    "subCategories": [
+      "category1",
+      "category3",
+      "category8"
+    ],
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "colors": [
+      "sofa_A4.jpg",
+      "sofa_A5.jpg",
+      "sofa_A6.jpg"
+    ],
+    "sku": null,
+    "brands": [
+      "Louis Vuitton",
+      "Hermes"
+    ],
+    "filterColors": [
+      "Pink",
+      "Orange"
+    ],
+    "filterSizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "isOnSale": true,
+    "isFeatured": false
+  },
+  {
+    "id": 37,
+    "title": "The Effortless Nester Table",
+    "description": "A compact, versatile accent table designed for flexible placement and everyday utility.",
+    "imgSrc": "nestertable_G.jpg",
+    "imgHover": "nestertable_G1.jpg",
+    "images": [
+      "nestertable_G1.jpg",
+      "nestertable_G2.jpg",
+      "nestertable_G3.jpg",
+      "nestertable_G4.jpg"
+    ],
+    "price": 45136,
+    "comparePrice": 53784,
+    "inStock": true,
+    "stockQuantity": 10,
+    "categories": "Nester Table",
+    "subCategories": [
+      "category8"
+    ],
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "colors": [
+      "sofa_A4.jpg",
+      "sofa_A5.jpg",
+      "sofa_A6.jpg"
+    ],
+    "sku": null,
+    "brands": [
+      "Louis Vuitton",
+      "Hermes"
+    ],
+    "filterColors": [
+      "Pink",
+      "Orange"
+    ],
+    "filterSizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "isOnSale": true,
+    "isFeatured": false
+  },
+  {
+    "id": 38,
+    "title": "The Silhouette Nester Table",
+    "description": "A compact, versatile accent table designed for flexible placement and everyday utility.",
+    "imgSrc": "nestertable_H.jpg",
+    "imgHover": "nestertable_H1.jpg",
+    "images": [
+      "nestertable_H1.jpg",
+      "nestertable_H2.jpg",
+      "nestertable_H3.jpg",
+      "nestertable_H4.jpg"
+    ],
+    "price": 46902,
+    "comparePrice": 55611,
+    "inStock": true,
+    "stockQuantity": 10,
+    "categories": "Nester Table",
+    "subCategories": [
+      "category1",
+      "category3",
+      "category7"
+    ],
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "colors": [
+      "sofa_A4.jpg",
+      "sofa_A5.jpg",
+      "sofa_A6.jpg"
+    ],
+    "sku": null,
+    "brands": [
+      "Louis Vuitton",
+      "Hermes"
+    ],
+    "filterColors": [
+      "Pink",
+      "Orange"
+    ],
+    "filterSizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "isOnSale": true,
+    "isFeatured": false
+  },
+  {
+    "id": 39,
+    "title": "The Hourglass Nester Table",
+    "description": "A compact, versatile accent table designed for flexible placement and everyday utility.",
+    "imgSrc": "nestertable_I.jpg",
+    "imgHover": "nestertable_I1.jpg",
+    "images": [
+      "nestertable_I1.jpg",
+      "nestertable_I2.jpg",
+      "nestertable_I3.jpg",
+      "nestertable_I4.jpg"
+    ],
+    "price": 48357,
+    "comparePrice": 56904,
+    "inStock": true,
+    "stockQuantity": 10,
+    "categories": "Nester Table",
+    "subCategories": [
+      "category1",
+      "category2",
+      "category7"
+    ],
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "colors": [
+      "sofa_A4.jpg",
+      "sofa_A5.jpg",
+      "sofa_A6.jpg"
+    ],
+    "sku": null,
+    "brands": [
+      "Louis Vuitton",
+      "Hermes"
+    ],
+    "filterColors": [
+      "Pink",
+      "Orange"
+    ],
+    "filterSizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "isOnSale": true,
+    "isFeatured": false
+  },
+  {
+    "id": 40,
+    "title": "The Monolith Nester Table",
+    "description": "A compact, versatile accent table designed for flexible placement and everyday utility.",
+    "imgSrc": "nestertable_J.jpg",
+    "imgHover": "nestertable_J1.jpg",
+    "images": [
+      "nestertable_J1.jpg",
+      "nestertable_J2.jpg",
+      "nestertable_J3.jpg",
+      "nestertable_J4.jpg"
+    ],
+    "price": 49621,
+    "comparePrice": 58437,
+    "inStock": true,
+    "stockQuantity": 10,
+    "categories": "Nester Table",
+    "subCategories": [
+      "category8"
+    ],
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "colors": [
+      "sofa_A4.jpg",
+      "sofa_A5.jpg",
+      "sofa_A6.jpg"
+    ],
+    "sku": null,
+    "brands": [
+      "Louis Vuitton",
+      "Hermes"
+    ],
+    "filterColors": [
+      "Pink",
+      "Orange"
+    ],
+    "filterSizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "isOnSale": true,
+    "isFeatured": false
+  },
+  {
+    "id": 41,
+    "title": "Amberis Ottoman",
+    "description": "A comfortable and functional ottoman designed to complement modern seating spaces.",
+    "imgSrc": "ottoman_A.jpg",
+    "imgHover": "ottoman_A1.jpg",
+    "images": [
+      "ottoman_A1.jpg",
+      "ottoman_A2.jpg",
+      "ottoman_A3.jpg",
+      "ottoman_A4.jpg",
+      "ottoman_A5.jpg",
+      "ottoman_A6.jpg"
+    ],
+    "price": 42000,
+    "comparePrice": 50000,
+    "inStock": true,
+    "stockQuantity": 10,
+    "categories": "ottoman",
+    "subCategories": [
+      "category1",
+      "category10"
+    ],
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "colors": [
+      "sofa_A4.jpg",
+      "sofa_A5.jpg",
+      "sofa_A6.jpg"
+    ],
+    "sku": null,
+    "brands": [
+      "Louis Vuitton",
+      "Hermes"
+    ],
+    "filterColors": [
+      "Pink",
+      "Orange"
+    ],
+    "filterSizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "isOnSale": true,
+    "isFeatured": false
+  },
+  {
+    "id": 42,
+    "title": "The Solace Ottoman",
+    "description": "A comfortable and functional ottoman designed to complement modern seating spaces.",
+    "imgSrc": "ottoman_B.jpg",
+    "imgHover": "ottoman_B1.jpg",
+    "images": [
+      "ottoman_B1.jpg",
+      "ottoman_B2.jpg",
+      "ottoman_B3.jpg",
+      "ottoman_B4.jpg",
+      "ottoman_B5.jpg",
+      "ottoman_B6.jpg"
+    ],
+    "price": 38000,
+    "comparePrice": 58000,
+    "inStock": true,
+    "stockQuantity": 10,
+    "categories": "ottoman",
+    "subCategories": [
+      "category1",
+      "category11"
+    ],
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "colors": [
+      "sofa_A4.jpg",
+      "sofa_A5.jpg",
+      "sofa_A6.jpg"
+    ],
+    "sku": null,
+    "brands": [
+      "Louis Vuitton",
+      "Hermes"
+    ],
+    "filterColors": [
+      "Pink",
+      "Orange"
+    ],
+    "filterSizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "isOnSale": true,
+    "isFeatured": false
+  },
+  {
+    "id": 43,
+    "title": "Serenova Chair",
+    "description": "A thoughtfully designed seating piece balancing comfort, form, and modern aesthetics.",
+    "imgSrc": "ottoman_C.jpg",
+    "imgHover": "ottoman_C1.jpg",
+    "images": [
+      "ottoman_C1.jpg",
+      "ottoman_C2.jpg",
+      "ottoman_C3.jpg",
+      "ottoman_C4.jpg",
+      "ottoman_C5.jpg",
+      "ottoman_C6.jpg"
+    ],
+    "price": 41000,
+    "comparePrice": 51000,
+    "inStock": true,
+    "stockQuantity": 10,
+    "categories": "ottoman",
+    "subCategories": [
+      "category8"
+    ],
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "colors": [
+      "sofa_A4.jpg",
+      "sofa_A5.jpg",
+      "sofa_A6.jpg"
+    ],
+    "sku": null,
+    "brands": [
+      "Louis Vuitton",
+      "Hermes"
+    ],
+    "filterColors": [
+      "Pink",
+      "Orange"
+    ],
+    "filterSizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "isOnSale": true,
+    "isFeatured": false
+  },
+  {
+    "id": 44,
+    "title": "The Eloise Armchair / The Taj Silhouette Armchair",
+    "description": "A thoughtfully designed seating piece balancing comfort, form, and modern aesthetics.",
+    "imgSrc": "ottoman_D.jpg",
+    "imgHover": "ottoman_D1.jpg",
+    "images": [
+      "ottoman_D1.jpg",
+      "ottoman_D2.jpg",
+      "ottoman_D3.jpg",
+      "ottoman_D4.jpg",
+      "ottoman_D5.jpg",
+      "ottoman_D6.jpg"
+    ],
+    "price": 47000,
+    "comparePrice": 50000,
+    "inStock": true,
+    "stockQuantity": 10,
+    "categories": "ottoman",
+    "subCategories": [
+      "category1",
+      "category2"
+    ],
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "colors": [
+      "sofa_A4.jpg",
+      "sofa_A5.jpg",
+      "sofa_A6.jpg"
+    ],
+    "sku": null,
+    "brands": [
+      "Louis Vuitton",
+      "Hermes"
+    ],
+    "filterColors": [
+      "Pink",
+      "Orange"
+    ],
+    "filterSizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "isOnSale": true,
+    "isFeatured": false
+  },
+  {
+    "id": 45,
+    "title": "The Aurelius Armchair",
+    "description": "A thoughtfully designed seating piece balancing comfort, form, and modern aesthetics.",
+    "imgSrc": "ottoman_E.jpg",
+    "imgHover": "ottoman_E1.jpg",
+    "images": [
+      "ottoman_E1.jpg",
+      "ottoman_E2.jpg",
+      "ottoman_E3.jpg",
+      "ottoman_E4.jpg",
+      "ottoman_E5.jpg",
+      "ottoman_E6.jpg"
+    ],
+    "price": 48200,
+    "comparePrice": 55000,
+    "inStock": true,
+    "stockQuantity": 10,
+    "categories": "ottoman",
+    "subCategories": [
+      "category1",
+      "category2"
+    ],
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "colors": [
+      "sofa_A4.jpg",
+      "sofa_A5.jpg",
+      "sofa_A6.jpg"
+    ],
+    "sku": null,
+    "brands": [
+      "Louis Vuitton",
+      "Hermes"
+    ],
+    "filterColors": [
+      "Pink",
+      "Orange"
+    ],
+    "filterSizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "isOnSale": true,
+    "isFeatured": false
+  },
+  {
+    "id": 46,
+    "title": "The Zaffran Chair",
+    "description": "A thoughtfully designed seating piece balancing comfort, form, and modern aesthetics.",
+    "imgSrc": "ottoman_F.jpg",
+    "imgHover": "ottoman_F1.jpg",
+    "images": [
+      "ottoman_F1.jpg",
+      "ottoman_F2.jpg",
+      "ottoman_F3.jpg",
+      "ottoman_F4.jpg",
+      "ottoman_F5.jpg",
+      "ottoman_F6.jpg"
+    ],
+    "price": 55000,
+    "comparePrice": 60000,
+    "inStock": true,
+    "stockQuantity": 10,
+    "categories": "ottoman",
+    "subCategories": [
+      "category1",
+      "category3",
+      "category9"
+    ],
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "colors": [
+      "sofa_A4.jpg",
+      "sofa_A5.jpg",
+      "sofa_A6.jpg"
+    ],
+    "sku": null,
+    "brands": [
+      "Louis Vuitton",
+      "Hermes"
+    ],
+    "filterColors": [
+      "Pink",
+      "Orange"
+    ],
+    "filterSizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "isOnSale": true,
+    "isFeatured": false
+  },
+  {
+    "id": 47,
+    "title": "The Kairo Lounge",
+    "description": "A thoughtfully designed seating piece balancing comfort, form, and modern aesthetics.",
+    "imgSrc": "ottoman_G.jpg",
+    "imgHover": "ottoman_G1.jpg",
+    "images": [
+      "ottoman_G1.jpg",
+      "ottoman_G2.jpg",
+      "ottoman_G3.jpg",
+      "ottoman_G4.jpg",
+      "ottoman_G5.jpg",
+      "ottoman_G6.jpg"
+    ],
+    "price": 34000,
+    "comparePrice": 40000,
+    "inStock": true,
+    "stockQuantity": 10,
+    "categories": "ottoman",
+    "subCategories": [
+      "category9"
+    ],
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "colors": [
+      "sofa_A4.jpg",
+      "sofa_A5.jpg",
+      "sofa_A6.jpg"
+    ],
+    "sku": null,
+    "brands": [
+      "Louis Vuitton",
+      "Hermes"
+    ],
+    "filterColors": [
+      "Pink",
+      "Orange"
+    ],
+    "filterSizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "isOnSale": true,
+    "isFeatured": false
+  },
+  {
+    "id": 48,
+    "title": "The Nova Chair",
+    "description": "A thoughtfully designed seating piece balancing comfort, form, and modern aesthetics.",
+    "imgSrc": "ottoman_H.jpg",
+    "imgHover": "ottoman_H1.jpg",
+    "images": [
+      "ottoman_H1.jpg",
+      "ottoman_H2.jpg",
+      "ottoman_H3.jpg",
+      "ottoman_H4.jpg",
+      "ottoman_H5.jpg",
+      "ottoman_H6.jpg"
+    ],
+    "price": 46000,
+    "comparePrice": 59000,
+    "inStock": true,
+    "stockQuantity": 10,
+    "categories": "ottoman",
+    "subCategories": [
+      "category1",
+      "category3",
+      "category8"
+    ],
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "colors": [
+      "sofa_A4.jpg",
+      "sofa_A5.jpg",
+      "sofa_A6.jpg"
+    ],
+    "sku": null,
+    "brands": [
+      "Louis Vuitton",
+      "Hermes"
+    ],
+    "filterColors": [
+      "Pink",
+      "Orange"
+    ],
+    "filterSizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "isOnSale": true,
+    "isFeatured": false
+  },
+  {
+    "id": 49,
+    "title": "The Cucoon Lounge Chair",
+    "description": "A thoughtfully designed seating piece balancing comfort, form, and modern aesthetics.",
+    "imgSrc": "ottoman_I.jpg",
+    "imgHover": "ottoman_I1.jpg",
+    "images": [
+      "ottoman_I1.jpg",
+      "ottoman_I2.jpg",
+      "ottoman_I3.jpg",
+      "ottoman_I4.jpg",
+      "ottoman_I5.jpg",
+      "ottoman_I6.jpg"
+    ],
+    "price": 58000,
+    "comparePrice": 60000,
+    "inStock": true,
+    "stockQuantity": 10,
+    "categories": "ottoman",
+    "subCategories": [
+      "category1",
+      "category2",
+      "category8"
+    ],
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "colors": [
+      "sofa_A4.jpg",
+      "sofa_A5.jpg",
+      "sofa_A6.jpg"
+    ],
+    "sku": null,
+    "brands": [
+      "Louis Vuitton",
+      "Hermes"
+    ],
+    "filterColors": [
+      "Pink",
+      "Orange"
+    ],
+    "filterSizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "isOnSale": true,
+    "isFeatured": false
+  },
+  {
+    "id": 50,
+    "title": "The Asymmetric wall decor",
+    "description": "A sculptural wall decor piece designed to add depth and visual interest to interiors.",
+    "imgSrc": "ottoman_J.jpg",
+    "imgHover": "wallSelf_A1.jpg",
+    "images": [
+      "ottoman_J1.jpg",
+      "ottoman_J2.jpg",
+      "ottoman_J3.jpg",
+      "ottoman_J4.jpg",
+      "ottoman_J5.jpg",
+      "ottoman_J6.jpg"
+    ],
+    "price": 57000,
+    "comparePrice": 65000,
+    "inStock": true,
+    "stockQuantity": 10,
+    "categories": "Wall Decore",
+    "subCategories": [
+      "category9"
+    ],
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "colors": [
+      "sofa_A4.jpg",
+      "sofa_A5.jpg",
+      "sofa_A6.jpg"
+    ],
+    "sku": null,
+    "brands": [
+      "Louis Vuitton",
+      "Hermes"
+    ],
+    "filterColors": [
+      "Pink",
+      "Orange"
+    ],
+    "filterSizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "isOnSale": true,
+    "isFeatured": false
+  },
+  {
+    "id": 51,
+    "title": "The Serenity Wall decor",
+    "description": "A sculptural wall decor piece designed to add depth and visual interest to interiors.",
+    "imgSrc": "wallSelf_B.jpg",
+    "imgHover": "wallSelf_B1.jpg",
+    "images": [
+      "wallSelf_B1.jpg",
+      "wallSelf_B2.jpg",
+      "wallSelf_B3.jpg",
+      "wallSelf_B4.jpg"
+    ],
+    "price": 31742,
+    "comparePrice": 38914,
+    "inStock": true,
+    "stockQuantity": 10,
+    "categories": "Wall Decore",
+    "subCategories": [
+      "category1",
+      "category12"
+    ],
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "colors": [
+      "sofa_A4.jpg",
+      "sofa_A5.jpg",
+      "sofa_A6.jpg"
+    ],
+    "sku": null,
+    "brands": [
+      "Louis Vuitton",
+      "Hermes"
+    ],
+    "filterColors": [
+      "Pink",
+      "Orange"
+    ],
+    "filterSizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "isOnSale": true,
+    "isFeatured": false
+  },
+  {
+    "id": 52,
+    "title": "The Luna Wall decor",
+    "description": "A sculptural wall decor piece designed to add depth and visual interest to interiors.",
+    "imgSrc": "wallSelf_C.jpg",
+    "imgHover": "wallSelf_C1.jpg",
+    "images": [
+      "wallSelf_C1.jpg",
+      "wallSelf_C2.jpg",
+      "wallSelf_C3.jpg",
+      "wallSelf_C4.jpg"
+    ],
+    "price": 34589,
+    "comparePrice": 41263,
+    "inStock": true,
+    "stockQuantity": 10,
+    "categories": "Wall Decore",
+    "subCategories": [
+      "category1",
+      "category13"
+    ],
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "colors": [
+      "sofa_A4.jpg",
+      "sofa_A5.jpg",
+      "sofa_A6.jpg"
+    ],
+    "sku": null,
+    "brands": [
+      "Louis Vuitton",
+      "Hermes"
+    ],
+    "filterColors": [
+      "Pink",
+      "Orange"
+    ],
+    "filterSizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "isOnSale": true,
+    "isFeatured": false
+  },
+  {
+    "id": 53,
+    "title": "Cascading Wooden Wall decor",
+    "description": "A sculptural wall decor piece designed to add depth and visual interest to interiors.",
+    "imgSrc": "wallSelf_D.jpg",
+    "imgHover": "wallSelf_D1.jpg",
+    "images": [
+      "wallSelf_D1.jpg",
+      "wallSelf_D2.jpg",
+      "wallSelf_D3.jpg",
+      "wallSelf_D4.jpg"
+    ],
+    "price": 36105,
+    "comparePrice": 44887,
+    "inStock": true,
+    "stockQuantity": 10,
+    "categories": "Wall Decore",
+    "subCategories": [
+      "category9"
+    ],
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "colors": [
+      "sofa_A4.jpg",
+      "sofa_A5.jpg",
+      "sofa_A6.jpg"
+    ],
+    "sku": null,
+    "brands": [
+      "Louis Vuitton",
+      "Hermes"
+    ],
+    "filterColors": [
+      "Pink",
+      "Orange"
+    ],
+    "filterSizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "isOnSale": true,
+    "isFeatured": false
+  },
+  {
+    "id": 54,
+    "title": "The Abstract Wall decor",
+    "description": "A sculptural wall decor piece designed to add depth and visual interest to interiors.",
+    "imgSrc": "wallSelf_E.jpg",
+    "imgHover": "wallSelf_E1.jpg",
+    "images": [
+      "wallSelf_E1.jpg",
+      "wallSelf_E2.jpg",
+      "wallSelf_E3.jpg",
+      "wallSelf_E4.jpg"
+    ],
+    "price": 38964,
+    "comparePrice": 47102,
+    "inStock": true,
+    "stockQuantity": 10,
+    "categories": "Wall Decore",
+    "subCategories": [
+      "category1",
+      "category2"
+    ],
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "colors": [
+      "sofa_A4.jpg",
+      "sofa_A5.jpg",
+      "sofa_A6.jpg"
+    ],
+    "sku": null,
+    "brands": [
+      "Louis Vuitton",
+      "Hermes"
+    ],
+    "filterColors": [
+      "Pink",
+      "Orange"
+    ],
+    "filterSizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "isOnSale": true,
+    "isFeatured": false
+  },
+  {
+    "id": 55,
+    "title": "Sculpted Wave Wall decor",
+    "description": "A sculptural wall decor piece designed to add depth and visual interest to interiors.",
+    "imgSrc": "wallSelf_F.jpg",
+    "imgHover": "wallSelf_F1.jpg",
+    "images": [
+      "wallSelf_F1.jpg",
+      "wallSelf_F2.jpg",
+      "wallSelf_F3.jpg",
+      "wallSelf_F4.jpg"
+    ],
+    "price": 40217,
+    "comparePrice": 48936,
+    "inStock": true,
+    "stockQuantity": 10,
+    "categories": "Wall Decore",
+    "subCategories": [
+      "category1",
+      "category2"
+    ],
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "colors": [
+      "sofa_A4.jpg",
+      "sofa_A5.jpg",
+      "sofa_A6.jpg"
+    ],
+    "sku": null,
+    "brands": [
+      "Louis Vuitton",
+      "Hermes"
+    ],
+    "filterColors": [
+      "Pink",
+      "Orange"
+    ],
+    "filterSizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "isOnSale": true,
+    "isFeatured": false
+  },
+  {
+    "id": 56,
+    "title": "Linear Wall decor",
+    "description": "A sculptural wall decor piece designed to add depth and visual interest to interiors.",
+    "imgSrc": "wallSelf_G.jpg",
+    "imgHover": "wallSelf_G1.jpg",
+    "images": [
+      "wallSelf_G1.jpg",
+      "wallSelf_G2.jpg",
+      "wallSelf_G3.jpg",
+      "wallSelf_G4.jpg"
+    ],
+    "price": 42880,
+    "comparePrice": 50941,
+    "inStock": true,
+    "stockQuantity": 10,
+    "categories": "Wall Decore",
+    "subCategories": [
+      "category1",
+      "category3",
+      "category10"
+    ],
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "colors": [
+      "sofa_A4.jpg",
+      "sofa_A5.jpg",
+      "sofa_A6.jpg"
+    ],
+    "sku": null,
+    "brands": [
+      "Louis Vuitton",
+      "Hermes"
+    ],
+    "filterColors": [
+      "Pink",
+      "Orange"
+    ],
+    "filterSizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "isOnSale": true,
+    "isFeatured": false
+  },
+  {
+    "id": 57,
+    "title": "Vertiledge Wall decor",
+    "description": "A sculptural wall decor piece designed to add depth and visual interest to interiors.",
+    "imgSrc": "wallSelf_H.jpg",
+    "imgHover": "wallSelf_H1.jpg",
+    "images": [
+      "wallSelf_H1.jpg",
+      "wallSelf_H2.jpg",
+      "wallSelf_H3.jpg",
+      "wallSelf_H4.jpg"
+    ],
+    "price": 45136,
+    "comparePrice": 53784,
+    "inStock": true,
+    "stockQuantity": 10,
+    "categories": "Wall Decore",
+    "subCategories": [
+      "category10"
+    ],
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "colors": [
+      "sofa_A4.jpg",
+      "sofa_A5.jpg",
+      "sofa_A6.jpg"
+    ],
+    "sku": null,
+    "brands": [
+      "Louis Vuitton",
+      "Hermes"
+    ],
+    "filterColors": [
+      "Pink",
+      "Orange"
+    ],
+    "filterSizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "isOnSale": true,
+    "isFeatured": false
+  },
+  {
+    "id": 58,
+    "title": "Monorise Wall decor",
+    "description": "A sculptural wall decor piece designed to add depth and visual interest to interiors.",
+    "imgSrc": "wallSelf_I.jpg",
+    "imgHover": "wallSelf_I1.jpg",
+    "images": [
+      "wallSelf_I1.jpg",
+      "wallSelf_I2.jpg",
+      "wallSelf_I3.jpg",
+      "wallSelf_I4.jpg"
+    ],
+    "price": 46902,
+    "comparePrice": 55611,
+    "inStock": true,
+    "stockQuantity": 10,
+    "categories": "Wall Decore",
+    "subCategories": [
+      "category1",
+      "category3",
+      "category9"
+    ],
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "colors": [
+      "sofa_A4.jpg",
+      "sofa_A5.jpg",
+      "sofa_A6.jpg"
+    ],
+    "sku": null,
+    "brands": [
+      "Louis Vuitton",
+      "Hermes"
+    ],
+    "filterColors": [
+      "Pink",
+      "Orange"
+    ],
+    "filterSizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "isOnSale": true,
+    "isFeatured": false
+  },
+  {
+    "id": 59,
+    "title": "Infinite Curve Wall decor",
+    "description": "A sculptural wall decor piece designed to add depth and visual interest to interiors.",
+    "imgSrc": "wallSelf_J.jpg",
+    "imgHover": "wallSelf_J1.jpg",
+    "images": [
+      "wallSelf_J1.jpg",
+      "wallSelf_J2.jpg",
+      "wallSelf_J3.jpg",
+      "wallSelf_J4.jpg"
+    ],
+    "price": 48357,
+    "comparePrice": 56904,
+    "inStock": true,
+    "stockQuantity": 10,
+    "categories": "Wall Decore",
+    "subCategories": [
+      "category1",
+      "category2",
+      "category9"
+    ],
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "colors": [
+      "sofa_A4.jpg",
+      "sofa_A5.jpg",
+      "sofa_A6.jpg"
+    ],
+    "sku": null,
+    "brands": [
+      "Louis Vuitton",
+      "Hermes"
+    ],
+    "filterColors": [
+      "Pink",
+      "Orange"
+    ],
+    "filterSizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "isOnSale": true,
+    "isFeatured": false
+  }
+]
