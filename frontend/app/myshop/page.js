@@ -9,7 +9,7 @@ export default function Home() {
     return (
         <Suspense fallback={<Loader />}>
             <Header2 />
-            <Nav />
+            {/* <Nav /> */}
             <MyShopGrid />
             <Footer1 />
             <ContentReadySignal />

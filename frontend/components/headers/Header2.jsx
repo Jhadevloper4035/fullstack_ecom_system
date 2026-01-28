@@ -1,9 +1,24 @@
+'use client';
 import React from "react";
 import Nav from "./Nav";
 import Image from "next/image";
 import Link from "next/link";
 import CartLength from "../common/CartLength";
-export default function Header1({ fullWidth = false }) {
+import { useAuth } from "@/context/AuthContext";
+export default function Header2({ fullWidth = false }) {
+  const { user, loading, logout } = useAuth();
+
+  if (loading) {
+    return null; // or a loading spinner
+
+  }
+
+  if (!user) {
+    console.log("No user in Header2");
+  } else {
+    console.log("User in Header2:", user?.user?.user.email);
+  }
+
   return (
     <header
       id="header"
@@ -99,18 +114,31 @@ export default function Header1({ fullWidth = false }) {
                   </svg>
                 </a>
                 <div className="dropdown-account dropdown-login">
-                  <div className="sub-top">
-                    <Link href={`/login`} className="tf-btn btn-reset">
-                      Login
-                    </Link>
-                    <p className="text-center text-secondary-2">
-                      Don’t have an account?{" "}
-                      <Link href={`/register`}>Register</Link>
-                    </p>
-                  </div>
-                  <div className="sub-bot">
-                    <span className="body-text-">Support</span>
-                  </div>
+                  {!user ? (
+                    <div className="sub-top">
+                      <Link href={`/login`} className="tf-btn btn-reset">
+                        Login
+                      </Link>
+                      <p className="text-center text-secondary-2">
+                        Don’t have an account?{" "}
+                        <Link href={`/register`}>Register</Link>
+                      </p>
+                    </div>
+
+                  ) : (
+                    <div className="sub-top text-center">
+                      <p>Welcome, {user?.user?.user.email.split('@')[0]}</p>
+                      <Link href={`/my-account`} className="tf-btn btn-reset">
+                        Profile
+                      </Link>
+                      <button
+                        onClick={logout}
+                        className="tf-btn btn-reset mt-2"
+                      >
+                        Logout
+                      </button>
+                    </div>
+                  )}
                 </div>
               </li>
               <li className="nav-wishlist">

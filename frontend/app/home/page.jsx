@@ -17,7 +17,7 @@ export default function Home() {
     return (
         <Suspense fallback={<Loader />}>
             <Header2 />
-            <Nav />
+            {/* <Nav /> */}
             <Hero />
             <Collections parentClass="flat-spacing-3" />
             <Banner />
