@@ -1,35 +1,15 @@
 'use client';
 
 import { useEffect, useState } from 'react';
+import productData from '@/data/product_data.json'; 
 
 export default function MyShopGrid() {
 
+    const productList = productData.products;
+    
 
-
-    const products = [
-        {
-            id: 1,
-            title: 'Elegant Sofa',
-            description: 'A comfortable and stylish sofa for your living room.',
-            price: 12000,
-            comparePrice: 15000,
-            imgSrc: 'https://rantechnology.in/curve-&-comfort/images/products/sofa1.jpg',
-        },
-        {
-            id: 2,
-            title: 'Modern Chair',
-            description: 'A sleek chair that complements any modern decor.',
-            price: 8000,
-            comparePrice: 10000,
-            imgSrc: 'https://rantechnology.in/curve-&-comfort/images/products/chair1.jpg',
-        }
-    ]
-
-    if (!products.length) {
+    if (!productList || !productList.length) {
         return <div>No products found</div>;
-    }
-    else {
-        console.log("Rendering products:", products);
     }
 
     return (
@@ -40,9 +20,10 @@ export default function MyShopGrid() {
                     display: 'grid',
                     gridTemplateColumns: 'repeat(auto-fill, minmax(260px, 1fr))',
                     gap: '1.5rem',
+                    padding: '1rem',
                 }}
             >
-                {products.map((product) => (
+                {productList.map((product) => (
                     <div
                         key={product.id}
                         className="product-card"
@@ -50,49 +31,120 @@ export default function MyShopGrid() {
                             border: '1px solid #e5e5e5',
                             padding: '1rem',
                             borderRadius: '8px',
+                            backgroundColor: '#fff',
+                            transition: 'transform 0.2s',
                         }}
                     >
-                        <img
-                            src={"https://rantechnology.in/curve-&-comfort/products/bed_A.jpg"}
-                            alt={product.title}
-                        />
+                        <div style={{ position: 'relative', overflow: 'hidden' }}>
+                            <img
+                                src={"https://rantechnology.in/curve-&-comfort/products/"+product.imgSrc}
+                                alt={product.title}
+                                style={{ 
+                                    width: '100%', 
+                                    height: '300px',
+                                    objectFit: 'cover',
+                                    borderRadius: '4px'
+                                }}
+                                onError={(e) => {
+                                    e.target.src = 'https://rantechnology.in/curve-&-comfort/products/bed_A.jpg';
+                                }}
+                            />
+                            
+                            {product.salePercentage && (
+                                <div style={{ 
+                                    position: 'absolute',
+                                    top: '10px',
+                                    left: '10px',
+                                    background: '#ff0000', 
+                                    color: '#fff', 
+                                    padding: '0.25rem 0.5rem',
+                                    borderRadius: '4px',
+                                    fontSize: '0.85rem',
+                                    fontWeight: 'bold'
+                                }}>
+                                    {product.salePercentage} OFF
+                                </div>
+                            )}
 
-                        <h3 style={{ marginTop: '0.75rem' }}>
+                            {!product.inStock && (
+                                <div style={{ 
+                                    position: 'absolute',
+                                    top: '10px',
+                                    right: '10px',
+                                    background: '#999', 
+                                    color: '#fff', 
+                                    padding: '0.25rem 0.5rem',
+                                    borderRadius: '4px',
+                                    fontSize: '0.85rem'
+                                }}>
+                                    Out of Stock
+                                </div>
+                            )}
+                        </div>
+
+                        <h3 style={{ 
+                            marginTop: '0.75rem',
+                            fontSize: '1.1rem',
+                            fontWeight: '600',
+                            color: '#333'
+                        }}>
                             {product.title}
                         </h3>
 
-                        <p style={{ fontSize: '0.9rem', color: '#555' }}>
-                            {product.description}
-                        </p>
-
-                        <div style={{ margin: '0.5rem 0', fontWeight: 600 }}>
-                            ₹{product.price.toLocaleString()}
-                            {product.comparePrice && (
+                        <div style={{ 
+                            margin: '0.5rem 0', 
+                            fontWeight: 600,
+                            fontSize: '1.1rem',
+                            color: '#000'
+                        }}>
+                            ${product.price.toFixed(2)}
+                            {product.oldPrice && (
                                 <span
                                     style={{
                                         marginLeft: '0.5rem',
                                         textDecoration: 'line-through',
                                         color: '#999',
                                         fontWeight: 400,
+                                        fontSize: '0.95rem'
                                     }}
                                 >
-                                    ₹{product.comparePrice.toLocaleString()}
+                                    ${product.oldPrice.toFixed(2)}
                                 </span>
                             )}
                         </div>
+
+                        {product.filterColor && product.filterColor.length > 0 && (
+                            <div style={{ 
+                                marginBottom: '0.75rem',
+                                fontSize: '0.85rem',
+                                color: '#666'
+                            }}>
+                                Colors: {product.filterColor.slice(0, 3).join(', ')}
+                                {product.filterColor.length > 3 && '...'}
+                            </div>
+                        )}
 
                         <button
                             style={{
                                 width: '100%',
                                 padding: '0.6rem',
-                                background: '#000',
+                                background: product.inStock ? '#000' : '#ccc',
                                 color: '#fff',
                                 border: 'none',
                                 borderRadius: '4px',
-                                cursor: 'pointer',
+                                cursor: product.inStock ? 'pointer' : 'not-allowed',
+                                fontWeight: '500',
+                                transition: 'background 0.2s'
+                            }}
+                            disabled={!product.inStock}
+                            onMouseEnter={(e) => {
+                                if (product.inStock) e.target.style.background = '#333';
+                            }}
+                            onMouseLeave={(e) => {
+                                if (product.inStock) e.target.style.background = '#000';
                             }}
                         >
-                            Add to Cart
+                            {product.inStock ? 'Add to Cart' : 'Out of Stock'}
                         </button>
                     </div>
                 ))}
