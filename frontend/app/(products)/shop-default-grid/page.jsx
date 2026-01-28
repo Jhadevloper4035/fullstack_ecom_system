@@ -1,7 +1,7 @@
 import Footer1 from "@/components/footers/Footer1";
 import Header2 from "@/components/headers/Header2";
 import Topbar6 from "@/components/headers/Topbar6";
-import ProductsNew from "@/components/products/ProductsNew";
+import Products1 from "@/components/products/Products1";
 import Link from "next/link";
 import React from "react";
 
@@ -33,7 +33,7 @@ export default function ShopDefaultGridPage() {
           </div>
         </div>
       </div>
-      <ProductsNew />
+      <Products1 />
       <Footer1 />
     </>
   );

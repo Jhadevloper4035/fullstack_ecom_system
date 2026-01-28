@@ -1,12 +1,12 @@
 'use client';
 
 import { useEffect, useState } from 'react';
-import productData from '@/data/product_data.json'; 
+import productData from '@/data/product_data.json';
 
 export default function MyShopGrid() {
 
     const productList = productData.products;
-    
+
 
     if (!productList || !productList.length) {
         return <div>No products found</div>;
@@ -37,10 +37,10 @@ export default function MyShopGrid() {
                     >
                         <div style={{ position: 'relative', overflow: 'hidden' }}>
                             <img
-                                src={"https://rantechnology.in/curve-&-comfort/products/"+product.imgSrc}
+                                src={"https://rantechnology.in/curve-&-comfort/products/" + product.imgSrc}
                                 alt={product.title}
-                                style={{ 
-                                    width: '100%', 
+                                style={{
+                                    width: '100%',
                                     height: '300px',
                                     objectFit: 'cover',
                                     borderRadius: '4px'
@@ -49,14 +49,14 @@ export default function MyShopGrid() {
                                     e.target.src = 'https://rantechnology.in/curve-&-comfort/products/bed_A.jpg';
                                 }}
                             />
-                            
+
                             {product.salePercentage && (
-                                <div style={{ 
+                                <div style={{
                                     position: 'absolute',
                                     top: '10px',
                                     left: '10px',
-                                    background: '#ff0000', 
-                                    color: '#fff', 
+                                    background: '#ff0000',
+                                    color: '#fff',
                                     padding: '0.25rem 0.5rem',
                                     borderRadius: '4px',
                                     fontSize: '0.85rem',
@@ -67,12 +67,12 @@ export default function MyShopGrid() {
                             )}
 
                             {!product.inStock && (
-                                <div style={{ 
+                                <div style={{
                                     position: 'absolute',
                                     top: '10px',
                                     right: '10px',
-                                    background: '#999', 
-                                    color: '#fff', 
+                                    background: '#999',
+                                    color: '#fff',
                                     padding: '0.25rem 0.5rem',
                                     borderRadius: '4px',
                                     fontSize: '0.85rem'
@@ -82,17 +82,21 @@ export default function MyShopGrid() {
                             )}
                         </div>
 
-                        <h3 style={{ 
+                        <h3 style={{
                             marginTop: '0.75rem',
                             fontSize: '1.1rem',
                             fontWeight: '600',
-                            color: '#333'
+                            color: '#333',
+
+                            whiteSpace: 'nowrap',
+                            overflow: 'hidden',
+                            textOverflow: 'ellipsis',
                         }}>
                             {product.title}
                         </h3>
 
-                        <div style={{ 
-                            margin: '0.5rem 0', 
+                        <div style={{
+                            margin: '0.5rem 0',
                             fontWeight: 600,
                             fontSize: '1.1rem',
                             color: '#000'
@@ -114,7 +118,7 @@ export default function MyShopGrid() {
                         </div>
 
                         {product.filterColor && product.filterColor.length > 0 && (
-                            <div style={{ 
+                            <div style={{
                                 marginBottom: '0.75rem',
                                 fontSize: '0.85rem',
                                 color: '#666'

@@ -36,7 +36,7 @@ export default function Header2({ fullWidth = false }) {
               <i className="icon icon-categories" />
             </a>
           </div>
-          <div className="col-xl-3 col-md-4 col-6">
+          <div className="col-xl-2 col-md-4 col-6">
             <Link href={`/`} className="logo-header">
               <Image
                 alt="logo"
@@ -47,14 +47,14 @@ export default function Header2({ fullWidth = false }) {
               />
             </Link>
           </div>
-          <div className="col-xl-6 d-none d-xl-block">
+          <div className="col-xl-8 d-none d-xl-block">
             <nav className="box-navigation text-center">
               <ul className="box-nav-ul d-flex align-items-center justify-content-center">
                 <Nav />
               </ul>
             </nav>
           </div>
-          <div className="col-xl-3 col-md-4 col-3">
+          <div className="col-xl-2 col-md-4 col-3">
             <ul className="nav-icon d-flex justify-content-end align-items-center">
               <li className="nav-search">
                 <a
