@@ -1,386 +1,422 @@
 "use client";
-
 import Link from "next/link";
 import React from "react";
+import Image from "next/image";
+import { products } from "@/data/products";
+import { Swiper, SwiperSlide } from "swiper/react";
+import ProductCard1 from "../productCards/ProductCard1";
+import {
+  blogLinks,
+  demoItems,
+  otherPageLinks,
+  otherShopMenus,
+  productFeatures,
+  productLinks,
+  productStyles,
+  shopFeatures,
+  shopLayout,
+  swatchLinks,
+} from "@/data/menu";
 import { usePathname } from "next/navigation";
-
 export default function Nav() {
   const pathname = usePathname();
-
-  const checkActive = (slug) => pathname.includes(slug);
-
-  // Hardcoded navigation data
-  const navigationData = [
-    {
-      name: "Furniture",
-      slug: "furniture",
-      subcategories: [
-        { name: "Sofas & Sectionals", slug: "sofas-sectionals" },
-        { name: "Beds & Headboards", slug: "beds-headboards" },
-        { name: "Dining Tables", slug: "dining-tables" },
-        { name: "Chairs & Seating", slug: "chairs-seating" },
-        { name: "Storage & Organization", slug: "storage-organization" },
-        { name: "Desks & Office", slug: "desks-office" },
-      ]
-    },
-    {
-      name: "Lighting",
-      slug: "lighting",
-      subcategories: [
-        { name: "Ceiling Lights", slug: "ceiling-lights" },
-        { name: "Table Lamps", slug: "table-lamps" },
-        { name: "Floor Lamps", slug: "floor-lamps" },
-        { name: "Wall Sconces", slug: "wall-sconces" },
-        { name: "Pendant Lights", slug: "pendant-lights" },
-      ]
-    },
-    {
-      name: "Decor",
-      slug: "decor",
-      subcategories: [
-        { name: "Wall Art", slug: "wall-art" },
-        { name: "Mirrors", slug: "mirrors" },
-        { name: "Vases & Planters", slug: "vases-planters" },
-        { name: "Decorative Objects", slug: "decorative-objects" },
-        { name: "Candles & Diffusers", slug: "candles-diffusers" },
-      ]
-    },
-    {
-      name: "Bedding",
-      slug: "bedding",
-      subcategories: [
-        { name: "Duvet Covers", slug: "duvet-covers" },
-        { name: "Sheet Sets", slug: "sheet-sets" },
-        { name: "Pillows", slug: "pillows" },
-        { name: "Blankets & Throws", slug: "blankets-throws" },
-        { name: "Quilts & Coverlets", slug: "quilts-coverlets" },
-      ]
-    },
-    {
-      name: "Bath",
-      slug: "bath",
-      subcategories: [
-        { name: "Towels", slug: "towels" },
-        { name: "Bath Rugs", slug: "bath-rugs" },
-        { name: "Shower Curtains", slug: "shower-curtains" },
-        { name: "Bath Accessories", slug: "bath-accessories" },
-      ]
-    },
-    {
-      name: "Rugs",
-      slug: "rugs",
-      subcategories: [
-        { name: "Area Rugs", slug: "area-rugs" },
-        { name: "Runner Rugs", slug: "runner-rugs" },
-        { name: "Outdoor Rugs", slug: "outdoor-rugs" },
-        { name: "Rug Pads", slug: "rug-pads" },
-      ]
-    },
-  ];
-
-  const renderMegaMenu = (category) => {
-    return (
-      <div className="westelm-mega-menu">
-        <div className="westelm-mega-container">
-          <div className="westelm-mega-content">
-            {/* Subcategories Column */}
-            <div className="westelm-mega-column">
-              <h3 className="westelm-mega-heading">{category.name}</h3>
-              <ul className="westelm-mega-list">
-                {category.subcategories.map((subcat, index) => (
-                  <li key={index} className="westelm-mega-list-item">
-                    <Link
-                      href={`/shop/${category.slug}/${subcat.slug}`}
-                      className={`westelm-mega-link ${pathname.includes(subcat.slug) ? "active" : ""}`}
-                    >
-                      {subcat.name}
-                    </Link>
-                  </li>
-                ))}
-                <li className="westelm-mega-list-item westelm-view-all">
-                  <Link
-                    href={`/shop/${category.slug}`}
-                    className="westelm-mega-link-bold"
-                  >
-                    View All {category.name} →
+  return (
+    <>
+      {" "}
+      <li
+        className={`menu-item ${
+          [...demoItems].some(
+            (elm) => elm.href.split("/")[1] == pathname.split("/")[1]
+          )
+            ? "active"
+            : ""
+        } `}
+      >
+        <a href="#" className="item-link">
+          Home
+          <i className="icon icon-arrow-down" />
+        </a>
+        <div className="sub-menu mega-menu">
+          <div className="container">
+            <div className="row-demo">
+              {demoItems.slice(0, 12).map((item, index) => (
+                <div
+                  className={`demo-item ${
+                    pathname.split("/")[1] === item.href.split("/")[1]
+                      ? "active"
+                      : ""
+                  }`}
+                  key={item.href}
+                >
+                  <Link href={item.href}>
+                    <div className="demo-image position-relative">
+                      <Image
+                        className="lazyload"
+                        data-src={item.src}
+                        alt={item.alt}
+                        src={item.src}
+                        width={273}
+                        height={300}
+                      />
+                      {item.label.length > 0 && (
+                        <div className="demo-label">
+                          {item.label.map((label, labelIndex) => (
+                            <span
+                              key={labelIndex}
+                              className={`demo-${label.toLowerCase()}`}
+                            >
+                              {label}
+                            </span>
+                          ))}
+                        </div>
+                      )}
+                    </div>
+                    <span className="demo-name">{item.name}</span>
                   </Link>
-                </li>
-              </ul>
+                </div>
+              ))}
             </div>
-
-            {/* Featured Products Column - Placeholder */}
-            <div className="westelm-mega-products">
-              <h3 className="westelm-mega-heading">Featured</h3>
-              <div className="westelm-products-grid">
-                <div className="westelm-product-placeholder">
-                  <div className="placeholder-image"></div>
-                  <p className="placeholder-text">Featured Product 1</p>
+            <div className="text-center view-all-demo">
+              <a href="#modalDemo" data-bs-toggle="modal" className="tf-btn">
+                <span className="text">View All Demos</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </li>
+      <li
+        className={`menu-item ${
+          [
+            ...shopLayout,
+            ...shopFeatures,
+            ...productStyles,
+            ...otherShopMenus,
+          ].some((elm) => elm.href.split("/")[1] == pathname.split("/")[1])
+            ? "active"
+            : ""
+        } `}
+      >
+        <a href="#" className="item-link">
+          Shop
+          <i className="icon icon-arrow-down" />
+        </a>
+        <div className="sub-menu mega-menu">
+          <div className="container">
+            <div className="row">
+              <div className="col-lg-2">
+                <div className="mega-menu-item">
+                  <div className="menu-heading">Shop Layout</div>
+                  <ul className="menu-list">
+                    {shopLayout.map((link, index) => (
+                      <li
+                        key={index}
+                        className={`menu-item-li ${
+                          pathname.split("/")[1] == link.href.split("/")[1]
+                            ? "active"
+                            : ""
+                        } `}
+                      >
+                        <Link href={link.href} className="menu-link-text">
+                          {link.name}
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
                 </div>
-                <div className="westelm-product-placeholder">
-                  <div className="placeholder-image"></div>
-                  <p className="placeholder-text">Featured Product 2</p>
+              </div>
+              <div className="col-lg-2">
+                <div className="mega-menu-item">
+                  <div className="menu-heading">Shop Features</div>
+                  <ul className="menu-list">
+                    {shopFeatures.map((link, index) => (
+                      <li
+                        key={index}
+                        className={`menu-item-li ${
+                          pathname.split("/")[1] == link.href.split("/")[1]
+                            ? "active"
+                            : ""
+                        } `}
+                      >
+                        <Link href={link.href} className="menu-link-text">
+                          {link.name}
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
                 </div>
-                <div className="westelm-product-placeholder">
-                  <div className="placeholder-image"></div>
-                  <p className="placeholder-text">Featured Product 3</p>
+              </div>
+              <div className="col-lg-2">
+                <div className="mega-menu-item">
+                  <div className="menu-heading">Products Hover</div>
+                  <ul className="menu-list">
+                    {productStyles.map((style, index) => (
+                      <li
+                        key={index}
+                        className={`menu-item-li ${
+                          pathname.split("/")[1] == style.href.split("/")[1]
+                            ? "active"
+                            : ""
+                        } `}
+                      >
+                        <Link href={style.href} className="menu-link-text">
+                          {style.name}
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+              <div className="col-lg-2">
+                <div className="mega-menu-item">
+                  <div className="menu-heading">My Pages</div>
+                  <ul className="menu-list">
+                    {otherShopMenus.map((link, index) => (
+                      <li
+                        key={index}
+                        className={`menu-item-li ${
+                          pathname.split("/")[1] == link.href.split("/")[1]
+                            ? "active"
+                            : ""
+                        } `}
+                      >
+                        <Link href={link.href} className="menu-link-text">
+                          {link.name}
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+              <div className="col-lg-4">
+                <div className="wrapper-sub-shop">
+                  <div className="menu-heading">Recent Products</div>
+                  <Swiper
+                    dir="ltr"
+                    className="swiper tf-product-header"
+                    slidesPerView={2}
+                    spaceBetween={20}
+                  >
+                    {products
+                      .slice(0, 4)
+                      .map((elm) => ({
+                        ...elm,
+                        colors: null,
+                      }))
+                      .map((elm, i) => (
+                        <SwiperSlide key={i} className="swiper-slide">
+                          <ProductCard1 product={elm} />
+                        </SwiperSlide>
+                      ))}
+                  </Swiper>
                 </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
-    );
-  };
-
-  return (
-    <>
-      <style jsx global>{`
-        /* West Elm Style Navigation */
-        .westelm-nav {
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          gap: 0;
-          background: #ffffff;
-          padding: 0;
-          margin: 0;
-          list-style: none;
-          border-top: 1px solid #e5e5e5;
-          border-bottom: 1px solid #e5e5e5;
-        }
-
-        .westelm-nav-item {
-          position: relative;
-          margin: 0;
-          padding: 0;
-        }
-
-        .westelm-nav-link {
-          display: block;
-          padding: 16px 20px;
-          color: #2c2c2c;
-          text-decoration: none;
-          font-size: 14px;
-          font-weight: 500;
-          letter-spacing: 0.5px;
-          text-transform: uppercase;
-          transition: color 0.2s ease;
-          white-space: nowrap;
-        }
-
-        .westelm-nav-link:hover {
-          color: #000000;
-          background-color: #f8f8f8;
-        }
-
-        .westelm-nav-item.active .westelm-nav-link {
-          color: #000000;
-          font-weight: 600;
-          border-bottom: 2px solid #000000;
-        }
-
-        /* Mega Menu Styles */
-        .westelm-mega-menu {
-          position: fixed;
-          top: auto;
-          left: 0;
-          right: 0;
-          width: 100vw;
-          background: #ffffff;
-          border-top: 1px solid #e5e5e5;
-          box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-          opacity: 0;
-          visibility: hidden;
-          transition: opacity 0.3s ease, visibility 0.3s ease;
-          z-index: 1000;
-          max-height: 0;
-          overflow: hidden;
-        }
-
-        .westelm-nav-item:hover .westelm-mega-menu {
-          opacity: 1;
-          visibility: visible;
-          max-height: 600px;
-        }
-
-        .westelm-mega-container {
-          max-width: 1400px;
-          margin: 0 auto;
-          padding: 40px 60px;
-        }
-
-        .westelm-mega-content {
-          display: grid;
-          grid-template-columns: 280px 1fr;
-          gap: 60px;
-        }
-
-        .westelm-mega-column {
-          min-width: 0;
-        }
-
-        .westelm-mega-heading {
-          font-size: 13px;
-          font-weight: 600;
-          text-transform: uppercase;
-          letter-spacing: 1px;
-          color: #2c2c2c;
-          margin-bottom: 20px;
-          padding-bottom: 10px;
-          border-bottom: 1px solid #e5e5e5;
-        }
-
-        .westelm-mega-list {
-          list-style: none;
-          padding: 0;
-          margin: 0;
-        }
-
-        .westelm-mega-list-item {
-          margin-bottom: 12px;
-        }
-
-        .westelm-mega-link {
-          color: #666666;
-          text-decoration: none;
-          font-size: 14px;
-          line-height: 1.6;
-          transition: color 0.2s ease;
-          display: block;
-        }
-
-        .westelm-mega-link:hover {
-          color: #000000;
-        }
-
-        .westelm-mega-link.active {
-          color: #000000;
-          font-weight: 600;
-        }
-
-        .westelm-mega-link-bold {
-          color: #2c2c2c;
-          text-decoration: none;
-          font-size: 14px;
-          font-weight: 600;
-          transition: color 0.2s ease;
-          display: inline-block;
-        }
-
-        .westelm-mega-link-bold:hover {
-          color: #000000;
-        }
-
-        .westelm-view-all {
-          margin-top: 20px;
-          padding-top: 15px;
-          border-top: 1px solid #e5e5e5;
-        }
-
-        .westelm-mega-products {
-          min-width: 0;
-        }
-
-        .westelm-products-grid {
-          display: grid;
-          grid-template-columns: repeat(3, 1fr);
-          gap: 30px;
-        }
-
-        .westelm-product-placeholder {
-          text-align: center;
-        }
-
-        .placeholder-image {
-          width: 100%;
-          aspect-ratio: 3/4;
-          background: #f5f5f5;
-          border-radius: 4px;
-          margin-bottom: 10px;
-        }
-
-        .placeholder-text {
-          font-size: 13px;
-          color: #666;
-          margin: 0;
-        }
-
-        /* Responsive Design */
-        @media (max-width: 1200px) {
-          .westelm-mega-content {
-            grid-template-columns: 240px 1fr;
-            gap: 40px;
-          }
-
-          .westelm-products-grid {
-            grid-template-columns: repeat(2, 1fr);
-            gap: 20px;
-          }
-
-          .westelm-mega-container {
-            padding: 30px 40px;
-          }
-        }
-
-        @media (max-width: 768px) {
-          .westelm-nav {
-            overflow-x: auto;
-            justify-content: flex-start;
-            -webkit-overflow-scrolling: touch;
-          }
-
-          .westelm-nav-link {
-            padding: 14px 16px;
-            font-size: 13px;
-          }
-
-          .westelm-mega-content {
-            grid-template-columns: 1fr;
-            gap: 30px;
-          }
-
-          .westelm-products-grid {
-            grid-template-columns: 1fr;
-          }
-
-          .westelm-mega-container {
-            padding: 20px;
-          }
-        }
-      `}</style>
-
-      <ul className="westelm-nav">
-        <li className={`westelm-nav-item ${pathname === "/" ? "active" : ""}`}>
-          <Link href="/" className="westelm-nav-link">
-            Home
-          </Link>
-        </li>
-
-        {navigationData.map((category, index) => {
-          const isActive = checkActive(category.slug);
-
-          return (
-            <li
-              key={index}
-              className={`westelm-nav-item ${isActive ? "active" : ""}`}
-            >
-              <Link
-                href={`/shop/${category.slug}`}
-                className="westelm-nav-link"
+      </li>
+      <li
+        className={`menu-item ${
+          [...productLinks, ...swatchLinks, ...productFeatures].some(
+            (elm) => elm.href.split("/")[1] == pathname.split("/")[1]
+          )
+            ? "active"
+            : ""
+        } `}
+      >
+        <a href="#" className="item-link">
+          Products
+          <i className="icon icon-arrow-down" />
+        </a>
+        <div className="sub-menu mega-menu">
+          <div className="container">
+            <div className="row">
+              <div className="col-lg-3">
+                <div className="mega-menu-item">
+                  <div className="menu-heading">Products Layout</div>
+                  <ul className="menu-list">
+                    {productLinks.map((link, index) => (
+                      <li
+                        key={index}
+                        className={`menu-item-li ${
+                          pathname.split("/")[1] == link.href.split("/")[1]
+                            ? "active"
+                            : ""
+                        } `}
+                      >
+                        <Link href={link.href} className="menu-link-text">
+                          {link.name}
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+              <div className="col-lg-3">
+                <div className="mega-menu-item">
+                  <div className="menu-heading">Colors Swatched</div>
+                  <ul className="menu-list">
+                    {swatchLinks.map((link, index) => (
+                      <li
+                        key={index}
+                        className={`menu-item-li ${
+                          pathname.split("/")[1] == link.href.split("/")[1]
+                            ? "active"
+                            : ""
+                        } `}
+                      >
+                        <Link href={link.href} className="menu-link-text">
+                          {link.name}
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+              <div className="col-lg-3">
+                <div className="mega-menu-item">
+                  <div className="menu-heading">Products Features</div>
+                  <ul className="menu-list">
+                    {productFeatures.map((link, index) => (
+                      <li
+                        key={index}
+                        className={`menu-item-li ${
+                          pathname.split("/")[1] == link.href.split("/")[1]
+                            ? "active"
+                            : ""
+                        } `}
+                      >
+                        <Link
+                          href={link.href}
+                          className={`menu-link-text ${
+                            link.badge ? "position-relative" : ""
+                          } `}
+                        >
+                          {link.name}
+                          {link.badge && (
+                            <div className="demo-label">
+                              <span className="demo-new">{link.badge}</span>
+                            </div>
+                          )}
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+              <div className="col-lg-3">
+                <div className="menu-heading">Best seller</div>
+                <div className="sec-cls-header">
+                  <div className="collection-position hover-img">
+                    <Link href={`/shop-collection`} className="img-style">
+                      <Image
+                        className="lazyload"
+                        data-src="/images/collections/cls-header.jpg"
+                        alt="banner-cls"
+                        src="/images/collections/cls-header.jpg"
+                        width={300}
+                        height={400}
+                      />
+                    </Link>
+                    <div className="content">
+                      <div className="title-top">
+                        <h4 className="title">
+                          <Link
+                            href={`/shop-collection`}
+                            className="link text-white wow fadeInUp"
+                          >
+                            Shop our top picks
+                          </Link>
+                        </h4>
+                        <p className="desc text-white wow fadeInUp">
+                          Reserved for special occasions
+                        </p>
+                      </div>
+                      <div>
+                        <Link
+                          href={`/shop-collection`}
+                          className="tf-btn btn-md btn-white"
+                        >
+                          <span className="text">Shop Now</span>
+                          <i className="icon icon-arrowUpRight" />
+                        </Link>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </li>
+      <li
+        className={`menu-item position-relative ${
+          [...blogLinks].some(
+            (elm) => elm.href.split("/")[1] == pathname.split("/")[1]
+          )
+            ? "active"
+            : ""
+        } `}
+      >
+        <a href="#" className="item-link">
+          Blog
+          <i className="icon icon-arrow-down" />
+        </a>
+        <div className="sub-menu submenu-default">
+          <ul className="menu-list">
+            {blogLinks.map((link, index) => (
+              <li
+                key={index}
+                className={`menu-item-li ${
+                  pathname.split("/")[1] == link.href.split("/")[1]
+                    ? "active"
+                    : ""
+                } `}
               >
-                {category.name}
-              </Link>
-              {renderMegaMenu(category)}
-            </li>
-          );
-        })}
-
-        <li className={`westelm-nav-item ${pathname === "/sale" ? "active" : ""}`}>
-          <Link href="/sale" className="westelm-nav-link">
-            Sale
-          </Link>
-        </li>
-      </ul>
+                <Link href={link.href} className="menu-link-text">
+                  {link.name}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </li>
+      <li
+        className={`menu-item position-relative ${
+          [...otherPageLinks].some(
+            (elm) => elm.href.split("/")[1] == pathname.split("/")[1]
+          )
+            ? "active"
+            : ""
+        } `}
+      >
+        <a href="#" className="item-link">
+          Pages
+          <i className="icon icon-arrow-down" />
+        </a>
+        <div className="sub-menu submenu-default">
+          <ul className="menu-list">
+            {otherPageLinks.map((link, index) => (
+              <li
+                key={index}
+                className={`menu-item-li ${
+                  pathname.split("/")[1] == link.href.split("/")[1]
+                    ? "active"
+                    : ""
+                } `}
+              >
+                <Link href={link.href} className="menu-link-text">
+                  {link.name}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </li>
+      <li className="menu-item">
+        <a href="https://themeforest.net/user/themesflat" className="item-link">
+          Buy Theme
+        </a>
+      </li>
     </>
   );
 }

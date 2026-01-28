@@ -2,27 +2,14 @@
 import React, { useState, useEffect } from 'react';
 import ProductCard1 from '@/components/productCards/ProductCard1';
 import Link from 'next/link';
-
+import productData from '@/data/product_data.json'; 
 const ExploreProducts = () => {
   const [products, setProducts] = useState([]);
+  const productList = productData.products;
 
-  useEffect(() => {
-    const fetchProducts = async () => {
-      try {
-        const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/product`);
-        const data = await response.json();
-        if (data.success) {
-          setProducts(data.products);
-        }
-      } catch (error) {
-        console.error('Error fetching products:', error);
-      }
-    };
+  
 
-    fetchProducts();
-  }, []);
-
-  const featuredProducts = products.slice(0, 6);
+  const featuredProducts = productList.slice(0, 6);
 
   return (
     <section className="explore-products py-5 bg-white">

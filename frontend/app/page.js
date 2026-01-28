@@ -1,6 +1,6 @@
 import React, { Suspense } from "react";
 import Loader from "@/components/Loader";
-import Nav from "@/components/headers/Nav";
+// import Nav from "@/components/headers/Nav";
 import Footer1 from "@/components/footers/Footer1";
 import Header2 from "@/components/headers/Header2";
 import Collections from "@/components/homes/furniture/Collections";
@@ -17,7 +17,7 @@ export default function Home() {
     return (
         <Suspense fallback={<Loader />}>
             <Header2 />
-            <Nav />
+            {/* <Nav /> */}
             <Hero />
             <Collections parentClass="flat-spacing-3" />
             <Banner />

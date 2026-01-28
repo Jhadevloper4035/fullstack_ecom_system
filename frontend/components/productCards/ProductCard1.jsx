@@ -47,7 +47,7 @@ export default function ProductCard1({
         >
           <Image
             className="lazyload img-product"
-            src={"https://rantechnology.in/curve-&-comfort/products/bed_A.jpg"}
+            src={`https://rantechnology.in/curve-&-comfort/products/${product.imgSrc}`}
             alt={product.title}
             width={600}
             height={800}
@@ -83,13 +83,13 @@ export default function ProductCard1({
           </div>
         )}
 
-        {product.isOnSale && (
+        {/* {product.isOnSale && (
           <div className="on-sale-wrap">
             <span className="on-sale-item">
               -{product.salePercentage}
             </span>
           </div>
-        )}
+        )} */}
 
         {product.sizes && (
           <div className="variant-wrap size-list">
