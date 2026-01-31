@@ -1,6 +1,5 @@
 {
-  "products" : 
-  [
+  "products": [
     {
       "id": 1,
       "title": "Caden Retro Cream Sofa",
@@ -16,40 +15,12 @@
         "sofa_A6.jpg"
       ],
       "price": 42000,
-      "comparePrice": 50000,
+      "oldPrice": 50000,
+      "salePercentage": "16%",
       "inStock": true,
-      "stockQuantity": 10,
-      "categories": "Sofa",
-      "subCategories": [
-        "category1",
-        "category2"
-      ],
-      "sizes": [
-        "S",
-        "M",
-        "L",
-        "XL"
-      ],
-      "colors": [
-        "sofa_A4.jpg",
-        "sofa_A5.jpg",
-        "sofa_A6.jpg"
-      ],
-      "sku": null,
-      "brands": [
-        "Louis Vuitton",
-        "Hermes"
-      ],
-      "filterColors": [
-        "Pink",
-        "Orange"
-      ],
-      "filterSizes": [
-        "S",
-        "M",
-        "L",
-        "XL"
-      ],
+      "filterBrands": ["Louis Vuitton", "Hermes"],
+      "filterColor": ["Pink", "Orange"],
+      "filterSizes": ["S", "M", "L", "XL"],
       "isOnSale": true,
       "isFeatured": false
     },
@@ -67,42 +38,14 @@
         "sofa_B5.jpg"
       ],
       "price": 38000,
-      "comparePrice": 58000,
+      "oldPrice": 58000,
+      "salePercentage": "34%",
       "inStock": true,
-      "stockQuantity": 10,
-      "categories": "Sofa",
-      "subCategories": [
-        "category1",
-        "category3"
-      ],
-      "sizes": [
-        "S",
-        "M",
-        "L",
-        "XL"
-      ],
-      "colors": [
-        "sofa_A4.jpg",
-        "sofa_A5.jpg",
-        "sofa_A6.jpg"
-      ],
-      "sku": null,
-      "brands": [
-        "Louis Vuitton",
-        "Hermes"
-      ],
-      "filterColors": [
-        "Pink",
-        "Orange"
-      ],
-      "filterSizes": [
-        "S",
-        "M",
-        "L",
-        "XL"
-      ],
+      "filterBrands": ["Louis Vuitton", "Gucci"],
+      "filterColor": ["Beige", "Cream"],
+      "filterSizes": ["S", "M", "L"],
       "isOnSale": true,
-      "isFeatured": false
+      "isFeatured": true
     },
     {
       "id": 3,
@@ -119,39 +62,12 @@
         "sofa_C6.jpg"
       ],
       "price": 41000,
-      "comparePrice": 51000,
+      "oldPrice": 51000,
+      "salePercentage": "20%",
       "inStock": true,
-      "stockQuantity": 10,
-      "categories": "Sofa",
-      "subCategories": [
-        "category4"
-      ],
-      "sizes": [
-        "S",
-        "M",
-        "L",
-        "XL"
-      ],
-      "colors": [
-        "sofa_A4.jpg",
-        "sofa_A5.jpg",
-        "sofa_A6.jpg"
-      ],
-      "sku": null,
-      "brands": [
-        "Louis Vuitton",
-        "Hermes"
-      ],
-      "filterColors": [
-        "Pink",
-        "Orange"
-      ],
-      "filterSizes": [
-        "S",
-        "M",
-        "L",
-        "XL"
-      ],
+      "filterBrands": ["Hermes", "Prada"],
+      "filterColor": ["White", "Gray"],
+      "filterSizes": ["M", "L", "XL"],
       "isOnSale": true,
       "isFeatured": false
     },
@@ -170,42 +86,14 @@
         "sofa_D6.jpg"
       ],
       "price": 47000,
-      "comparePrice": 50000,
+      "oldPrice": 50000,
+      "salePercentage": "6%",
       "inStock": true,
-      "stockQuantity": 10,
-      "categories": "Sofa",
-      "subCategories": [
-        "category1",
-        "category2"
-      ],
-      "sizes": [
-        "S",
-        "M",
-        "L",
-        "XL"
-      ],
-      "colors": [
-        "sofa_A4.jpg",
-        "sofa_A5.jpg",
-        "sofa_A6.jpg"
-      ],
-      "sku": null,
-      "brands": [
-        "Louis Vuitton",
-        "Hermes"
-      ],
-      "filterColors": [
-        "Pink",
-        "Orange"
-      ],
-      "filterSizes": [
-        "S",
-        "M",
-        "L",
-        "XL"
-      ],
+      "filterBrands": ["Louis Vuitton", "Chanel"],
+      "filterColor": ["Navy", "Blue"],
+      "filterSizes": ["S", "M", "L", "XL"],
       "isOnSale": true,
-      "isFeatured": false
+      "isFeatured": true
     },
     {
       "id": 5,
@@ -222,40 +110,12 @@
         "sofa_E6.jpg"
       ],
       "price": 48200,
-      "comparePrice": 55000,
+      "oldPrice": 55000,
+      "salePercentage": "12%",
       "inStock": true,
-      "stockQuantity": 10,
-      "categories": "Sofa",
-      "subCategories": [
-        "category1",
-        "category2"
-      ],
-      "sizes": [
-        "S",
-        "M",
-        "L",
-        "XL"
-      ],
-      "colors": [
-        "sofa_A4.jpg",
-        "sofa_A5.jpg",
-        "sofa_A6.jpg"
-      ],
-      "sku": null,
-      "brands": [
-        "Louis Vuitton",
-        "Hermes"
-      ],
-      "filterColors": [
-        "Pink",
-        "Orange"
-      ],
-      "filterSizes": [
-        "S",
-        "M",
-        "L",
-        "XL"
-      ],
+      "filterBrands": ["Hermes", "Gucci"],
+      "filterColor": ["Brown", "Tan"],
+      "filterSizes": ["L", "XL"],
       "isOnSale": true,
       "isFeatured": false
     },
@@ -274,43 +134,14 @@
         "sofa_F6.jpg"
       ],
       "price": 55000,
-      "comparePrice": 60000,
+      "oldPrice": 60000,
+      "salePercentage": "8%",
       "inStock": true,
-      "stockQuantity": 10,
-      "categories": "Sofa",
-      "subCategories": [
-        "category1",
-        "category3",
-        "category5"
-      ],
-      "sizes": [
-        "S",
-        "M",
-        "L",
-        "XL"
-      ],
-      "colors": [
-        "sofa_A4.jpg",
-        "sofa_A5.jpg",
-        "sofa_A6.jpg"
-      ],
-      "sku": null,
-      "brands": [
-        "Louis Vuitton",
-        "Hermes"
-      ],
-      "filterColors": [
-        "Pink",
-        "Orange"
-      ],
-      "filterSizes": [
-        "S",
-        "M",
-        "L",
-        "XL"
-      ],
+      "filterBrands": ["Louis Vuitton", "Prada"],
+      "filterColor": ["Green", "Olive"],
+      "filterSizes": ["M", "L", "XL"],
       "isOnSale": true,
-      "isFeatured": false
+      "isFeatured": true
     },
     {
       "id": 7,
@@ -327,39 +158,12 @@
         "sofa_G6.jpg"
       ],
       "price": 34000,
-      "comparePrice": 40000,
+      "oldPrice": 40000,
+      "salePercentage": "15%",
       "inStock": true,
-      "stockQuantity": 10,
-      "categories": "Sofa",
-      "subCategories": [
-        "category5"
-      ],
-      "sizes": [
-        "S",
-        "M",
-        "L",
-        "XL"
-      ],
-      "colors": [
-        "sofa_A4.jpg",
-        "sofa_A5.jpg",
-        "sofa_A6.jpg"
-      ],
-      "sku": null,
-      "brands": [
-        "Louis Vuitton",
-        "Hermes"
-      ],
-      "filterColors": [
-        "Pink",
-        "Orange"
-      ],
-      "filterSizes": [
-        "S",
-        "M",
-        "L",
-        "XL"
-      ],
+      "filterBrands": ["Chanel", "Dior"],
+      "filterColor": ["Black", "Charcoal"],
+      "filterSizes": ["S", "M", "L"],
       "isOnSale": true,
       "isFeatured": false
     },
@@ -378,43 +182,14 @@
         "sofa_H6.jpg"
       ],
       "price": 46000,
-      "comparePrice": 59000,
+      "oldPrice": 59000,
+      "salePercentage": "22%",
       "inStock": true,
-      "stockQuantity": 10,
-      "categories": "Sofa",
-      "subCategories": [
-        "category1",
-        "category3",
-        "category4"
-      ],
-      "sizes": [
-        "S",
-        "M",
-        "L",
-        "XL"
-      ],
-      "colors": [
-        "sofa_A4.jpg",
-        "sofa_A5.jpg",
-        "sofa_A6.jpg"
-      ],
-      "sku": null,
-      "brands": [
-        "Louis Vuitton",
-        "Hermes"
-      ],
-      "filterColors": [
-        "Pink",
-        "Orange"
-      ],
-      "filterSizes": [
-        "S",
-        "M",
-        "L",
-        "XL"
-      ],
+      "filterBrands": ["Hermes", "Burberry"],
+      "filterColor": ["Burgundy", "Red"],
+      "filterSizes": ["S", "M", "L", "XL"],
       "isOnSale": true,
-      "isFeatured": false
+      "isFeatured": true
     },
     {
       "id": 9,
@@ -431,41 +206,12 @@
         "sofa_I6.jpg"
       ],
       "price": 58000,
-      "comparePrice": 60000,
+      "oldPrice": 60000,
+      "salePercentage": "3%",
       "inStock": true,
-      "stockQuantity": 10,
-      "categories": "Sofa",
-      "subCategories": [
-        "category1",
-        "category2",
-        "category4"
-      ],
-      "sizes": [
-        "S",
-        "M",
-        "L",
-        "XL"
-      ],
-      "colors": [
-        "sofa_A4.jpg",
-        "sofa_A5.jpg",
-        "sofa_A6.jpg"
-      ],
-      "sku": null,
-      "brands": [
-        "Louis Vuitton",
-        "Hermes"
-      ],
-      "filterColors": [
-        "Pink",
-        "Orange"
-      ],
-      "filterSizes": [
-        "S",
-        "M",
-        "L",
-        "XL"
-      ],
+      "filterBrands": ["Louis Vuitton", "Versace"],
+      "filterColor": ["Emerald", "Teal"],
+      "filterSizes": ["M", "L", "XL"],
       "isOnSale": true,
       "isFeatured": false
     },
@@ -484,41 +230,14 @@
         "sofa_J6.jpg"
       ],
       "price": 57000,
-      "comparePrice": 65000,
+      "oldPrice": 65000,
+      "salePercentage": "12%",
       "inStock": true,
-      "stockQuantity": 10,
-      "categories": "Sofa",
-      "subCategories": [
-        "category5"
-      ],
-      "sizes": [
-        "S",
-        "M",
-        "L",
-        "XL"
-      ],
-      "colors": [
-        "sofa_A4.jpg",
-        "sofa_A5.jpg",
-        "sofa_A6.jpg"
-      ],
-      "sku": null,
-      "brands": [
-        "Louis Vuitton",
-        "Hermes"
-      ],
-      "filterColors": [
-        "Pink",
-        "Orange"
-      ],
-      "filterSizes": [
-        "S",
-        "M",
-        "L",
-        "XL"
-      ],
+      "filterBrands": ["Gucci", "Prada"],
+      "filterColor": ["Mustard", "Yellow"],
+      "filterSizes": ["S", "M", "L"],
       "isOnSale": true,
-      "isFeatured": false
+      "isFeatured": true
     },
     {
       "id": 11,
@@ -533,40 +252,12 @@
         "coffeeTable_A4.jpg"
       ],
       "price": 31742,
-      "comparePrice": 38914,
+      "oldPrice": 38914,
+      "salePercentage": "18%",
       "inStock": true,
-      "stockQuantity": 10,
-      "categories": "Coffee Table",
-      "subCategories": [
-        "category1",
-        "category4"
-      ],
-      "sizes": [
-        "S",
-        "M",
-        "L",
-        "XL"
-      ],
-      "colors": [
-        "sofa_A4.jpg",
-        "sofa_A5.jpg",
-        "sofa_A6.jpg"
-      ],
-      "sku": null,
-      "brands": [
-        "Louis Vuitton",
-        "Hermes"
-      ],
-      "filterColors": [
-        "Pink",
-        "Orange"
-      ],
-      "filterSizes": [
-        "S",
-        "M",
-        "L",
-        "XL"
-      ],
+      "filterBrands": ["West Elm", "CB2"],
+      "filterColor": ["Black", "Gray"],
+      "filterSizes": ["M", "L"],
       "isOnSale": true,
       "isFeatured": false
     },
@@ -583,42 +274,14 @@
         "coffeeTable_B4.jpg"
       ],
       "price": 34589,
-      "comparePrice": 41263,
+      "oldPrice": 41263,
+      "salePercentage": "16%",
       "inStock": true,
-      "stockQuantity": 10,
-      "categories": "Coffee Table",
-      "subCategories": [
-        "category1",
-        "category5"
-      ],
-      "sizes": [
-        "S",
-        "M",
-        "L",
-        "XL"
-      ],
-      "colors": [
-        "sofa_A4.jpg",
-        "sofa_A5.jpg",
-        "sofa_A6.jpg"
-      ],
-      "sku": null,
-      "brands": [
-        "Louis Vuitton",
-        "Hermes"
-      ],
-      "filterColors": [
-        "Pink",
-        "Orange"
-      ],
-      "filterSizes": [
-        "S",
-        "M",
-        "L",
-        "XL"
-      ],
+      "filterBrands": ["Restoration Hardware", "Pottery Barn"],
+      "filterColor": ["White", "Marble"],
+      "filterSizes": ["M", "L", "XL"],
       "isOnSale": true,
-      "isFeatured": false
+      "isFeatured": true
     },
     {
       "id": 13,
@@ -633,39 +296,12 @@
         "coffeeTable_C4.jpg"
       ],
       "price": 36105,
-      "comparePrice": 44887,
+      "oldPrice": 44887,
+      "salePercentage": "20%",
       "inStock": true,
-      "stockQuantity": 10,
-      "categories": "Coffee Table",
-      "subCategories": [
-        "category5"
-      ],
-      "sizes": [
-        "S",
-        "M",
-        "L",
-        "XL"
-      ],
-      "colors": [
-        "sofa_A4.jpg",
-        "sofa_A5.jpg",
-        "sofa_A6.jpg"
-      ],
-      "sku": null,
-      "brands": [
-        "Louis Vuitton",
-        "Hermes"
-      ],
-      "filterColors": [
-        "Pink",
-        "Orange"
-      ],
-      "filterSizes": [
-        "S",
-        "M",
-        "L",
-        "XL"
-      ],
+      "filterBrands": ["Article", "West Elm"],
+      "filterColor": ["Walnut", "Brown"],
+      "filterSizes": ["S", "M", "L"],
       "isOnSale": true,
       "isFeatured": false
     },
@@ -682,42 +318,14 @@
         "coffeeTable_D4.jpg"
       ],
       "price": 38964,
-      "comparePrice": 47102,
+      "oldPrice": 47102,
+      "salePercentage": "17%",
       "inStock": true,
-      "stockQuantity": 10,
-      "categories": "Coffee Table",
-      "subCategories": [
-        "category1",
-        "category2"
-      ],
-      "sizes": [
-        "S",
-        "M",
-        "L",
-        "XL"
-      ],
-      "colors": [
-        "sofa_A4.jpg",
-        "sofa_A5.jpg",
-        "sofa_A6.jpg"
-      ],
-      "sku": null,
-      "brands": [
-        "Louis Vuitton",
-        "Hermes"
-      ],
-      "filterColors": [
-        "Pink",
-        "Orange"
-      ],
-      "filterSizes": [
-        "S",
-        "M",
-        "L",
-        "XL"
-      ],
+      "filterBrands": ["CB2", "Crate & Barrel"],
+      "filterColor": ["Oak", "Natural"],
+      "filterSizes": ["M", "L"],
       "isOnSale": true,
-      "isFeatured": false
+      "isFeatured": true
     },
     {
       "id": 15,
@@ -732,40 +340,12 @@
         "coffeeTable_E4.jpg"
       ],
       "price": 40217,
-      "comparePrice": 48936,
+      "oldPrice": 48936,
+      "salePercentage": "18%",
       "inStock": true,
-      "stockQuantity": 10,
-      "categories": "Coffee Table",
-      "subCategories": [
-        "category1",
-        "category2"
-      ],
-      "sizes": [
-        "S",
-        "M",
-        "L",
-        "XL"
-      ],
-      "colors": [
-        "sofa_A4.jpg",
-        "sofa_A5.jpg",
-        "sofa_A6.jpg"
-      ],
-      "sku": null,
-      "brands": [
-        "Louis Vuitton",
-        "Hermes"
-      ],
-      "filterColors": [
-        "Pink",
-        "Orange"
-      ],
-      "filterSizes": [
-        "S",
-        "M",
-        "L",
-        "XL"
-      ],
+      "filterBrands": ["West Elm", "Room & Board"],
+      "filterColor": ["Terracotta", "Orange"],
+      "filterSizes": ["S", "M", "L", "XL"],
       "isOnSale": true,
       "isFeatured": false
     },
@@ -782,43 +362,14 @@
         "coffeeTable_F4.jpg"
       ],
       "price": 42880,
-      "comparePrice": 50941,
+      "oldPrice": 50941,
+      "salePercentage": "16%",
       "inStock": true,
-      "stockQuantity": 10,
-      "categories": "Coffee Table",
-      "subCategories": [
-        "category1",
-        "category3",
-        "category6"
-      ],
-      "sizes": [
-        "S",
-        "M",
-        "L",
-        "XL"
-      ],
-      "colors": [
-        "sofa_A4.jpg",
-        "sofa_A5.jpg",
-        "sofa_A6.jpg"
-      ],
-      "sku": null,
-      "brands": [
-        "Louis Vuitton",
-        "Hermes"
-      ],
-      "filterColors": [
-        "Pink",
-        "Orange"
-      ],
-      "filterSizes": [
-        "S",
-        "M",
-        "L",
-        "XL"
-      ],
+      "filterBrands": ["Article", "Blu Dot"],
+      "filterColor": ["Concrete", "Gray"],
+      "filterSizes": ["M", "L"],
       "isOnSale": true,
-      "isFeatured": false
+      "isFeatured": true
     },
     {
       "id": 17,
@@ -833,39 +384,12 @@
         "coffeeTable_G4.jpg"
       ],
       "price": 45136,
-      "comparePrice": 53784,
+      "oldPrice": 53784,
+      "salePercentage": "16%",
       "inStock": true,
-      "stockQuantity": 10,
-      "categories": "Coffee Table",
-      "subCategories": [
-        "category6"
-      ],
-      "sizes": [
-        "S",
-        "M",
-        "L",
-        "XL"
-      ],
-      "colors": [
-        "sofa_A4.jpg",
-        "sofa_A5.jpg",
-        "sofa_A6.jpg"
-      ],
-      "sku": null,
-      "brands": [
-        "Louis Vuitton",
-        "Hermes"
-      ],
-      "filterColors": [
-        "Pink",
-        "Orange"
-      ],
-      "filterSizes": [
-        "S",
-        "M",
-        "L",
-        "XL"
-      ],
+      "filterBrands": ["CB2", "Design Within Reach"],
+      "filterColor": ["Black", "Metal"],
+      "filterSizes": ["L", "XL"],
       "isOnSale": true,
       "isFeatured": false
     },
@@ -882,43 +406,14 @@
         "coffeeTable_H4.jpg"
       ],
       "price": 46902,
-      "comparePrice": 55611,
+      "oldPrice": 55611,
+      "salePercentage": "16%",
       "inStock": true,
-      "stockQuantity": 10,
-      "categories": "Coffee Table",
-      "subCategories": [
-        "category1",
-        "category3",
-        "category5"
-      ],
-      "sizes": [
-        "S",
-        "M",
-        "L",
-        "XL"
-      ],
-      "colors": [
-        "sofa_A4.jpg",
-        "sofa_A5.jpg",
-        "sofa_A6.jpg"
-      ],
-      "sku": null,
-      "brands": [
-        "Louis Vuitton",
-        "Hermes"
-      ],
-      "filterColors": [
-        "Pink",
-        "Orange"
-      ],
-      "filterSizes": [
-        "S",
-        "M",
-        "L",
-        "XL"
-      ],
+      "filterBrands": ["West Elm", "Crate & Barrel"],
+      "filterColor": ["Brass", "Gold"],
+      "filterSizes": ["M", "L", "XL"],
       "isOnSale": true,
-      "isFeatured": false
+      "isFeatured": true
     },
     {
       "id": 19,
@@ -933,41 +428,12 @@
         "coffeeTable_I4.jpg"
       ],
       "price": 48357,
-      "comparePrice": 56904,
+      "oldPrice": 56904,
+      "salePercentage": "15%",
       "inStock": true,
-      "stockQuantity": 10,
-      "categories": "Coffee Table",
-      "subCategories": [
-        "category1",
-        "category2",
-        "category5"
-      ],
-      "sizes": [
-        "S",
-        "M",
-        "L",
-        "XL"
-      ],
-      "colors": [
-        "sofa_A4.jpg",
-        "sofa_A5.jpg",
-        "sofa_A6.jpg"
-      ],
-      "sku": null,
-      "brands": [
-        "Louis Vuitton",
-        "Hermes"
-      ],
-      "filterColors": [
-        "Pink",
-        "Orange"
-      ],
-      "filterSizes": [
-        "S",
-        "M",
-        "L",
-        "XL"
-      ],
+      "filterBrands": ["Article", "Anthropologie"],
+      "filterColor": ["Sand", "Beige"],
+      "filterSizes": ["S", "M", "L"],
       "isOnSale": true,
       "isFeatured": false
     },
@@ -984,41 +450,14 @@
         "coffeeTable_J4.jpg"
       ],
       "price": 49621,
-      "comparePrice": 58437,
+      "oldPrice": 58437,
+      "salePercentage": "15%",
       "inStock": true,
-      "stockQuantity": 10,
-      "categories": "Coffee Table",
-      "subCategories": [
-        "category6"
-      ],
-      "sizes": [
-        "S",
-        "M",
-        "L",
-        "XL"
-      ],
-      "colors": [
-        "sofa_A4.jpg",
-        "sofa_A5.jpg",
-        "sofa_A6.jpg"
-      ],
-      "sku": null,
-      "brands": [
-        "Louis Vuitton",
-        "Hermes"
-      ],
-      "filterColors": [
-        "Pink",
-        "Orange"
-      ],
-      "filterSizes": [
-        "S",
-        "M",
-        "L",
-        "XL"
-      ],
+      "filterBrands": ["Restoration Hardware", "Room & Board"],
+      "filterColor": ["White", "Black"],
+      "filterSizes": ["M", "L", "XL"],
       "isOnSale": true,
-      "isFeatured": false
+      "isFeatured": true
     },
     {
       "id": 21,
@@ -1033,40 +472,12 @@
         "consoleTable_A4.jpg"
       ],
       "price": 42000,
-      "comparePrice": 50000,
+      "oldPrice": 50000,
+      "salePercentage": "16%",
       "inStock": true,
-      "stockQuantity": 10,
-      "categories": "Console Table",
-      "subCategories": [
-        "category1",
-        "category6"
-      ],
-      "sizes": [
-        "S",
-        "M",
-        "L",
-        "XL"
-      ],
-      "colors": [
-        "sofa_A4.jpg",
-        "sofa_A5.jpg",
-        "sofa_A6.jpg"
-      ],
-      "sku": null,
-      "brands": [
-        "Louis Vuitton",
-        "Hermes"
-      ],
-      "filterColors": [
-        "Pink",
-        "Orange"
-      ],
-      "filterSizes": [
-        "S",
-        "M",
-        "L",
-        "XL"
-      ],
+      "filterBrands": ["West Elm", "CB2"],
+      "filterColor": ["Walnut", "Brass"],
+      "filterSizes": ["M", "L"],
       "isOnSale": true,
       "isFeatured": false
     },
@@ -1083,42 +494,14 @@
         "consoleTable_B4.jpg"
       ],
       "price": 38000,
-      "comparePrice": 58000,
+      "oldPrice": 58000,
+      "salePercentage": "34%",
       "inStock": true,
-      "stockQuantity": 10,
-      "categories": "Console Table",
-      "subCategories": [
-        "category1",
-        "category7"
-      ],
-      "sizes": [
-        "S",
-        "M",
-        "L",
-        "XL"
-      ],
-      "colors": [
-        "sofa_A4.jpg",
-        "sofa_A5.jpg",
-        "sofa_A6.jpg"
-      ],
-      "sku": null,
-      "brands": [
-        "Louis Vuitton",
-        "Hermes"
-      ],
-      "filterColors": [
-        "Pink",
-        "Orange"
-      ],
-      "filterSizes": [
-        "S",
-        "M",
-        "L",
-        "XL"
-      ],
+      "filterBrands": ["Pottery Barn", "Crate & Barrel"],
+      "filterColor": ["Black", "White"],
+      "filterSizes": ["L", "XL"],
       "isOnSale": true,
-      "isFeatured": false
+      "isFeatured": true
     },
     {
       "id": 23,
@@ -1133,39 +516,12 @@
         "consoleTable_C4.jpg"
       ],
       "price": 41000,
-      "comparePrice": 51000,
+      "oldPrice": 51000,
+      "salePercentage": "20%",
       "inStock": true,
-      "stockQuantity": 10,
-      "categories": "Console Table",
-      "subCategories": [
-        "category6"
-      ],
-      "sizes": [
-        "S",
-        "M",
-        "L",
-        "XL"
-      ],
-      "colors": [
-        "sofa_A4.jpg",
-        "sofa_A5.jpg",
-        "sofa_A6.jpg"
-      ],
-      "sku": null,
-      "brands": [
-        "Louis Vuitton",
-        "Hermes"
-      ],
-      "filterColors": [
-        "Pink",
-        "Orange"
-      ],
-      "filterSizes": [
-        "S",
-        "M",
-        "L",
-        "XL"
-      ],
+      "filterBrands": ["Article", "West Elm"],
+      "filterColor": ["Oak", "Natural"],
+      "filterSizes": ["S", "M", "L"],
       "isOnSale": true,
       "isFeatured": false
     },
@@ -1182,42 +538,14 @@
         "consoleTable_D4.jpg"
       ],
       "price": 47000,
-      "comparePrice": 50000,
+      "oldPrice": 50000,
+      "salePercentage": "6%",
       "inStock": true,
-      "stockQuantity": 10,
-      "categories": "Console Table",
-      "subCategories": [
-        "category1",
-        "category2"
-      ],
-      "sizes": [
-        "S",
-        "M",
-        "L",
-        "XL"
-      ],
-      "colors": [
-        "sofa_A4.jpg",
-        "sofa_A5.jpg",
-        "sofa_A6.jpg"
-      ],
-      "sku": null,
-      "brands": [
-        "Louis Vuitton",
-        "Hermes"
-      ],
-      "filterColors": [
-        "Pink",
-        "Orange"
-      ],
-      "filterSizes": [
-        "S",
-        "M",
-        "L",
-        "XL"
-      ],
+      "filterBrands": ["CB2", "Room & Board"],
+      "filterColor": ["Gray", "Gold"],
+      "filterSizes": ["M", "L", "XL"],
       "isOnSale": true,
-      "isFeatured": false
+      "isFeatured": true
     },
     {
       "id": 25,
@@ -1232,40 +560,12 @@
         "consoleTable_E4.jpg"
       ],
       "price": 48200,
-      "comparePrice": 55000,
+      "oldPrice": 55000,
+      "salePercentage": "12%",
       "inStock": true,
-      "stockQuantity": 10,
-      "categories": "Console Table",
-      "subCategories": [
-        "category1",
-        "category2"
-      ],
-      "sizes": [
-        "S",
-        "M",
-        "L",
-        "XL"
-      ],
-      "colors": [
-        "sofa_A4.jpg",
-        "sofa_A5.jpg",
-        "sofa_A6.jpg"
-      ],
-      "sku": null,
-      "brands": [
-        "Louis Vuitton",
-        "Hermes"
-      ],
-      "filterColors": [
-        "Pink",
-        "Orange"
-      ],
-      "filterSizes": [
-        "S",
-        "M",
-        "L",
-        "XL"
-      ],
+      "filterBrands": ["West Elm", "Design Within Reach"],
+      "filterColor": ["White", "Silver"],
+      "filterSizes": ["M", "L"],
       "isOnSale": true,
       "isFeatured": false
     },
@@ -1282,43 +582,14 @@
         "consoleTable_F4.jpg"
       ],
       "price": 55000,
-      "comparePrice": 60000,
+      "oldPrice": 60000,
+      "salePercentage": "8%",
       "inStock": true,
-      "stockQuantity": 10,
-      "categories": "Console Table",
-      "subCategories": [
-        "category1",
-        "category3",
-        "category7"
-      ],
-      "sizes": [
-        "S",
-        "M",
-        "L",
-        "XL"
-      ],
-      "colors": [
-        "sofa_A4.jpg",
-        "sofa_A5.jpg",
-        "sofa_A6.jpg"
-      ],
-      "sku": null,
-      "brands": [
-        "Louis Vuitton",
-        "Hermes"
-      ],
-      "filterColors": [
-        "Pink",
-        "Orange"
-      ],
-      "filterSizes": [
-        "S",
-        "M",
-        "L",
-        "XL"
-      ],
+      "filterBrands": ["Restoration Hardware", "Pottery Barn"],
+      "filterColor": ["Espresso", "Brown"],
+      "filterSizes": ["L", "XL"],
       "isOnSale": true,
-      "isFeatured": false
+      "isFeatured": true
     },
     {
       "id": 27,
@@ -1333,39 +604,12 @@
         "consoleTable_G4.jpg"
       ],
       "price": 34000,
-      "comparePrice": 40000,
+      "oldPrice": 40000,
+      "salePercentage": "15%",
       "inStock": true,
-      "stockQuantity": 10,
-      "categories": "Console Table",
-      "subCategories": [
-        "category7"
-      ],
-      "sizes": [
-        "S",
-        "M",
-        "L",
-        "XL"
-      ],
-      "colors": [
-        "sofa_A4.jpg",
-        "sofa_A5.jpg",
-        "sofa_A6.jpg"
-      ],
-      "sku": null,
-      "brands": [
-        "Louis Vuitton",
-        "Hermes"
-      ],
-      "filterColors": [
-        "Pink",
-        "Orange"
-      ],
-      "filterSizes": [
-        "S",
-        "M",
-        "L",
-        "XL"
-      ],
+      "filterBrands": ["Article", "CB2"],
+      "filterColor": ["Ash", "Light Gray"],
+      "filterSizes": ["S", "M"],
       "isOnSale": true,
       "isFeatured": false
     },
@@ -1382,43 +626,14 @@
         "consoleTable_H4.jpg"
       ],
       "price": 46000,
-      "comparePrice": 59000,
+      "oldPrice": 59000,
+      "salePercentage": "22%",
       "inStock": true,
-      "stockQuantity": 10,
-      "categories": "Console Table",
-      "subCategories": [
-        "category1",
-        "category3",
-        "category6"
-      ],
-      "sizes": [
-        "S",
-        "M",
-        "L",
-        "XL"
-      ],
-      "colors": [
-        "sofa_A4.jpg",
-        "sofa_A5.jpg",
-        "sofa_A6.jpg"
-      ],
-      "sku": null,
-      "brands": [
-        "Louis Vuitton",
-        "Hermes"
-      ],
-      "filterColors": [
-        "Pink",
-        "Orange"
-      ],
-      "filterSizes": [
-        "S",
-        "M",
-        "L",
-        "XL"
-      ],
+      "filterBrands": ["West Elm", "Crate & Barrel"],
+      "filterColor": ["Dark Brown", "Brass"],
+      "filterSizes": ["M", "L", "XL"],
       "isOnSale": true,
-      "isFeatured": false
+      "isFeatured": true
     },
     {
       "id": 31,
@@ -1433,40 +648,12 @@
         "nestertable_A4.jpg"
       ],
       "price": 31742,
-      "comparePrice": 38914,
+      "oldPrice": 38914,
+      "salePercentage": "18%",
       "inStock": true,
-      "stockQuantity": 10,
-      "categories": "Nester Table",
-      "subCategories": [
-        "category1",
-        "category8"
-      ],
-      "sizes": [
-        "S",
-        "M",
-        "L",
-        "XL"
-      ],
-      "colors": [
-        "sofa_A4.jpg",
-        "sofa_A5.jpg",
-        "sofa_A6.jpg"
-      ],
-      "sku": null,
-      "brands": [
-        "Louis Vuitton",
-        "Hermes"
-      ],
-      "filterColors": [
-        "Pink",
-        "Orange"
-      ],
-      "filterSizes": [
-        "S",
-        "M",
-        "L",
-        "XL"
-      ],
+      "filterBrands": ["Article", "West Elm"],
+      "filterColor": ["Gold", "Marble"],
+      "filterSizes": ["S", "M"],
       "isOnSale": true,
       "isFeatured": false
     },
@@ -1483,42 +670,14 @@
         "nestertable_B4.jpg"
       ],
       "price": 34589,
-      "comparePrice": 41263,
+      "oldPrice": 41263,
+      "salePercentage": "16%",
       "inStock": true,
-      "stockQuantity": 10,
-      "categories": "Nester Table",
-      "subCategories": [
-        "category1",
-        "category9"
-      ],
-      "sizes": [
-        "S",
-        "M",
-        "L",
-        "XL"
-      ],
-      "colors": [
-        "sofa_A4.jpg",
-        "sofa_A5.jpg",
-        "sofa_A6.jpg"
-      ],
-      "sku": null,
-      "brands": [
-        "Louis Vuitton",
-        "Hermes"
-      ],
-      "filterColors": [
-        "Pink",
-        "Orange"
-      ],
-      "filterSizes": [
-        "S",
-        "M",
-        "L",
-        "XL"
-      ],
+      "filterBrands": ["CB2", "Pottery Barn"],
+      "filterColor": ["Black", "Glass"],
+      "filterSizes": ["S", "M", "L"],
       "isOnSale": true,
-      "isFeatured": false
+      "isFeatured": true
     },
     {
       "id": 33,
@@ -1533,39 +692,12 @@
         "nestertable_C4.jpg"
       ],
       "price": 36105,
-      "comparePrice": 44887,
+      "oldPrice": 44887,
+      "salePercentage": "20%",
       "inStock": true,
-      "stockQuantity": 10,
-      "categories": "Nester Table",
-      "subCategories": [
-        "category7"
-      ],
-      "sizes": [
-        "S",
-        "M",
-        "L",
-        "XL"
-      ],
-      "colors": [
-        "sofa_A4.jpg",
-        "sofa_A5.jpg",
-        "sofa_A6.jpg"
-      ],
-      "sku": null,
-      "brands": [
-        "Louis Vuitton",
-        "Hermes"
-      ],
-      "filterColors": [
-        "Pink",
-        "Orange"
-      ],
-      "filterSizes": [
-        "S",
-        "M",
-        "L",
-        "XL"
-      ],
+      "filterBrands": ["West Elm", "Room & Board"],
+      "filterColor": ["White", "Chrome"],
+      "filterSizes": ["M", "L"],
       "isOnSale": true,
       "isFeatured": false
     },
@@ -1582,42 +714,14 @@
         "nestertable_D4.jpg"
       ],
       "price": 38964,
-      "comparePrice": 47102,
+      "oldPrice": 47102,
+      "salePercentage": "17%",
       "inStock": true,
-      "stockQuantity": 10,
-      "categories": "Nester Table",
-      "subCategories": [
-        "category1",
-        "category2"
-      ],
-      "sizes": [
-        "S",
-        "M",
-        "L",
-        "XL"
-      ],
-      "colors": [
-        "sofa_A4.jpg",
-        "sofa_A5.jpg",
-        "sofa_A6.jpg"
-      ],
-      "sku": null,
-      "brands": [
-        "Louis Vuitton",
-        "Hermes"
-      ],
-      "filterColors": [
-        "Pink",
-        "Orange"
-      ],
-      "filterSizes": [
-        "S",
-        "M",
-        "L",
-        "XL"
-      ],
+      "filterBrands": ["Article", "Blu Dot"],
+      "filterColor": ["Oak", "Natural"],
+      "filterSizes": ["S", "M", "L"],
       "isOnSale": true,
-      "isFeatured": false
+      "isFeatured": true
     },
     {
       "id": 35,
@@ -1632,40 +736,12 @@
         "nestertable_E4.jpg"
       ],
       "price": 40217,
-      "comparePrice": 48936,
+      "oldPrice": 48936,
+      "salePercentage": "18%",
       "inStock": true,
-      "stockQuantity": 10,
-      "categories": "Nester Table",
-      "subCategories": [
-        "category1",
-        "category2"
-      ],
-      "sizes": [
-        "S",
-        "M",
-        "L",
-        "XL"
-      ],
-      "colors": [
-        "sofa_A4.jpg",
-        "sofa_A5.jpg",
-        "sofa_A6.jpg"
-      ],
-      "sku": null,
-      "brands": [
-        "Louis Vuitton",
-        "Hermes"
-      ],
-      "filterColors": [
-        "Pink",
-        "Orange"
-      ],
-      "filterSizes": [
-        "S",
-        "M",
-        "L",
-        "XL"
-      ],
+      "filterBrands": ["CB2", "Design Within Reach"],
+      "filterColor": ["Walnut", "Copper"],
+      "filterSizes": ["M", "L"],
       "isOnSale": true,
       "isFeatured": false
     },
@@ -1682,43 +758,14 @@
         "nestertable_F4.jpg"
       ],
       "price": 42880,
-      "comparePrice": 50941,
+      "oldPrice": 50941,
+      "salePercentage": "16%",
       "inStock": true,
-      "stockQuantity": 10,
-      "categories": "Nester Table",
-      "subCategories": [
-        "category1",
-        "category3",
-        "category8"
-      ],
-      "sizes": [
-        "S",
-        "M",
-        "L",
-        "XL"
-      ],
-      "colors": [
-        "sofa_A4.jpg",
-        "sofa_A5.jpg",
-        "sofa_A6.jpg"
-      ],
-      "sku": null,
-      "brands": [
-        "Louis Vuitton",
-        "Hermes"
-      ],
-      "filterColors": [
-        "Pink",
-        "Orange"
-      ],
-      "filterSizes": [
-        "S",
-        "M",
-        "L",
-        "XL"
-      ],
+      "filterBrands": ["West Elm", "Crate & Barrel"],
+      "filterColor": ["Gray", "Metal"],
+      "filterSizes": ["S", "M"],
       "isOnSale": true,
-      "isFeatured": false
+      "isFeatured": true
     },
     {
       "id": 37,
@@ -1733,39 +780,12 @@
         "nestertable_G4.jpg"
       ],
       "price": 45136,
-      "comparePrice": 53784,
+      "oldPrice": 53784,
+      "salePercentage": "16%",
       "inStock": true,
-      "stockQuantity": 10,
-      "categories": "Nester Table",
-      "subCategories": [
-        "category8"
-      ],
-      "sizes": [
-        "S",
-        "M",
-        "L",
-        "XL"
-      ],
-      "colors": [
-        "sofa_A4.jpg",
-        "sofa_A5.jpg",
-        "sofa_A6.jpg"
-      ],
-      "sku": null,
-      "brands": [
-        "Louis Vuitton",
-        "Hermes"
-      ],
-      "filterColors": [
-        "Pink",
-        "Orange"
-      ],
-      "filterSizes": [
-        "S",
-        "M",
-        "L",
-        "XL"
-      ],
+      "filterBrands": ["Article", "Anthropologie"],
+      "filterColor": ["Brass", "Smoke Glass"],
+      "filterSizes": ["M", "L"],
       "isOnSale": true,
       "isFeatured": false
     },
@@ -1782,43 +802,14 @@
         "nestertable_H4.jpg"
       ],
       "price": 46902,
-      "comparePrice": 55611,
+      "oldPrice": 55611,
+      "salePercentage": "16%",
       "inStock": true,
-      "stockQuantity": 10,
-      "categories": "Nester Table",
-      "subCategories": [
-        "category1",
-        "category3",
-        "category7"
-      ],
-      "sizes": [
-        "S",
-        "M",
-        "L",
-        "XL"
-      ],
-      "colors": [
-        "sofa_A4.jpg",
-        "sofa_A5.jpg",
-        "sofa_A6.jpg"
-      ],
-      "sku": null,
-      "brands": [
-        "Louis Vuitton",
-        "Hermes"
-      ],
-      "filterColors": [
-        "Pink",
-        "Orange"
-      ],
-      "filterSizes": [
-        "S",
-        "M",
-        "L",
-        "XL"
-      ],
+      "filterBrands": ["CB2", "Room & Board"],
+      "filterColor": ["Black", "Gold"],
+      "filterSizes": ["S", "M", "L"],
       "isOnSale": true,
-      "isFeatured": false
+      "isFeatured": true
     },
     {
       "id": 39,
@@ -1833,41 +824,12 @@
         "nestertable_I4.jpg"
       ],
       "price": 48357,
-      "comparePrice": 56904,
+      "oldPrice": 56904,
+      "salePercentage": "15%",
       "inStock": true,
-      "stockQuantity": 10,
-      "categories": "Nester Table",
-      "subCategories": [
-        "category1",
-        "category2",
-        "category7"
-      ],
-      "sizes": [
-        "S",
-        "M",
-        "L",
-        "XL"
-      ],
-      "colors": [
-        "sofa_A4.jpg",
-        "sofa_A5.jpg",
-        "sofa_A6.jpg"
-      ],
-      "sku": null,
-      "brands": [
-        "Louis Vuitton",
-        "Hermes"
-      ],
-      "filterColors": [
-        "Pink",
-        "Orange"
-      ],
-      "filterSizes": [
-        "S",
-        "M",
-        "L",
-        "XL"
-      ],
+      "filterBrands": ["West Elm", "Pottery Barn"],
+      "filterColor": ["Concrete", "Steel"],
+      "filterSizes": ["M", "L"],
       "isOnSale": true,
       "isFeatured": false
     },
@@ -1884,41 +846,14 @@
         "nestertable_J4.jpg"
       ],
       "price": 49621,
-      "comparePrice": 58437,
+      "oldPrice": 58437,
+      "salePercentage": "15%",
       "inStock": true,
-      "stockQuantity": 10,
-      "categories": "Nester Table",
-      "subCategories": [
-        "category8"
-      ],
-      "sizes": [
-        "S",
-        "M",
-        "L",
-        "XL"
-      ],
-      "colors": [
-        "sofa_A4.jpg",
-        "sofa_A5.jpg",
-        "sofa_A6.jpg"
-      ],
-      "sku": null,
-      "brands": [
-        "Louis Vuitton",
-        "Hermes"
-      ],
-      "filterColors": [
-        "Pink",
-        "Orange"
-      ],
-      "filterSizes": [
-        "S",
-        "M",
-        "L",
-        "XL"
-      ],
+      "filterBrands": ["Article", "Design Within Reach"],
+      "filterColor": ["Stone", "Granite"],
+      "filterSizes": ["L", "XL"],
       "isOnSale": true,
-      "isFeatured": false
+      "isFeatured": true
     },
     {
       "id": 41,
@@ -1935,40 +870,12 @@
         "ottoman_A6.jpg"
       ],
       "price": 42000,
-      "comparePrice": 50000,
+      "oldPrice": 50000,
+      "salePercentage": "16%",
       "inStock": true,
-      "stockQuantity": 10,
-      "categories": "ottoman",
-      "subCategories": [
-        "category1",
-        "category10"
-      ],
-      "sizes": [
-        "S",
-        "M",
-        "L",
-        "XL"
-      ],
-      "colors": [
-        "sofa_A4.jpg",
-        "sofa_A5.jpg",
-        "sofa_A6.jpg"
-      ],
-      "sku": null,
-      "brands": [
-        "Louis Vuitton",
-        "Hermes"
-      ],
-      "filterColors": [
-        "Pink",
-        "Orange"
-      ],
-      "filterSizes": [
-        "S",
-        "M",
-        "L",
-        "XL"
-      ],
+      "filterBrands": ["West Elm", "Pottery Barn"],
+      "filterColor": ["Amber", "Orange"],
+      "filterSizes": ["S", "M", "L"],
       "isOnSale": true,
       "isFeatured": false
     },
@@ -1987,41 +894,14 @@
         "ottoman_C6.jpg"
       ],
       "price": 41000,
-      "comparePrice": 51000,
+      "oldPrice": 51000,
+      "salePercentage": "20%",
       "inStock": true,
-      "stockQuantity": 10,
-      "categories": "ottoman",
-      "subCategories": [
-        "category8"
-      ],
-      "sizes": [
-        "S",
-        "M",
-        "L",
-        "XL"
-      ],
-      "colors": [
-        "sofa_A4.jpg",
-        "sofa_A5.jpg",
-        "sofa_A6.jpg"
-      ],
-      "sku": null,
-      "brands": [
-        "Louis Vuitton",
-        "Hermes"
-      ],
-      "filterColors": [
-        "Pink",
-        "Orange"
-      ],
-      "filterSizes": [
-        "S",
-        "M",
-        "L",
-        "XL"
-      ],
+      "filterBrands": ["CB2", "Article"],
+      "filterColor": ["Cream", "Beige"],
+      "filterSizes": ["M", "L"],
       "isOnSale": true,
-      "isFeatured": false
+      "isFeatured": true
     },
     {
       "id": 44,
@@ -2038,40 +918,12 @@
         "ottoman_D6.jpg"
       ],
       "price": 47000,
-      "comparePrice": 50000,
+      "oldPrice": 50000,
+      "salePercentage": "6%",
       "inStock": true,
-      "stockQuantity": 10,
-      "categories": "ottoman",
-      "subCategories": [
-        "category1",
-        "category2"
-      ],
-      "sizes": [
-        "S",
-        "M",
-        "L",
-        "XL"
-      ],
-      "colors": [
-        "sofa_A4.jpg",
-        "sofa_A5.jpg",
-        "sofa_A6.jpg"
-      ],
-      "sku": null,
-      "brands": [
-        "Louis Vuitton",
-        "Hermes"
-      ],
-      "filterColors": [
-        "Pink",
-        "Orange"
-      ],
-      "filterSizes": [
-        "S",
-        "M",
-        "L",
-        "XL"
-      ],
+      "filterBrands": ["Restoration Hardware", "Anthropologie"],
+      "filterColor": ["Teal", "Blue"],
+      "filterSizes": ["M", "L", "XL"],
       "isOnSale": true,
       "isFeatured": false
     },
@@ -2090,42 +942,14 @@
         "ottoman_E6.jpg"
       ],
       "price": 48200,
-      "comparePrice": 55000,
+      "oldPrice": 55000,
+      "salePercentage": "12%",
       "inStock": true,
-      "stockQuantity": 10,
-      "categories": "ottoman",
-      "subCategories": [
-        "category1",
-        "category2"
-      ],
-      "sizes": [
-        "S",
-        "M",
-        "L",
-        "XL"
-      ],
-      "colors": [
-        "sofa_A4.jpg",
-        "sofa_A5.jpg",
-        "sofa_A6.jpg"
-      ],
-      "sku": null,
-      "brands": [
-        "Louis Vuitton",
-        "Hermes"
-      ],
-      "filterColors": [
-        "Pink",
-        "Orange"
-      ],
-      "filterSizes": [
-        "S",
-        "M",
-        "L",
-        "XL"
-      ],
+      "filterBrands": ["West Elm", "Room & Board"],
+      "filterColor": ["Charcoal", "Gray"],
+      "filterSizes": ["L", "XL"],
       "isOnSale": true,
-      "isFeatured": false
+      "isFeatured": true
     },
     {
       "id": 46,
@@ -2142,41 +966,12 @@
         "ottoman_F6.jpg"
       ],
       "price": 55000,
-      "comparePrice": 60000,
+      "oldPrice": 60000,
+      "salePercentage": "8%",
       "inStock": true,
-      "stockQuantity": 10,
-      "categories": "ottoman",
-      "subCategories": [
-        "category1",
-        "category3",
-        "category9"
-      ],
-      "sizes": [
-        "S",
-        "M",
-        "L",
-        "XL"
-      ],
-      "colors": [
-        "sofa_A4.jpg",
-        "sofa_A5.jpg",
-        "sofa_A6.jpg"
-      ],
-      "sku": null,
-      "brands": [
-        "Louis Vuitton",
-        "Hermes"
-      ],
-      "filterColors": [
-        "Pink",
-        "Orange"
-      ],
-      "filterSizes": [
-        "S",
-        "M",
-        "L",
-        "XL"
-      ],
+      "filterBrands": ["Article", "CB2"],
+      "filterColor": ["Saffron", "Yellow"],
+      "filterSizes": ["M", "L"],
       "isOnSale": true,
       "isFeatured": false
     },
@@ -2195,41 +990,14 @@
         "ottoman_G6.jpg"
       ],
       "price": 34000,
-      "comparePrice": 40000,
+      "oldPrice": 40000,
+      "salePercentage": "15%",
       "inStock": true,
-      "stockQuantity": 10,
-      "categories": "ottoman",
-      "subCategories": [
-        "category9"
-      ],
-      "sizes": [
-        "S",
-        "M",
-        "L",
-        "XL"
-      ],
-      "colors": [
-        "sofa_A4.jpg",
-        "sofa_A5.jpg",
-        "sofa_A6.jpg"
-      ],
-      "sku": null,
-      "brands": [
-        "Louis Vuitton",
-        "Hermes"
-      ],
-      "filterColors": [
-        "Pink",
-        "Orange"
-      ],
-      "filterSizes": [
-        "S",
-        "M",
-        "L",
-        "XL"
-      ],
+      "filterBrands": ["Pottery Barn", "Crate & Barrel"],
+      "filterColor": ["Tan", "Brown"],
+      "filterSizes": ["S", "M", "L"],
       "isOnSale": true,
-      "isFeatured": false
+      "isFeatured": true
     },
     {
       "id": 48,
@@ -2246,41 +1014,12 @@
         "ottoman_H6.jpg"
       ],
       "price": 46000,
-      "comparePrice": 59000,
+      "oldPrice": 59000,
+      "salePercentage": "22%",
       "inStock": true,
-      "stockQuantity": 10,
-      "categories": "ottoman",
-      "subCategories": [
-        "category1",
-        "category3",
-        "category8"
-      ],
-      "sizes": [
-        "S",
-        "M",
-        "L",
-        "XL"
-      ],
-      "colors": [
-        "sofa_A4.jpg",
-        "sofa_A5.jpg",
-        "sofa_A6.jpg"
-      ],
-      "sku": null,
-      "brands": [
-        "Louis Vuitton",
-        "Hermes"
-      ],
-      "filterColors": [
-        "Pink",
-        "Orange"
-      ],
-      "filterSizes": [
-        "S",
-        "M",
-        "L",
-        "XL"
-      ],
+      "filterBrands": ["West Elm", "Design Within Reach"],
+      "filterColor": ["Navy", "Velvet"],
+      "filterSizes": ["M", "L", "XL"],
       "isOnSale": true,
       "isFeatured": false
     },
@@ -2299,43 +1038,14 @@
         "ottoman_I6.jpg"
       ],
       "price": 58000,
-      "comparePrice": 60000,
+      "oldPrice": 60000,
+      "salePercentage": "3%",
       "inStock": true,
-      "stockQuantity": 10,
-      "categories": "ottoman",
-      "subCategories": [
-        "category1",
-        "category2",
-        "category8"
-      ],
-      "sizes": [
-        "S",
-        "M",
-        "L",
-        "XL"
-      ],
-      "colors": [
-        "sofa_A4.jpg",
-        "sofa_A5.jpg",
-        "sofa_A6.jpg"
-      ],
-      "sku": null,
-      "brands": [
-        "Louis Vuitton",
-        "Hermes"
-      ],
-      "filterColors": [
-        "Pink",
-        "Orange"
-      ],
-      "filterSizes": [
-        "S",
-        "M",
-        "L",
-        "XL"
-      ],
+      "filterBrands": ["Article", "Blu Dot"],
+      "filterColor": ["White", "Ivory"],
+      "filterSizes": ["L", "XL"],
       "isOnSale": true,
-      "isFeatured": false
+      "isFeatured": true
     },
     {
       "id": 50,
@@ -2352,39 +1062,12 @@
         "ottoman_J6.jpg"
       ],
       "price": 57000,
-      "comparePrice": 65000,
+      "oldPrice": 65000,
+      "salePercentage": "12%",
       "inStock": true,
-      "stockQuantity": 10,
-      "categories": "Wall Decore",
-      "subCategories": [
-        "category9"
-      ],
-      "sizes": [
-        "S",
-        "M",
-        "L",
-        "XL"
-      ],
-      "colors": [
-        "sofa_A4.jpg",
-        "sofa_A5.jpg",
-        "sofa_A6.jpg"
-      ],
-      "sku": null,
-      "brands": [
-        "Louis Vuitton",
-        "Hermes"
-      ],
-      "filterColors": [
-        "Pink",
-        "Orange"
-      ],
-      "filterSizes": [
-        "S",
-        "M",
-        "L",
-        "XL"
-      ],
+      "filterBrands": ["CB2", "West Elm"],
+      "filterColor": ["Wood", "Natural"],
+      "filterSizes": ["M", "L"],
       "isOnSale": true,
       "isFeatured": false
     },
@@ -2401,42 +1084,14 @@
         "wallSelf_B4.jpg"
       ],
       "price": 31742,
-      "comparePrice": 38914,
+      "oldPrice": 38914,
+      "salePercentage": "18%",
       "inStock": true,
-      "stockQuantity": 10,
-      "categories": "Wall Decore",
-      "subCategories": [
-        "category1",
-        "category12"
-      ],
-      "sizes": [
-        "S",
-        "M",
-        "L",
-        "XL"
-      ],
-      "colors": [
-        "sofa_A4.jpg",
-        "sofa_A5.jpg",
-        "sofa_A6.jpg"
-      ],
-      "sku": null,
-      "brands": [
-        "Louis Vuitton",
-        "Hermes"
-      ],
-      "filterColors": [
-        "Pink",
-        "Orange"
-      ],
-      "filterSizes": [
-        "S",
-        "M",
-        "L",
-        "XL"
-      ],
+      "filterBrands": ["Anthropologie", "Urban Outfitters"],
+      "filterColor": ["White", "Ceramic"],
+      "filterSizes": ["S", "M"],
       "isOnSale": true,
-      "isFeatured": false
+      "isFeatured": true
     },
     {
       "id": 52,
@@ -2451,40 +1106,12 @@
         "wallSelf_C4.jpg"
       ],
       "price": 34589,
-      "comparePrice": 41263,
+      "oldPrice": 41263,
+      "salePercentage": "16%",
       "inStock": true,
-      "stockQuantity": 10,
-      "categories": "Wall Decore",
-      "subCategories": [
-        "category1",
-        "category13"
-      ],
-      "sizes": [
-        "S",
-        "M",
-        "L",
-        "XL"
-      ],
-      "colors": [
-        "sofa_A4.jpg",
-        "sofa_A5.jpg",
-        "sofa_A6.jpg"
-      ],
-      "sku": null,
-      "brands": [
-        "Louis Vuitton",
-        "Hermes"
-      ],
-      "filterColors": [
-        "Pink",
-        "Orange"
-      ],
-      "filterSizes": [
-        "S",
-        "M",
-        "L",
-        "XL"
-      ],
+      "filterBrands": ["West Elm", "Pottery Barn"],
+      "filterColor": ["Silver", "Metal"],
+      "filterSizes": ["M", "L"],
       "isOnSale": true,
       "isFeatured": false
     },
@@ -2501,41 +1128,14 @@
         "wallSelf_D4.jpg"
       ],
       "price": 36105,
-      "comparePrice": 44887,
+      "oldPrice": 44887,
+      "salePercentage": "20%",
       "inStock": true,
-      "stockQuantity": 10,
-      "categories": "Wall Decore",
-      "subCategories": [
-        "category9"
-      ],
-      "sizes": [
-        "S",
-        "M",
-        "L",
-        "XL"
-      ],
-      "colors": [
-        "sofa_A4.jpg",
-        "sofa_A5.jpg",
-        "sofa_A6.jpg"
-      ],
-      "sku": null,
-      "brands": [
-        "Louis Vuitton",
-        "Hermes"
-      ],
-      "filterColors": [
-        "Pink",
-        "Orange"
-      ],
-      "filterSizes": [
-        "S",
-        "M",
-        "L",
-        "XL"
-      ],
+      "filterBrands": ["Article", "CB2"],
+      "filterColor": ["Oak", "Wood"],
+      "filterSizes": ["L", "XL"],
       "isOnSale": true,
-      "isFeatured": false
+      "isFeatured": true
     },
     {
       "id": 54,
@@ -2550,40 +1150,12 @@
         "wallSelf_E4.jpg"
       ],
       "price": 38964,
-      "comparePrice": 47102,
+      "oldPrice": 47102,
+      "salePercentage": "17%",
       "inStock": true,
-      "stockQuantity": 10,
-      "categories": "Wall Decore",
-      "subCategories": [
-        "category1",
-        "category2"
-      ],
-      "sizes": [
-        "S",
-        "M",
-        "L",
-        "XL"
-      ],
-      "colors": [
-        "sofa_A4.jpg",
-        "sofa_A5.jpg",
-        "sofa_A6.jpg"
-      ],
-      "sku": null,
-      "brands": [
-        "Louis Vuitton",
-        "Hermes"
-      ],
-      "filterColors": [
-        "Pink",
-        "Orange"
-      ],
-      "filterSizes": [
-        "S",
-        "M",
-        "L",
-        "XL"
-      ],
+      "filterBrands": ["Design Within Reach", "Room & Board"],
+      "filterColor": ["Black", "Gold"],
+      "filterSizes": ["M", "L"],
       "isOnSale": true,
       "isFeatured": false
     },
@@ -2600,42 +1172,14 @@
         "wallSelf_F4.jpg"
       ],
       "price": 40217,
-      "comparePrice": 48936,
+      "oldPrice": 48936,
+      "salePercentage": "18%",
       "inStock": true,
-      "stockQuantity": 10,
-      "categories": "Wall Decore",
-      "subCategories": [
-        "category1",
-        "category2"
-      ],
-      "sizes": [
-        "S",
-        "M",
-        "L",
-        "XL"
-      ],
-      "colors": [
-        "sofa_A4.jpg",
-        "sofa_A5.jpg",
-        "sofa_A6.jpg"
-      ],
-      "sku": null,
-      "brands": [
-        "Louis Vuitton",
-        "Hermes"
-      ],
-      "filterColors": [
-        "Pink",
-        "Orange"
-      ],
-      "filterSizes": [
-        "S",
-        "M",
-        "L",
-        "XL"
-      ],
+      "filterBrands": ["West Elm", "Crate & Barrel"],
+      "filterColor": ["Blue", "Teal"],
+      "filterSizes": ["S", "M", "L"],
       "isOnSale": true,
-      "isFeatured": false
+      "isFeatured": true
     },
     {
       "id": 56,
@@ -2650,41 +1194,12 @@
         "wallSelf_G4.jpg"
       ],
       "price": 42880,
-      "comparePrice": 50941,
+      "oldPrice": 50941,
+      "salePercentage": "16%",
       "inStock": true,
-      "stockQuantity": 10,
-      "categories": "Wall Decore",
-      "subCategories": [
-        "category1",
-        "category3",
-        "category10"
-      ],
-      "sizes": [
-        "S",
-        "M",
-        "L",
-        "XL"
-      ],
-      "colors": [
-        "sofa_A4.jpg",
-        "sofa_A5.jpg",
-        "sofa_A6.jpg"
-      ],
-      "sku": null,
-      "brands": [
-        "Louis Vuitton",
-        "Hermes"
-      ],
-      "filterColors": [
-        "Pink",
-        "Orange"
-      ],
-      "filterSizes": [
-        "S",
-        "M",
-        "L",
-        "XL"
-      ],
+      "filterBrands": ["CB2", "Article"],
+      "filterColor": ["Brass", "Gold"],
+      "filterSizes": ["M", "L", "XL"],
       "isOnSale": true,
       "isFeatured": false
     },
@@ -2701,41 +1216,14 @@
         "wallSelf_H4.jpg"
       ],
       "price": 45136,
-      "comparePrice": 53784,
+      "oldPrice": 53784,
+      "salePercentage": "16%",
       "inStock": true,
-      "stockQuantity": 10,
-      "categories": "Wall Decore",
-      "subCategories": [
-        "category10"
-      ],
-      "sizes": [
-        "S",
-        "M",
-        "L",
-        "XL"
-      ],
-      "colors": [
-        "sofa_A4.jpg",
-        "sofa_A5.jpg",
-        "sofa_A6.jpg"
-      ],
-      "sku": null,
-      "brands": [
-        "Louis Vuitton",
-        "Hermes"
-      ],
-      "filterColors": [
-        "Pink",
-        "Orange"
-      ],
-      "filterSizes": [
-        "S",
-        "M",
-        "L",
-        "XL"
-      ],
+      "filterBrands": ["Pottery Barn", "West Elm"],
+      "filterColor": ["Walnut", "Brown"],
+      "filterSizes": ["L", "XL"],
       "isOnSale": true,
-      "isFeatured": false
+      "isFeatured": true
     },
     {
       "id": 58,
@@ -2750,41 +1238,12 @@
         "wallSelf_I4.jpg"
       ],
       "price": 46902,
-      "comparePrice": 55611,
+      "oldPrice": 55611,
+      "salePercentage": "16%",
       "inStock": true,
-      "stockQuantity": 10,
-      "categories": "Wall Decore",
-      "subCategories": [
-        "category1",
-        "category3",
-        "category9"
-      ],
-      "sizes": [
-        "S",
-        "M",
-        "L",
-        "XL"
-      ],
-      "colors": [
-        "sofa_A4.jpg",
-        "sofa_A5.jpg",
-        "sofa_A6.jpg"
-      ],
-      "sku": null,
-      "brands": [
-        "Louis Vuitton",
-        "Hermes"
-      ],
-      "filterColors": [
-        "Pink",
-        "Orange"
-      ],
-      "filterSizes": [
-        "S",
-        "M",
-        "L",
-        "XL"
-      ],
+      "filterBrands": ["Article", "Anthropologie"],
+      "filterColor": ["Stone", "Gray"],
+      "filterSizes": ["M", "L"],
       "isOnSale": true,
       "isFeatured": false
     },
@@ -2801,43 +1260,14 @@
         "wallSelf_J4.jpg"
       ],
       "price": 48357,
-      "comparePrice": 56904,
+      "oldPrice": 56904,
+      "salePercentage": "15%",
       "inStock": true,
-      "stockQuantity": 10,
-      "categories": "Wall Decore",
-      "subCategories": [
-        "category1",
-        "category2",
-        "category9"
-      ],
-      "sizes": [
-        "S",
-        "M",
-        "L",
-        "XL"
-      ],
-      "colors": [
-        "sofa_A4.jpg",
-        "sofa_A5.jpg",
-        "sofa_A6.jpg"
-      ],
-      "sku": null,
-      "brands": [
-        "Louis Vuitton",
-        "Hermes"
-      ],
-      "filterColors": [
-        "Pink",
-        "Orange"
-      ],
-      "filterSizes": [
-        "S",
-        "M",
-        "L",
-        "XL"
-      ],
+      "filterBrands": ["CB2", "Design Within Reach"],
+      "filterColor": ["Copper", "Bronze"],
+      "filterSizes": ["S", "M", "L"],
       "isOnSale": true,
-      "isFeatured": false
+      "isFeatured": true
     }
   ]
 }

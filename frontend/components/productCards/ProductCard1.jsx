@@ -52,14 +52,14 @@ export default function ProductCard1({
             width={600}
             height={800}
           />
-{/* 
+
           <Image
             className="lazyload img-hover"
-            src={getImageUrl(product.imgHover)}
+            src={`https://rantechnology.in/curve-&-comfort/products/${product.imgHover}`}
             alt={product.title}
             width={600}
             height={800}
-          /> */}
+          />
         </Link>
 
         {product.hotSale && (
